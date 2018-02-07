@@ -5,7 +5,7 @@ function buildPaymentRequest() {
 
     let supportedInstruments = [{
         supportedMethods: [
-            'https://paylib.fr',
+            'https://liamThiveux.github.io',
         ]
     }];
 
