@@ -1,7 +1,7 @@
 {
-    "name": "Test Payment Handler",
+    "name": "Test Paylib handler",
     "icons": [{
-        "src": "tree.png",
+        "src": "bgPaylib.png",
         "sizes": "600x600",
         "type": "image/png"
     }]
