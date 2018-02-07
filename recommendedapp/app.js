@@ -4,7 +4,7 @@ self.addEventListener('canmnakepayment', (evt) => {
 
 self.addEventListener('paymentrequest', (evt) => {
     evt.respondWith({
-        methodName: 'https://paylib.fr',
+        methodName: 'https://liamThiveux.github.io',
         details: {
             token: '1234567890',
         },
