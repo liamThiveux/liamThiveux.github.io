@@ -1,44 +1,56 @@
-<!DOCTYPE html>
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" class="flexNav-no-touch" lang="en">
+<!doctype html>
+<html lang="en">
+
 <head>
-	<meta content="text/html; charset=UTF-8" http-equiv="content-type">
-	<meta content="text/javascript" http-equiv="content-script-type">
-	<meta content="0" http-equiv="expires">
-	<meta content="no-cache" http-equiv="pragma">
-	<meta content="no-cache, must-revalidate" http-equiv="cache-control">
-	<meta content="initial-scale=1.0, user-scalable=1" name="viewport">
-	<title>Checkout Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Payment Handler for "https://rsolomakhin.github.io"</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
-            <h2 class="title">Sign up for libPay</h2>
-            <div class="separator"></div>
+    <div id="contents">
+        <h1>Payment Handler for "https://rsolomakhin.github.io"</h1>
+        <p>This is a payment handler for "https://rsolomakhin.github.io" payment
+        method, which is located on the same origin as this payment handler.
+        The browser does not download the payment method manifest in this
+        case.</p>
 
-            <div class="message">
-			    <p>E-mail</p>
-                <input class="textinput" style="text-transform: capitalize" type="text" id="name" />
-                
-				<p>Mot de passe</p>
-                <input class="textinput" type="password" id="password" />
-            </div>
-			<button onclick="install();"> Install paylib </button>
+        <p id="checking">Checking whether the payment handler is installed...</p>
 
+        <div id="installed" style="display: none;">
+            <p>The payment handler is installed. <a href="../origin-test/">Test it out</a>.</p>
+            <ul>
+                <li>Scope: <code id="scope">N/A</code></li>
+                <li>Method: <code id="method">N/A</code></li>
+            </ul>
+            <p><button onclick="uninstall();">Uninstall</button></p>
+        </div>
 
-<script>
-	function install(){
-		console.log("installing paylib service");
-		navigator.serviceWorker.register('app.js').then(function(registration){return Promise.all([ registration.paymentManager.instruments.set(numberField.value.substr(-4),{ 
-			name: 'test',
-			enabledMethods: ['https://rsolomakhin.github.io']
-			}),
-		]);
-		}).then(function(){
-			window.location.href = "checkout.html";
-			}).catch(function(error){
-				alert("error: " + error);
-			});
-			console.log("fin d'install");
-	}
-</script>
+        <p id="installing" style="display: none;">Installing...</p>
 
+        <p id="uninstalling" style="display: none;">Uninstalling...</p>
+
+        <div id="not-installed" style="display: none;">
+            <p>The payment handler is not installed. <a href="../origin-test/">Verify</a>.</p>
+            <p><button onclick="install();">Install</button></p>
+        </div>
+
+        <pre id="msg"></pre>
+
+        <div id="src">
+            <p>View the source code:</p>
+            <ul>
+                <li><a href="installer.js">Installer</a></li>
+                <li><a href="app.js">App</a></li>
+                <li><a href="manifest.json">Web app manifest</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="installer.js"></script>
+    <script src="/redirect.js"></script>
 </body>
+
 </html>
