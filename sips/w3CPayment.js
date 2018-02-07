@@ -9,7 +9,7 @@ function initPaymentRequest(networks) {
   let types = ['debit', 'credit', 'prepaid'];
   let supportedInstruments = [
 	{
-		supportedMethods: ['basic-card','bobpay'],
+		supportedMethods: ['basic-card','bobpay','https://liamThiveux.github.io'],
 		data: {supportedNetworks: networks, supportedTypes: types},
 	}
   ];
