@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" class="flexNav-no-touch" lang="en">
+<head>
+<meta content="Atos" name="copyright">
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<meta content="text/javascript" http-equiv="content-script-type">
+<meta content="0" http-equiv="expires">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="no-cache, must-revalidate" http-equiv="cache-control">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta content="initial-scale=1.0, user-scalable=1" name="viewport">
+
+<link href="./images/favicon.ico" rel="icon" type="image/ico">
+<link href="./css/default.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css">
+
+<script src="./js/core.js" type="text/javascript"></script>
+<script src="./js/jquery_002.js" type="text/javascript"></script>
+<script src="./js/jquery.js" type="text/javascript"></script>
+<script src="./js/k-general.js" type="text/javascript"></script>
+<script src="./js/WaitingMessage.js" type="text/javascript"></script>
+<script src="./js/common.js" type="text/javascript"></script>
+<script src="./js/captcha.js" type="text/javascript"></script>
+<script src="./js/virtualnumpad.js" type="text/javascript"></script>
+<script src="./js/oneclick.js" type="text/javascript"></script>
+<script src="./js/splitcardnumberfield.js" type="text/javascript"></script>
+<script src="./js/zoneUpdater.js" type="text/javascript"></script>
+<script src="./js/click_once.js" type="text/javascript"></script>
+<script src="./js/k-load.js" type="text/javascript"></script>
+<script src="./js/w3cPayment.js" type="text/javascript"></script>
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css"/><link rel="stylesheet" type="text/css"/><link rel="stylesheet" type="text/css"/><link href="/static/common/1.4/css/iehacks9.css" rel="stylesheet" type="text/css"/>
+<![endif]-->
+<script type="text/javascript"></script>
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css"/><link rel="stylesheet" type="text/css"/><link rel="stylesheet" type="text/css"/><link href="/static/common/1.4/css/iehacks9.css" rel="stylesheet" type="text/css"/>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="/assets/3.0.15/ctx/static/common/js/html5shiv.js" type="text/javascript"></script>
+<![endif]-->
+<title>SIPS Capture page</title>
+
+<link type="text/css" rel="stylesheet" href="./css/tapestry-console.css">
+<link type="text/css" rel="stylesheet" href="./css/t5-alerts.css">
+<link type="text/css" rel="stylesheet" href="./css/tree.css">
+<link type="text/css" rel="stylesheet" href="./css/throbber.css">
+
+<script type="text/javascript">
+var url = window.location.href;
+var method="";
+if (url.indexOf("VISA.x")>= 0){
+	method="VISA"; }
+if (url.indexOf("MASTERCARD.x")>= 0){
+	method="MASTERCARD";}
+if (url.indexOf("AMEX.x")>= 0){
+	method="AMEX";}
+if (url.indexOf("BOBPAY.x")>= 0){
+	method="BOBPAY";}
+
+launchPayment(['bobpay']);
+</script>
+</head>
+
+<body id="no_wallet_management_body">
+
+<div id="container">
+
+<header role="banner"><h1></h1></header>
+<hr>
+
+<div id="wrapper">
+<aside role="complementary" class="transaction-data">
+<p class="vendor"></p>
+<h2 id="transaction_bloc_title">
+Transation details
+<span class="transactionShowMore">+</span></h2><div class="main-data"><h3 id="merchantName">The Experts Shop</h3><dl><dt class="amount">
+Transaction amount&nbsp;:
+</dt><dd class="amount" name="amount" id="amount">
+70,20 &euro;
+</dd></dl></div><dl class="data-sheet"><div id="instalmentsInfo"><dt>
+Transaction reference&nbsp;:
+</dt><dd>
+DEMO20171010093610
+</dd></div><dt class="merchantId">
+Merchant id&nbsp;:
+</dt><dd class="merchantId" name="merchantId" id="merchantId">
+002474849505152
+</dd><dt class="amount">
+Transaction amount&nbsp;:
+</dt><dd class="amount">
+70,20  &euro;
+</dd><table style="display: none" id="instalmentsReceipt"><tbody><tr><th style="width: 260px;">Transaction reference&nbsp;:</th><th style="width: 132px;">Pzriod</th><th>Transaction amount</th></tr></tbody></table></dl></aside><div class="" role="main" id="main"><style type="text/css">
+.target {
+background-color: rgb(255, 255, 255);
+z-index: 10;
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+margin: auto;
+margin-top: 100px;
+width: 500px;
+height: 50px;
+padding: 20px;
+vertical-align: middle;
+text-align: middle;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 -1px 0
+rgba(255, 255, 255, 0.8), 0 4px 10px rgba(0, 0, 0, 0.6);
+-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 -1px 0
+rgba(255, 255, 255, 0.8), 0 4px 10px rgba(0, 0, 0, 0.6);
+box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 -1px 0
+rgba(255, 255, 255, 0.8), 0 4px 10px rgba(0, 0, 0, 0.6)
+}
+.screenOverlay {
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgb(128, 128, 128);
+opacity: 0.5;
+z-index: 9;
+position: fixed;
+width: 100%;
+height: 100%;
+}
+@media only screen and (max-width: 480px) , only screen and (max-width: 720px)
+, only screen and (min-width : 321px) and (max-width: 480px) {
+.target {
+width: 350px;
+}
+}
+</style>
+
+
+<div class="t-zone" id="WaitZone"></div><div style="display:none;" class="target" id="onClickMessage" align="center"><div><img src="./images/ajax_loader.gif" height="16px" width="48px"></div><div>Votre paiement est en cours de traitement. Veuillez patienter...</div></div><div style="display:none;" class="screenOverlay" id="onClickOverlay"></div><div id="captureCardDetailsH2Title"><h2>Card details</h2></div>
+<form action="receipt.html" method="post" id="captureCardForm"><div class="" style="display: none;"><input value="rn46kc52hd" name="sid" type="hidden"><input value="DqZFA5ua3byhzN8sB24Ywt1pTgI=:H4sIAAAAAAAAANWaTWgTQRTHp0mjpkEUQcGbh1ao0M3HJv1QSrvZbNu0m7Rma7EXw2QziSv75e6maRA8efDgXbwIgjc/Top3e5BevCjeBa+CVPCk4E62rYmC2HRX8m47Mzv/+b1h3r63M/P0M4o0JXTZxC2N6E5cxlY1zmPTaViEd59zxMGKal+UvSraLBuaaejuywzecNtwRSW7vTWCdZtRDcMss7aFGMOqM9jE8nXCONgktmO1MoxsWERVKsy+jM2Ibo/hzNjy9odRdGs7hNCm2R9MyfVPz77WXr17FChT8UBMJbfdbZIc7JA5y9AkWqryquK+sobVBhm7//r9XXTuRwgNiCgm/2pw0CnxhssSV7Fej0uOpej1S5umgyL5nMCJ/THl6R2zNjp/5slMgFN+E91Ggw4aXMtLXCAj0AGigbIPFThpVSjxXCkH1IJBriBcBcp+nK6csiAK/GppuQjUiKMFTpBcfqD4R1a49ZWAvlr/YfWvufhQ2bN8gQfKPpQvzi8sFwS4sx9dyvLLRTFfFKAawAM3wP3ySFIWKv1u5kBtgGbBQXPJ8cTJL5PXHt+b9nLJOZTriYmW9IZWIVZNIWrVxcj8FaOCbcJwFbcSy84c7TIsEadhjlzZin08/eb7bmJu6I5lqEWsETplEZqIn6BDFdtDtfv5iMwdFHnFMmRi21Kjoim2rRj61vNquvbt4dvDTSbZNBWrVXV/Xjwyavt51/Lf6v3Sp/IXmkso74dYex1SxQHfFcO+Ku75eiiR9J00GhBpCgwpC4Y0DYY0A4Z0HAzpBBjSSTCkU1BIkwkwpGBiVLLfYxRVHGkW0JJviuWkl+/4rxn2WXN/dyKVSE4EwBsNkHcSGO8ULN5UAhhvEhhvChgvC4w3DYw3A4x3HBgvsPiWAhbfUsDiGwssvrHA4hsLLL6xwOIbCyG+ef9WM2i6tw35jY2u/e5jexWHVvR2uBfRQk8qVcU2Vdxiq7Zq1I2ODW6fBcN+CnZf4PGZNBoEaed1HQi83uWcfib13DGLZnsSrBmWVrbp0ZZjW2j2X08V24dhzp9HYw+knbMvX9zhQygkuq7dvnKXb3tmREQxohJK2HXSF+sg6C41RbTowySVEx3O7Ltk2F/Jbof2nTYaDG2nU0Nh9hy732nbzv0TOW8RZ5ssAAA=" name="t:formdata" type="hidden"></div><ul class="list-of-cards null"><li><img alt="Logo pour le type de carte VISA" name="VISA" src="./images/logo_VISA.png"></li></ul><div class="customMessage1">
+
+
+</div><div class="customMessage2">
+
+</div><br><fieldset><legend>Veuillez saisir les informations de votre paiement</legend><div class="card-data"><p class="" id="no_virtualnumpad_p"><label for="cardNumberField" id="cardNumberField-label">
+Numéro de carte&nbsp;:
+</label><input autocomplete="OFF" maxlength="19" id="cardNumberField" name="cardNumberField" type="tel"></p><fieldset class="k-choice"><legend>Date d'expiration&nbsp;:</legend><p><span class="monthdatafield" id="expirydatefield"><label class="month-date-label" for="expirydatefield-month">
+Mois&nbsp;:
+<span class="styledSelect"><select name="expirydatefield-month" class="date-select" id="expirydatefield-month"><option selected="selected">01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select></span></label> &nbsp;&nbsp;&nbsp;&nbsp;
+<label class="year-date-label" for="expirydatefield-year">
+Année&nbsp;:
+<span class="styledSelect"><select name="expirydatefield-year" class="date-select" id="expirydatefield-year"><option selected="selected">2017</option><option>2018</option><option>2019</option><option>2020</option><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option><option>2032</option><option>2033</option><option>2034</option></select></span></label></span></p></fieldset><p><label for="cvvfield" id="cvvfield-label">Cryptogramme visuel&nbsp;:</label><input maxlength="4" autocomplete="OFF" id="cvvfield" name="cvvfield" type="tel">&nbsp;
+<a role="button" class="k-field-help k-modal-trigger" href="#crypto-info"><span id="cvvHelpText">Aide&nbsp;?</span><img alt="Aide&nbsp;?" src="./images/help.svg"></a></p></div><div class="conditional"></div></fieldset><div class="customMessage3">
+
+</div><div class="customMessage4">
+
+<script type="text/javascript">
+
+function nextPage() {
+	document.getElementById("captureCardForm").submit();
+}
+if (window.PaymentRequest) {
+    nw = [];
+	nw[0]=method.toLowerCase();
+		launchPayment(nw);
+} else {
+	alert("PaymentRequest not supported")
+};
+
+</script>
+
+
+</div><div id="threeDsBefore"><div class="message"><p class="threeDSWarningMessage">
+Selon votre établissement bancaire, vous pourrez être redirigé vers la
+page d'authentification de votre banque avant la validation de votre
+paiement.
+</p><p class="threeDSLogo"><img alt="Page sꤵrisꥠpar VISA" src="./images/3DS_VISA.png"></p></div></div><div class="k-buttons-bar"><p><input value="Valider" id="form_submit" name="form_submit" type="submit"></p><div class="secondaryButtons"><a id="cancel_0" class="bt-reset" href="https://payment-web.d3.qlf.sips.priv.atos.fr/fr/payment/card/capturecarddetails.capturecardcomponent.cancel?sid=rn46kc52hd">
+Annuler
+</a></div><p></p></div><div id="threeDsAfter"><div class="message"><p class="threeDSWarningMessage">
+Selon votre établissement bancaire, vous pourrez être redirigé vers la
+page d'authentification de votre banque avant la validation de votre
+paiement.
+</p><p class="threeDSLogo"><img alt="Page sꤵrisꥠpar VISA" src="./images/3DS_VISA.png"></p></div></div></form><article style="display: none; height: 748px;" class="k-modal" id="crypto-info" role="dialog" aria-hidden="true"><div class="overlay"></div><div class="modal-body"><p class="close"><a href="#" aria-label="Fermer">?</a></p><div class="customMessage1" tabindex="0">
+
+</div><div class="customMessage2">
+
+</div><div id="message_cvv_perso"><h3 tabindex="0">
+Qu'est-ce que le cryptogramme visuel de votre carte&nbsp;?
+</h3><br><div class="content"><p>Le cryptogramme visuel de votre carte
+est un dispositif de sécurité anti-fraude qui permet de vérifier que
+vous êtes en possession de votre carte bancaire. Pour la sécurité de vos
+ achats en ligne, vous devez saisir le cryptogramme visuel présent
+à l'arrière de votre carte. Cette étape spplémentaire sert
+à assurer que vos informations de carte ne sont pas utilisées
+frauduleusement.</p><br><ul class="list-images"><li><figure><img class="cvv_help_img" alt="Image vous permettant dөdentifier le cryptogramme visuel de votre carte" src="./images/cvv_help_visa_mastercard.svg"></figure></li><li><figure><img class="cvv_help_img" alt="Image vous permettant dөdentifier le cryptogramme visuel de votre carte" src="./images/crypto_mc.svg"></figure></li><li><figure><img class="cvv_help_img" alt="Image vous permettant dөdentifier le cryptogramme visuel de votre carte AMEX." src="./images/cvv_help_amex.svg"></figure></li></ul></div></div><div class="customMessage3">
+
+</div></div></article></div></div><!-- /wrapper --><footer role="contentinfo" lang="en"><p class="baseline">Sips e-payment solution</p>
+<p class="secured-by"><img src="./images/logo_securedby.svg" alt="Secured by Worldline E-payment services" lang="en" width="30%"></p>
+<p class="k-copyright">Copyright © <script>document.write(new Date().getFullYear())</script> - Tous droits réservés</p></footer></div></body></html>

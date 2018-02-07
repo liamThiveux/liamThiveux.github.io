@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" class="flexNav-no-touch" lang="en">
+<head>
+<meta content="Atos" name="copyright">
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<meta content="text/javascript" http-equiv="content-script-type">
+<meta content="0" http-equiv="expires">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="no-cache, must-revalidate" http-equiv="cache-control">
+<link href="./images/favicon.ico" rel="icon" type="image/ico">
+<link href="./css/default.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="./css/tapestry-console.css">
+<link type="text/css" rel="stylesheet" href="./css/t5-alerts.css">
+<link type="text/css" rel="stylesheet" href="./css/tree.css">
+<script src="./js/core.js" type="text/javascript"></script>
+<script src="./js/jquery.js" type="text/javascript"></script>
+<script src="./js/jquery_002.js" type="text/javascript"></script>
+<script src="./js/k-general.js" type="text/javascript"></script>
+<script src="./js/k-load.js" type="text/javascript"></script>
+<script src="./js/w3CPayment.js" type="text/javascript"></script>
+<script src="./js/cookies.js" type="text/javascript"></script>
+
+<title>SIPS confirmation page</title>
+
+<script type="text/javascript">
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+var tId=getUrlParameter("tId");
+//var tId = getCookie("tId");
+
+
+var payMethod=getUrlParameter("payMethod");
+//var payMethod = getCookie("payMethod");
+ if ( payMethod=="" ) {
+   payMethod="card";
+ }
+
+var payMean=getUrlParameter("payMean");
+//var payMean = getCookie("payMean");
+ if ( payMean=="" ) {
+   payMean="4970";
+ }
+var d = new Date();
+var authNum=d.getMilliseconds()+""+d.getSeconds();
+</script>
+
+</head>
+<body id="no_wallet_management_body">
+
+<div id="demo"></div>
+
+<div id="container">
+<header role="banner"><h1></h1></header>
+<hr>
+
+
+<div id="wrapper">
+<aside role="complementary" class="transaction-data"><p class="vendor"></p><h2 id="transaction_bloc_title">
+Détails de la transaction
+<span class="transactionShowMore">+</span></h2><div class="main-data"><h3 id="merchantName">Hungry Experts Shop</h3><dl><dt class="amount">
+Montant de la transaction&nbsp;:
+</dt><dd class="amount" name="amount" id="amount">
+23,20 €
+</dd></dl></div><dl class="data-sheet">
+  <dt class="merchantId">
+  Identifiant du commerçant&nbsp;:
+  </dt><dd class="merchantId" name="merchantId" id="merchantId">
+  002474849505152
+  </dd>
+  <div id="instalmentsInfo"><dt>
+  Référence de la transaction&nbsp;:
+  </dt><dd>
+    <script>document.write(tId)</script>
+  </dd></div>
+  <dt class="transactionDate">
+Date de la transaction&nbsp;:
+</dt><dd class="transactionDate" name="transactionDate" id="transactionDate">
+20 Nov. 2017
+</dd>
+<dt class="amount">
+Montant de la transaction&nbsp;:
+</dt><dd class="amount">
+23,20 €
+</dd>
+
+<div id="cardResult" style="display:none">
+<dt class="maskedCardNumber">
+Numéro de carte&nbsp;:
+</dt><dd class="maskedCardNumber" name="maskedCardNumber" id="maskedCardNumber">
+  <script>document.write(payMean+"##########")</script>
+</dd><dt class="authorizationId">
+Numéro d’autorisation&nbsp;:
+</dt><dd class="authorizationId" name="authorizationId" id="authorizationId">
+<script>document.write(authNum)</script>
+</dd></div>
+
+<div id="bobpayResult"  style="display:none">
+<dt class="maskedCardNumber">
+Numéro de compte Bobpay&nbsp;:
+</dt><dd class="maskedCardNumber" name="maskedCardNumber" id="maskedCardNumber">
+  <script>document.write(payMean)</script>
+</dd></div>
+
+<script type="text/javascript">
+var cardres = document.getElementById("cardResult");
+var bpres = document.getElementById("bobpayResult");
+if ( payMethod=="bobpay" ) {
+  bpres.style.display='inline';
+} else {
+  cardres.style.display='inline';
+}
+</script>
+
+</dl></aside><div class="print" role="main" id="main"><form onsubmit="javascript:return Tapestry.waitForPage(event);" action="/fr/payment/receipt.form" method="post" id="form"><div class="" style="display: none;"><input value="tadfx2y3j3" name="sid" type="hidden"><input value="oXJkzk4QnAh8rPzkm3k+MIYLjUM=:H4sIAAAAAAAAAFvzloEVAN3OqfcEAAAA" name="t:formdata" type="hidden"></div>
+
+
+
+<h2 class="receiptH2">Informations de paiement</h2><div class="k-confirm-messages"><div class="customMessage1">
+
+</div><div class="customMessage2">
+
+</div><div id="paymentaccepted" style="display:block">
+Votre paiement a été accepté.
+</div><div>
+Nous vous conseillons de conserver vos informations de paiement.
+</div></div><div class="customMessage3">
+
+</div><div class="k-buttons-bar"><p><a role="button" class="bt-option k-print" href="#">Imprimer le reçu du paiement</a><a class="bt-submit" href="../merchant/confirmation.html">Continuer
+</a></p></div></form></div>
+
+</div><!-- /wrapper --><footer role="contentinfo" lang="en"><p class="baseline">Sips e-payment solution</p>
+<p class="secured-by"><img src="./images/logo_securedby.svg" alt="Secured by Worldline E-payment services" lang="en" width="30%"></p>
+<p class="k-copyright">Copyright © <script>document.write(new Date().getFullYear())</script> - Tous droits réservés</p></footer></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+#loadingScreenLabel {
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	width: 40%;
+	text-align: center;
+	padding: 10px;
+	z-index: 120;
+	background-color: #FFF;
+	border: 1px solid #0066A1;
+	box-shadow: 0px 5px 5px #555;
+	border-radius: 10px;
+}
+
+#loadingScreenLabel span {
+	height: 25px;
+	display: inline-block;
+	color: #0066A1; #
+	font-weight: bold;
+	font-size: 17px;
+}
+
+div.overlay {
+	background: #808080;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	opacity: 0.35;
+	-ms-filter: "alpha(opacity=35)";
+	filter: alpha(opacity = 35);
+	z-index: 100;
+}
