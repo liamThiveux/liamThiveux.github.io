@@ -94,7 +94,7 @@ function install() {
             registration.paymentManager.instruments
                 .set('instrument-key', {
                     name: 'Chrome uses name and icon from the web app manifest',
-                    enabledMethods: ['https://paylib.fr'],
+                    enabledMethods: ['https://liamThiveux.github.io'],
                 })
                 .then(() => {
                     registration.paymentManager.instruments.get('instrument-key').then((instrument) => {
