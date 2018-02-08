@@ -30,5 +30,13 @@ left: 850px;
 top: 422px;  z-index: 1;" />
 	</a>
 </p>
+<input type="hidden" id="cbnumber" value="">
+	<script>
+	var url = new URL(window.location.href);
+	var c = url.searchParams.get("cardNumber");
+	console.log(c);
+	document.getElementById("cbnumber").value = c;
+	</script>
+
 </body>
 </html>
