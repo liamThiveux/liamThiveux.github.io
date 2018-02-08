@@ -28,7 +28,7 @@ function initPaymentRequest(networks) {
 	  		merchantIdentifier: "Liam",
 	  		bobPaySpecificField: true
 	  	}
-	};
+	}
   ];
 
   let details = {
