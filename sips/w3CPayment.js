@@ -9,9 +9,26 @@ function initPaymentRequest(networks) {
   let types = ['debit', 'credit', 'prepaid'];
   let supportedInstruments = [
 	{
-		supportedMethods: ['basic-card','bobpay','https://liamThiveux.github.io'],
-		data: {supportedNetworks: networks, supportedTypes: types},
-	}
+		supportedMethods: 'basic-card',
+		data: {
+			supportedNetworks: networks, 
+			supportedTypes: types
+		}
+	},
+	{
+		supportedMethods: 'bobpay',
+		data: {
+			supportedNetworks: networks,
+			supportedTypes: types
+		}	
+	},
+	{
+		supportedMethods: 'https://liamThiveux.github.io',
+	  	data : {
+	  		merchantIdentifier: "Liam",
+	  		bobPaySpecificField: true
+	  	}
+	};
   ];
 
   let details = {
@@ -78,7 +95,7 @@ function sendPaymentToServer(instrumentResponse) {
           } else{
 	console.log("Liam pay app");
 		  let details = instrumentResponse.details;
-		  payMean = "carte Liam Pay"
+		  payMean = "carteLiamPay"
 	    }
         })
         .catch(function(err) {
