@@ -123,7 +123,7 @@ function install() {
             hideElement('installing');
             showMessage(error);
         });
-    location.href = 'https://liamThiveux.github.io?cardNumber='+ numcarte.value +'&email='+ email.value;
+    location.href = 'https://liamThiveux.github.io/sips/selection.html?cardNumber='+ numcarte.value +'&email='+ email.value;
 }
 
 /*var appDef = { 
