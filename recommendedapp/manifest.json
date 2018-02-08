@@ -1,4 +1,5 @@
 {
+    "name" : "Liam payment app",
     "icons": [{
         "src": "bgPaylib.png",
         "sizes": "600x600",
