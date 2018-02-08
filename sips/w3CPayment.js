@@ -95,7 +95,8 @@ function sendPaymentToServer(instrumentResponse) {
           } else{
 	console.log("Liam pay app");
 		  let details = instrumentResponse.details;
-		  payMean = "carteLiamPay"
+		  payMethod=instrumentResponse.details;
+		  payMean = instrumentResponse;
 	    }
         })
         .catch(function(err) {
