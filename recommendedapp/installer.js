@@ -44,6 +44,7 @@ function check() {
     clearMessages();
     hideElements();
     showElement('checking');
+    showElement('not-installed');
 
     if (!navigator.serviceWorker) {
         hideElement('checking');
