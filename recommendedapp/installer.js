@@ -1,8 +1,7 @@
 var email = document.querySelector("[name='E-mail']"); 
 var mdp = document.querySelector("[name='password']"); 
 var numcarte = document.querySelector("[name='numcarte']"); 
-console.log(numcarte);
-console.log(mdp);
+
 
 function showMessage(message) {
     const messageElement = document.getElementById('msg');
@@ -92,6 +91,8 @@ function check() {
 }
 
 function install() {
+    console.log(numcarte.value);
+    console.log(mdp.value);
     hideElements();
     showElement('installing');
 
