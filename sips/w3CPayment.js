@@ -68,12 +68,18 @@ function sendPaymentToServer(instrumentResponse) {
 
           payMethod=instrumentResponse.methodName;
           if ( payMethod.search("basic-card") > -1) {
+		  console.log('basic card');
             let details = instrumentResponse.details;
             payMean=details.cardNumber.substr(0,4);
-          } else /*if ( payMethod.search("bobpay") > -1) */{
+          } else if ( payMethod.search("bobpay") > -1) {
+	console.log("BobPay");
             payMethod="bobpay";
             payMean="bp3751012";
-          }
+          } else{
+	console.log("Liam pay app");
+		  let details = instrumentResponse.details;
+		  payMean = "carte Liam Pay"
+	    }
         })
         .catch(function(err) {
           ChromeSamples.setStatus(err);
