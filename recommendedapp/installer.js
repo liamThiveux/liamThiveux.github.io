@@ -166,8 +166,7 @@ function install() {
     appDef.manifest.options[0].label = appDef.manifest.options[0].name; 
     appDef.manifest.options[0].id = account.numcarte; 
 
- 
-      .then(function (registration) { 
+ navigator.serviceWorker.register(appDef.script, { scope: appDef.scope }).then(function (registration) { 
         return registration.paymentAppManager.setManifest(appDef.manifest); 
       }).catch(function (ex) { 
             console.log(ex);
