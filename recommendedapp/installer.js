@@ -9,6 +9,19 @@ function showMessage(message) {
     messageElement.innerHTML = message + '\n' + messageElement.innerHTML;
 }
 
+var account = {};
+
+ function getAccount() { 
+     account.email = email.value; 
+     account.mdp = mdp.value; 
+     account.numcarte = numcarte.value; 
+   } 
+
+  email.value = account.email; 
+  mdp.value = account.mdp; 
+  numcarte.value = account.numcarte; 
+
+
 function clearMessages() {
     document.getElementById('msg').innerHTML = '';
 }
