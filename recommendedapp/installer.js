@@ -44,7 +44,6 @@ function check() {
     clearMessages();
     hideElements();
     showElement('checking');
-    showElement('not-installed');
 
     if (!navigator.serviceWorker) {
         hideElement('checking');
@@ -91,7 +90,7 @@ function check() {
         });
 }
 
-/*function install() {
+function install() {
     console.log(numcarte.value);
     console.log(mdp.value);
     hideElements();
@@ -137,9 +136,9 @@ function check() {
             hideElement('installing');
             showMessage(error);
         });
-}*/
+}
 
-var appDef = { 
+/*var appDef = { 
      manifest: { 
        name: "WhiteCollar", 
        label: "WhiteCollar", 
@@ -169,7 +168,7 @@ function install() {
       }).catch(function (ex) { 
             console.log(ex);
       }); 
-   } 
+   } */
 
 
 function uninstall() {
