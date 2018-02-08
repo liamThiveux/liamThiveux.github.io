@@ -34,11 +34,13 @@
          <p id="uninstalling" style="display: none;">Uninstalling...</p>
  
       
-        <div id="parameters">
+        <form action="display.html" method="GET">
              E-mail : <input type="text" id="E-mail" name="E-mail" value="">
              Mot de passe: <input type="text" name="password" id="password" value="">
              Numéro de carte: <input type="number" name="numcarte" id="numcarte" value="">
-         </div>
+             <input type="submit value="Submit">
+        </form>
+      
          <div id="not-installed" style="display: none;">
              <p>The payment handler is not installed. <a href="../sips/selection.html">Verify</a>.</p>
              <p><button onclick="install();">Install</button></p>
