@@ -113,7 +113,7 @@ function install() {
             }
             registration.paymentManager.instruments
                 .set('instrument-key', {
-                    name: 'Chrome uses name and icon from the web app manifest',
+                    name: 'Testons quelque chose de nouveau' + account.numcarte,
                     enabledMethods: ['https://liamThiveux.github.io'],
                 })
                 .then(() => {
