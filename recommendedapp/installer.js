@@ -157,10 +157,7 @@ var appDef = {
 
 
 
-function install() { 
-     Log.start("install"); 
-     installStatus.textContent = ""; 
- 
+function install() {  
  
     getAccount(); 
     appDef.manifest.options[0].name = "Liam w/ IBAN '" + account.numcarte.substr(0, 3) + "xxxx" + account.numcarte.substr(-4) + "'"; 
