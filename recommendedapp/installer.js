@@ -90,7 +90,7 @@ function check() {
         });
 }
 
-function install() {
+/*function install() {
     console.log(numcarte.value);
     console.log(mdp.value);
     hideElements();
@@ -136,7 +136,44 @@ function install() {
             hideElement('installing');
             showMessage(error);
         });
-}
+}*/
+
+var appDef = { 
+     manifest: { 
+       name: "WhiteCollar", 
+       label: "WhiteCollar", 
+       options: [ 
+       { 
+         name: "WhiteCollar for SEPA Payment", 
+         label: "WhiteCollar SEPA", 
+         id: "WhiteCollar", 
+         enabledMethods: ["https://liamThiveux.github.io"] 
+       }] 
+     }, 
+     script: "app.js", 
+     scope: "./" 
+   }; 
+
+
+
+function install() { 
+     Log.start("install"); 
+     installStatus.textContent = ""; 
+ 
+ 
+    getAccount(); 
+    appDef.manifest.options[0].name = "Liam w/ IBAN '" + account.numcarte.substr(0, 3) + "xxxx" + account.numcarte.substr(-4) + "'"; 
+    appDef.manifest.options[0].label = appDef.manifest.options[0].name; 
+    appDef.manifest.options[0].id = account.numcarte; 
+
+ 
+      .then(function (registration) { 
+        return registration.paymentAppManager.setManifest(appDef.manifest); 
+      }).catch(function (ex) { 
+            console.log(ex);
+      }); 
+   } 
+
 
 function uninstall() {
     hideElements();
