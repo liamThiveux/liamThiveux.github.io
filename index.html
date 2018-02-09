@@ -27,7 +27,6 @@ img {
 	var url = new URL(window.location.href);
 	var c = url.searchParams.get("cardNumber");
 	console.log(c);
-	document.getElementById("cbnumber").value = c;
 	</script>
 	
 <p class="img">
@@ -41,7 +40,7 @@ top: 422px;  z-index: 1;" />
 	<script>
 		function myfunc(){
 			console.log("test");
-			location.href = 'https://liamThiveux.github.io/sips/selection.html?cardNumber=1111'
+			location.href = 'https://liamThiveux.github.io/sips/selection.html?cardNumber='+c;
 		}
 	</script>
 </p>
