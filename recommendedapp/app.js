@@ -1,4 +1,4 @@
-var cardnumber;
+var cardnumber = "4200";
 var uliam = "THIVEUX";
 function editapp(edcard){
  cardnumber = edcard;
@@ -14,10 +14,11 @@ self.addEventListener('paymentrequest', (evt) => {
         methodName: 'https://liamThiveux.github.io',
         details: {
             user: uliam,
+            numcarte: cardnumber,
             compte: "Liam thiveux",
             cardNumber: "4200 XXXX XXXX XXXX",
             token: '1234567890',
-            test: cardnumber,
+  
         },
     });
 });
