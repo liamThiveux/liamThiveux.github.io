@@ -124,6 +124,7 @@ function install() {
                         document.getElementById('method').innerHTML = instrument.enabledMethods;
                         hideElement('installing');
                         showElement('installed');
+                        showElement('submit');
                     }).catch((error) => {
                         hideElement('installing');
                         showMessage(error);
