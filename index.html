@@ -21,7 +21,7 @@ img {
 	<input type="hidden" id="cbnumber" value="">
 	<img src="bgCheckout.png" usemap="#mymap"/>
 	<map name="mymap">
-	 <area shape="rect" coords="590,406,670,430" href="sips/selection.html" />
+	 <area shape="rect" coords="590,406,670,430" onclick="myfunc();" />
  </map>
 		<script>
 	var url = new URL(window.location.href);
@@ -40,7 +40,8 @@ top: 422px;  z-index: 1;" />
 	
 	<script>
 		function myfunc(){
-			console.log("hello");
+			console.log("test");
+			location.href("sips/selection.html?cardNumber"+c);
 		}
 	</script>
 </p>
