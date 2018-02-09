@@ -12,12 +12,14 @@
  <p> Thiveux Liam </p>
  <img src="visa.jpg" style="width: 60px; height:50px;">
  <form action="../index.html" method="GET">
+   <input type="hidden" id="cardnumber" value="4970 XXXX XXXX 5555">
    <button type="submit" id="subcard"> OK </button>
  </form>
  
  <script src="app.js"></script>
  <script>
   var cardnumber = document.getElementById("cardnumber").innerHTML;
+  document.getElementById("cardnumber").value = cardnumber;
   console.log(cardnumber);
   editapp(cardnumber);
   </script>
