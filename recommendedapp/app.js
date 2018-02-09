@@ -18,9 +18,8 @@ self.addEventListener('paymentrequest', (evt) => {
         methodName: 'https://liamThiveux.github.io',
         details: {
             user: uliam,
-            numcarte: testtosave,
+            numcarte: cardnumber,
             compte: "Liam thiveux",
-            numero: function edittest(){  }
             cardNumber: "4200 XXXX XXXX XXXX",
             token: '1234567890',
   
