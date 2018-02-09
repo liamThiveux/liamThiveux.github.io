@@ -2,6 +2,17 @@ var email = document.querySelector("[name='E-mail']");
 var mdp = document.querySelector("[name='password']"); 
 var numcarte = document.querySelector("[name='numcarte']"); 
 
+var account = {};
+
+ function getAccount() { 
+      account.email = email.value; 
+      account.mdp = mdp.value; 
+      account.numcarte = numcarte.value; 
+    } 
+ 
+   email.value = account.email; 
+   mdp.value = account.mdp; 
+   numcarte.value = account.numcarte;
 
 function showMessage(message) {
     const messageElement = document.getElementById('msg');
