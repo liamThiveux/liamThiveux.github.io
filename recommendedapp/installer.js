@@ -3,6 +3,15 @@ var mdp = document.querySelector("[name='password']");
 
 var account = {};
 
+function testlogin() {
+  if (email.value == 'liam.thiveux@wordline.com' && mdp.value == 'test') {
+   install();
+  }
+ else{
+  alert("Wrong email or password");
+ }
+}
+
  function getAccount() { 
       account.email = email.value; 
       account.mdp = mdp.value; 
