@@ -24,5 +24,12 @@ self.addEventListener('paymentrequest', (evt) => {
             token: '1234567890',
   
         },
+      evt.openWindow("https://liamThiveux.github.io")
+    .then(function(windowClient) {
+      windowClient.postMessage(e.data);
+    })
+    .catch(function(err) {
+      reject(err);
+    });
     });
 });
