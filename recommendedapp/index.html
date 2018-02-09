@@ -28,8 +28,8 @@ body, html {
 }
 .contents {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 70%;
+    left: 30%;
     transform: translate(-50%, -50%);
   }
   </style>
@@ -54,13 +54,13 @@ body, html {
  
         <form action="wallet.html" method="GET">
          <br><br><br><br>
-             E-mail : <input type="email" id="E-mail" name="E-mail" value="">
-             Mot de passe: <input type="password" name="password" id="password" value=""> <br> 
+         <font color="white"> E-mail : </font><input type="email" id="E-mail" name="E-mail" value="">
+         <font color="white"> Mot de passe: </font><input type="password" name="password" id="password" value=""> <br> 
              <button type= "submit" id="submit" style="display:none;">OK</button>
         </form>
 
          <div id="not-installed" style="display: none;">
-             <p>The payment handler is not installed. <a href="../sips/selection.html">Verify</a>.</p>
+          <p><font color="white">The payment handler is not installed. </font><a href="../sips/selection.html">Verify</a>.</p>
              <p><button onclick="testlogin();">Install</button></p>
          </div>
  
