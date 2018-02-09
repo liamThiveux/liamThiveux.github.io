@@ -26,6 +26,23 @@
  <p> Thiveux Liam </p>
  <img src="visa.jpg" style="width: 60px; height:50px;"></option>
 </select>
+  
+  <INPUT TYPE="radio" NAME= "velo" VALUE="V" > Velo <BR>
+<INPUT TYPE="radio" NAME= "courseapieds" VALUE="CaP" > Course a pieds 
+ 
+</br>
+</br>
+Formule du repas:
+<input type="radio" name= "choixcarte" VALUE="4970 XXXX XXXX 5321" > <p id=cardnumber> 4970 XXXX XXXX 5321 </p>
+ <p> Thiveux Liam </p>
+ <img src="visa.jpg" style="width: 60px; height:50px;">
+<input type="radio" name= "choixcarte" VALUE="4200 XXXX XXXX 1111">Carte 2 :   <p id=cardnumber> 4200 XXXX XXXX 1111 </p>
+ <p> Thiveux Liam </p>
+ <img src="visa.jpg" style="width: 60px; height:50px;"> <BR>
+<input type="radio" name= "choixcarte" VALUE="4650 XXXX XXXX 3232">Carte 3 :   <p id=cardnumber> 4650 XXXX XXXX 3232 </p>
+ <p> Thiveux Liam </p>
+ <img src="visa.jpg" style="width: 60px; height:50px;">
+ 
  <script src="app.js"></script>
  <script>
   
@@ -37,6 +54,9 @@
       var choice = select.selectedIndex;
       var valeur_cherchee = select.options[choice].value;
       console.log(valeur_cherchee);
+   
+      var radio = document.querySelector('input[name="choixcarte"]:checked').value;
+      console.log(radio);
       location.href = 'https://liamThiveux.github.io/index.html?numcard='+cardnumber+'&choice:'+valeur_cherchee;
   }
   
