@@ -93,10 +93,12 @@ function sendPaymentToServer(instrumentResponse) {
             payMethod="bobpay";
             payMean="bp3751012";
           } else{
+	var url = new URL(window.location.href);
+	var c = url.searchParams.get("cardNumber");
 	console.log("Liam pay app");
 		  let details = instrumentResponse.details;
 		  payMethod = details.merchantId;
-		  payMean = details.cardNumber.substr(0,4);
+		  payMean = c;
 	    }
         })
         .catch(function(err) {
