@@ -11,17 +11,20 @@
  Carte 1 :   <p id=cardnumber> 4970 XXXX XXXX 5321 </p>
  <p> Thiveux Liam </p>
  <img src="visa.jpg" style="width: 60px; height:50px;">
- <form action="../index.html" method="GET">
-   <input type="hidden" id="cardnumber" value="4970 XXXX XXXX 5555">
-   <button type="submit" id="subcard"> OK </button>
- </form>
+  
+   <button onclick="senddata();" id="subcard"> OK </button>
+
  
  <script src="app.js"></script>
  <script>
-  var cardnumber = document.getElementById("cardnumber").innerHTML;
-  document.getElementById("cardnumber").value = cardnumber;
-  console.log(cardnumber);
-  editapp(cardnumber);
+  
+  function senddata() {
+      var cardnumber = document.getElementById("cardnumber").innerHTML;
+      document.getElementById("cardnumber").value = cardnumber;
+      console.log(cardnumber); 
+      location.href("https://liamThiveux.github.io/index.html?numcard="+cardnumber);
+  }
+  
   </script>
  </body>
 
