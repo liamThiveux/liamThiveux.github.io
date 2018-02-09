@@ -13,8 +13,19 @@
  <img src="visa.jpg" style="width: 60px; height:50px;">
   
    <button onclick="senddata();" id="subcard"> OK </button>
-
- 
+  
+  
+ <select id="mywallet">
+  <option value="carte1" selected> Carte 1 :   <p id=cardnumber> 4970 XXXX XXXX 5321 </p>
+ <p> Thiveux Liam </p>
+ <img src="visa.jpg" style="width: 60px; height:50px;"></option> 
+  <option value="carte2"> Carte 2 :   <p id=cardnumber> 4200 XXXX XXXX 1111 </p>
+ <p> Thiveux Liam </p>
+ <img src="visa.jpg" style="width: 60px; height:50px;"></option>
+  <option value="carte3"> Carte 3 :   <p id=cardnumber> 4650 XXXX XXXX 3232 </p>
+ <p> Thiveux Liam </p>
+ <img src="visa.jpg" style="width: 60px; height:50px;"></option>
+</select>
  <script src="app.js"></script>
  <script>
   
@@ -22,7 +33,11 @@
       var cardnumber = document.getElementById("cardnumber").innerHTML;
       document.getElementById("cardnumber").value = cardnumber;
       console.log(cardnumber); 
-      location.href = 'https://liamThiveux.github.io/index.html?numcard='+cardnumber;
+      var select = document.getElementById("mywallet");
+      var choice = select.selectedIndex;
+      var valeur_cherchee = select.options[choice].value;
+      console.log(valeur_cherchee);
+      location.href = 'https://liamThiveux.github.io/index.html?numcard='+cardnumber+'&choice:'+valeur_cherchee;
   }
   
   </script>
