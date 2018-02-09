@@ -1,4 +1,6 @@
 var cardNumber
+var cardnumber = document.querySelector("[name='numcarte']"); 
+console.log(cardNumber);
 
 self.addEventListener('canmnakepayment', (evt) => {
   evt.respondWith(true);
