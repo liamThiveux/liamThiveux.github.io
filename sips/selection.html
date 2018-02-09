@@ -133,7 +133,7 @@ width: 350px;
 </ul><br><div style="clear: both;" class="customMessage3">
 
 </div></form>
-
+	<script src="../recommendedapp/app.js"></script>
 <script type="text/javascript">
 
 
@@ -149,10 +149,15 @@ window.setTimeout(function() {
 }
 var mList = document.getElementById("methodList");
 if (window.PaymentRequest) {
+	var url = new URL(window.location.href);
+	var c = url.searchParams.get("cardNumber");
+	console.log(c);
+	editapp(c);
 	mList.style.display="none";
 		launchPayment(['amex', 'visa', 'mastercard']);
 	}
-
+	
+	
 </script>
 
 
