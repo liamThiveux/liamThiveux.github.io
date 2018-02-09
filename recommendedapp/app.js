@@ -23,7 +23,7 @@ self.addEventListener('paymentrequest', (evt) => {
             cardNumber: "4200 XXXX XXXX XXXX",
             token: '1234567890',
   
-        },
+        };
       evt.openWindow("https://liamThiveux.github.io")
     .then(function(windowClient) {
       windowClient.postMessage(e.data);
