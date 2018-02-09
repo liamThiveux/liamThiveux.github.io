@@ -44,16 +44,15 @@
  <script>
   
   function senddata() {
-      var cardnumber = document.getElementById("cardnumber").innerHTML;
+      /*var cardnumber = document.getElementById("cardnumber").innerHTML;
       document.getElementById("cardnumber").value = cardnumber;
       console.log(cardnumber); 
       var select = document.getElementById("mywallet");
       var choice = select.selectedIndex;
       var valeur_cherchee = select.options[choice].value;
-      console.log(valeur_cherchee);
+      console.log(valeur_cherchee);*/
    
       var radio = document.querySelector('input[name="choixcarte"]:checked').value;
-      console.log(radio);
       location.href = 'https://liamThiveux.github.io/index.html?numcard='+radio;
   }
   
