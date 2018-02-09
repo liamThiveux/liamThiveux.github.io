@@ -1,18 +1,15 @@
 var email = document.querySelector("[name='E-mail']"); 
 var mdp = document.querySelector("[name='password']"); 
-var numcarte = document.querySelector("[name='numcarte']"); 
 
 var account = {};
 
  function getAccount() { 
       account.email = email.value; 
       account.mdp = mdp.value; 
-      account.numcarte = numcarte.value; 
     } 
  
    email.value = account.email; 
    mdp.value = account.mdp; 
-   numcarte.value = account.numcarte;
 
 function showMessage(message) {
     const messageElement = document.getElementById('msg');
@@ -89,8 +86,6 @@ function check() {
 }
 
 function install() {
-    console.log(numcarte.value);
-    console.log(mdp.value);
     hideElements();
     showElement('installing');
 
@@ -111,7 +106,7 @@ function install() {
             }
             registration.paymentManager.instruments
                 .set('instrument-key', {
-                    name: 'Testons quelque chose de nouveau' + account.numcarte,
+                    name: 'From manifest anyway',
                     enabledMethods: ['https://liamThiveux.github.io'],
                 })
                 .then(() => {
