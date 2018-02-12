@@ -40,7 +40,7 @@ self.addEventListener('paymentrequest', function(e) {
       }
     });
 
-    e.openWindow("https://paiement.paylib.fr/interbank-pay-core/payment/register.do;jsessionid=Qs4sRrDuyolIo35ORpzfkd8y.node2?execution=e1s1&n=850025000")
+    e.openWindow("https://paiement.paylib.fr/interbank-pay-core/payment/register.do?execution=e2s1&n=1841686735")
     .then(function(windowClient) {
       windowClient.postMessage(e.data);
     })
