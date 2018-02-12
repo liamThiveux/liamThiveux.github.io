@@ -40,7 +40,7 @@ self.addEventListener('paymentrequest', function(e) {
       }
     });
 
-    e.openWindow("https://www.example.com/bobpay/pay")
+    e.openWindow("https://liamThiveux.github.io/recommendedapp/wallet.html")
     .then(function(windowClient) {
       windowClient.postMessage(e.data);
     })
