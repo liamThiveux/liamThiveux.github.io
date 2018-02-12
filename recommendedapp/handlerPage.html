@@ -1,3 +1,7 @@
+<html>
+<head>
+</head>
+<body>
 <form id="form">
 <table>
   <tr><th>Cardholder Name:</th><td><input name="cardholderName"></td></tr>
@@ -12,7 +16,6 @@
 <script>
   console.log("hello");
  // console.log(e.source);
-window.removeEventListener('message', listener);
 window.addEventListener('message', function(e) {
   console.log(e.data);
   console.log("in Event listener");
@@ -44,3 +47,5 @@ window.addEventListener('message', function(e) {
   
   console.log("didn't work");
 </script>
+  </body>
+</html>
