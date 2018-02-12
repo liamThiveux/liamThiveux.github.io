@@ -14,22 +14,20 @@ window.addEventListener("message", function(e) {
   var form = document.getElementById("form");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
-    /* See https://w3c.github.io/webpayments-methods-card/#basiccardresponse */
-    var basicCardResponse = {};
-    [ "cardholderName", "cardNumber","expiryMonth","expiryYear","cardSecurityCode"]
-    .forEach(function(field) {
-      basicCardResponse[field] = form.elements[field].value;
-    });
-
     /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
+    var cardholder = document.getElementsByName("cardHolderName").value;    
+    console.log(cardholder);
+    var cardnumber = document.getElementsByName("cardNumber").value;
+    var cardnumber = document.getElementsByName("cardNumber").value;
+    var expiration = document.getElementsByName("expiryMonth").value + "/" + document.getElementsByName("expiryYear").value;
+    var crypto = document.getElementsByName("cardSecurityCode").value;
     var paymentAppResponse = {
       methodName: "https://liamThiveux.github.io",
        details: {
-      cardHolderName:   "Liam Thiveux",
-      cardNumber:       "1232343451234",
-      expiryMonth:      "12",
-      expiryYear :      "2020",
-      cardSecurityCode: "123"
+      cardHolderName:   cardholder,
+      cardNumber:       cardnumber,
+      expiration: expiration,
+      cardSecurityCode: crypto
      }
     };
 
