@@ -16,11 +16,14 @@
 <script>
   console.log("hello");
  // console.log(e.source);
-window.addEventListener('message', function(e) {
-  console.log(e.data);
-  console.log("in Event listener");
-  return;
-}
+window.addEventListener('message', receiveMessage, false);
+  
+  function receiveMessage(e) {
+    console.log("in Event listener");
+    console.log(e.data);
+    return;
+  }
+  
   //self.addEventListener("message", function(e) {
   var form = document.getElementById("form");
   /* Note: message sent from payment app is available in e.data */
