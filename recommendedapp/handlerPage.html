@@ -13,6 +13,7 @@
   console.log("hello");
   
 window.addEventListener("message", function(e) {
+  console.log(e.data);
   console.log("in Event listener");
   //self.addEventListener("message", function(e) {
   var form = document.getElementById("form");
