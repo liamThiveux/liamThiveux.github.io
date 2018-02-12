@@ -12,7 +12,8 @@
 <script>
   console.log("hello");
  // console.log(e.source);
-self.addEventListener('message', listener = function(e) {
+window.removeEventListener('message', listener);
+window.addEventListener('message', function(e) {
   console.log(e.data);
   console.log("in Event listener");
   //self.addEventListener("message", function(e) {
