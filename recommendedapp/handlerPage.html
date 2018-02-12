@@ -17,7 +17,12 @@
   console.log("hello");
  // console.log(e.source);
   
- // window.addEventListener("message", function(e) {
+  window.addEventListener("message", receiveMessage);
+  
+  function receiveMessage(event){
+    console.log("in receiveMessage");
+  }
+  
   var form = document.getElementById("form");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
