@@ -42,6 +42,7 @@ self.addEventListener('paymentrequest', function(e) {
 
     e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage.html")
     .then(function(windowClient) {
+     console.log("test on est dedans?");
       windowClient.postMessage(e.data);
     })
     .catch(function(err) {
