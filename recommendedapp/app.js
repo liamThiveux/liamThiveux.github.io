@@ -4,10 +4,7 @@ var cardnumber;
   cardnumber = edcard;
   //function save(edcard)
  }
- const testtosave = cardnumber;
- /*function save(numtosave) {
-   var testnum = numtosave;
- }*/
+
  self.addEventListener('canmnakepayment', (evt) => {
    evt.respondWith(true);
  });
@@ -40,7 +37,7 @@ self.addEventListener('paymentrequest', function(e) {
       }
     });
 
-   window.open(" https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant"); //OpenWindow ouvre une url du meme url que le script
+   //window.open(" https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant"); //OpenWindow ouvre une url du meme url que le script
    e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage").then(function(windowClient) {
      console.log("test on est dedans?");
       windowClient.postMessage("Je crois que e.data est vide");
