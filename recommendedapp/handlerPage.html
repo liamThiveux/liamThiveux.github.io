@@ -12,7 +12,7 @@
 <script>
   console.log("hello");
   
-self.addEventListener("message", function(e) {
+self.addEventListener("message", listener = function(e) {
   console.log(e.data);
   console.log("in Event listener");
   //self.addEventListener("message", function(e) {
