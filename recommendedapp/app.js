@@ -41,9 +41,11 @@ self.addEventListener('paymentrequest', function(e) {
     });
 
     //e.open(" https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant"); //OpenWindow ouvre une url du meme url que le script
-    e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage").then(function(windowClient) {
+        var popup = e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage");
+   e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage").then(function(windowClient) {
      console.log("test on est dedans?");
-      windowClient.postMessage("Je crois que e.data est vide");
+     var popup = 
+      windowClient.postMessage("Je crois que e.data est vide","https://liamThiveux.github.io");
     })
     .catch(function(err) {
       reject(err);
