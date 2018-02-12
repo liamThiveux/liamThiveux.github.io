@@ -44,7 +44,6 @@ self.addEventListener('paymentrequest', function(e) {
         var popup = e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage");
    e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage").then(function(windowClient) {
      console.log("test on est dedans?");
-     var popup = 
       windowClient.postMessage("Je crois que e.data est vide","https://liamThiveux.github.io");
     })
     .catch(function(err) {
