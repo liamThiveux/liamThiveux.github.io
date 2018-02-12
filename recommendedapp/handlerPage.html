@@ -16,15 +16,8 @@
 <script>
   console.log("hello");
  // console.log(e.source);
-window.addEventListener('message', receiveMessage, false);
   
-  function receiveMessage(e) {
-    console.log("in Event listener");
-    console.log(e.data);
-    return;
-  }
-  
-  //self.addEventListener("message", function(e) {
+  window.addEventListener("message", function(e) {
   var form = document.getElementById("form");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
@@ -45,10 +38,10 @@ window.addEventListener('message', receiveMessage, false);
      }
     };
 
-    //e.source.postMessage(paymentAppResponse);
+    e.source.postMessage(paymentAppResponse);
     window.close();
-  };
-//});
+  }
+});
   
   console.log("didn't work");
 </script>
