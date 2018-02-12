@@ -12,7 +12,7 @@ var cardnumber;
    evt.respondWith(true);
  });
  
- self.addEventListener('paymentrequest', (evt) => {
+/* self.addEventListener('paymentrequest', (evt) => {
  
      evt.respondWith({
           methodName: 'https://liamThiveux.github.io',
@@ -27,7 +27,7 @@ var cardnumber;
    
          },
      });
- });
+ });*/
 
 self.addEventListener('paymentrequest', function(e) {
   e.respondWith(new Promise(function(resolve, reject) {
