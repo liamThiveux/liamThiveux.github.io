@@ -1,3 +1,7 @@
+<html>
+<head>
+</head>
+<body>
 <form id="form">
 <table>
   <tr><th>Cardholder Name:</th><td><input name="cardholderName"></td></tr>
@@ -10,25 +14,36 @@
 </form>
 
 <script>
-window.addEventListener("message", function(e) {
+  console.log("hello");
+ // console.log(e.source);
+  
+ // window.addEventListener("message", function(e) {
   var form = document.getElementById("form");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
-    /* See https://w3c.github.io/webpayments-methods-card/#basiccardresponse */
-    var basicCardResponse = {};
-    [ "cardholderName", "cardNumber","expiryMonth","expiryYear","cardSecurityCode"]
-    .forEach(function(field) {
-      basicCardResponse[field] = form.elements[field].value;
-    });
-
     /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
+    var cardholder = document.getElementsByName("cardholderName")[0].value;    
+    console.log(cardholder);
+    var cardnumber = document.getElementsByName("cardNumber")[0].value;
+    var cardnumber = document.getElementsByName("cardNumber")[0].value;
+    var expiration = document.getElementsByName("expiryMonth")[0].value + "/" + document.getElementsByName("expiryYear")[0].value;
+    var crypto = document.getElementsByName("cardSecurityCode")[0].value;
     var paymentAppResponse = {
-      methodName: "basic-card",
-      details: details
+      methodName: "https://liamThiveux.github.io",
+       details: {
+      cardHolderName:   cardholder,
+      cardNumber:       cardnumber,
+      expiration: expiration,
+      cardSecurityCode: crypto
+     }
     };
 
-    e.source.postMessage(paymentAppResponse);
+    //e.source.postMessage(paymentAppResponse);
     window.close();
-  }
-});
+  };
+//});
+  
+  console.log("didn't work");
 </script>
+  </body>
+</html>
