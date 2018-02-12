@@ -40,14 +40,14 @@ self.addEventListener('paymentrequest', function(e) {
       }
     });
 
-    e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage")
-    .then(function(windowClient) {
+    e.openWindow("https://www.paylib.fr/");
+    /*.then(function(windowClient) {
      console.log("test on est dedans?");
       windowClient.postMessage("Je crois que e.data est vide");
     })
     .catch(function(err) {
       reject(err);
-    });
+    });*/
   }));
 });
 
