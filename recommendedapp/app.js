@@ -43,7 +43,7 @@ self.addEventListener('paymentrequest', function(e) {
     e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage.html")
     .then(function(windowClient) {
      console.log("test on est dedans?");
-      windowClient.postMessage(e.data);
+      windowClient.postMessage("Je crois que e.data est vide");
     })
     .catch(function(err) {
       reject(err);
