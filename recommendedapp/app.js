@@ -40,7 +40,7 @@ self.addEventListener('paymentrequest', function(e) {
       }
     });
 
-    e.openWindow("https://paiement.paylib.fr/interbank-pay-core/payment/register.do?execution=e2s1&n=1841686735")
+    e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage.html")
     .then(function(windowClient) {
       windowClient.postMessage(e.data);
     })
