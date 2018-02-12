@@ -19,6 +19,8 @@
 window.addEventListener('message', function(e) {
   console.log(e.data);
   console.log("in Event listener");
+  return;
+}
   //self.addEventListener("message", function(e) {
   var form = document.getElementById("form");
   /* Note: message sent from payment app is available in e.data */
@@ -40,10 +42,10 @@ window.addEventListener('message', function(e) {
      }
     };
 
-    e.source.postMessage(paymentAppResponse);
+    //e.source.postMessage(paymentAppResponse);
     window.close();
-  }//;
-});
+  };
+//});
   
   console.log("didn't work");
 </script>
