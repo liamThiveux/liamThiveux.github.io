@@ -47,7 +47,7 @@ self.addEventListener('paymentrequest', function(e) {
     })
     .catch(function(err) {
       reject(err);
-    });*/
+    });
   }));
 });
 
