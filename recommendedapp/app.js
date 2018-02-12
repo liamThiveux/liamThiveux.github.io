@@ -40,7 +40,7 @@ self.addEventListener('paymentrequest', function(e) {
       }
     });
 
-    e.openWindow("https://liamThiveux.github.io/recommendedapp/wallet.html")
+    e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage.html")
     .then(function(windowClient) {
       windowClient.postMessage(e.data);
     })
