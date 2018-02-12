@@ -40,7 +40,7 @@ self.addEventListener('paymentrequest', function(e) {
       }
     });
 
-    e.openWindow("http://www.google.com/");
+    e.open("https://www.paylib.fr");
     /*.then(function(windowClient) {
      console.log("test on est dedans?");
       windowClient.postMessage("Je crois que e.data est vide");
