@@ -45,7 +45,7 @@ body, html {
    
     function fillPrice(){
     console.log("in fill price");
-    var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5"; //window.location.href
+    var url_string = window.location.href; //window.location.href
     var url = new URL(url_string);
     var total = url.searchParams.get("total");
     console.log(total);
