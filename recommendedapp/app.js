@@ -39,7 +39,7 @@ self.addEventListener('paymentrequest', function(e) {
 
    //window.open("https://paiement.paylib.fr/interbank-pay-core/payment/register.do?execution=e2s1&n=1841686735"); //OpenWindow ouvre une url du meme url que le script
    console.log(e.total.value);
-   var newWindow =e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin");
+   var newWindow =e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin?total="+e.total.value);
    newWindow.amount = e.total.value;
    newWindow.then(function(windowClient) {
      console.log("test on est dedans?");
