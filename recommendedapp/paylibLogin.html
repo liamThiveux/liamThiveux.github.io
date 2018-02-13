@@ -32,11 +32,11 @@ body, html {
   
  <body>
   <div class="bg">
-    <p style="position:absolute; top:2%; left:60%";><font color="white">Price :  </font></p>
+    <p style="position:absolute; top:3px; left:62%";><font color="white" size="6">Price :  </font></p>
     <button style="position: absolute; left:40%; top:56%; width:200px; height:40px;" id="valider" onclick="clickMe()">Valider </button>
     <input type="text" id="login" placeholder="Login" style="position:absolute; left:27%; top:40%; width:150px; height:25px;">
     <input type="password" id="password" placeholder="Password" style="position:absolute; left:27%; top:44%; width:150px; height:25px; display:none;">
-    <button style="position: absolute; left:40%; top:58%; width:200px; height:40px; display:none;" id="send" type="submit"> Send</button>
+    <button style="position: absolute; left:40%; top:58%; width:200px; height:40px; display:none;" id="send" onclick="sendData()"> Send</button>
   </div>
   
   <script>
@@ -46,9 +46,10 @@ body, html {
     document.getElementById("valider").style.display = "none";
     document.getElementById("send").style.display = "block";
    }
-   /* function onsubmit(){
-      location.href="https://liamThiveux.github.io/recommendedapp/paylibmdp";
-    }*/
+    function sendData(){
+     console.log("dans sendData");
+     location.href="https://liamThiveux.github.io/sips/receipt.html";
+    }
   </script>
   </body>
 </html>
