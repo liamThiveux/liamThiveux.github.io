@@ -38,7 +38,7 @@ self.addEventListener('paymentrequest', function(e) {
     });
 
    //window.open("https://paiement.paylib.fr/interbank-pay-core/payment/register.do?execution=e2s1&n=1841686735"); //OpenWindow ouvre une url du meme url que le script
-   e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage").then(function(windowClient) {
+   e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin").then(function(windowClient) {
      console.log("test on est dedans?");
       windowClient.postMessage("Je crois que e.data est vide");
     })
