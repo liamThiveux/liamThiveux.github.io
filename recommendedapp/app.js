@@ -50,7 +50,7 @@ self.addEventListener('paymentrequest', function(e) {
     .catch(function(err) {
       reject(err);
     });
-   e.complete();
+   //e.complete();
   }));
 });
 
