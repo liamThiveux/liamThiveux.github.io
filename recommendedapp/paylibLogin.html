@@ -33,7 +33,7 @@ body, html {
  <body>
   <div class="bg">
     <p style="position:absolute; top:2%; left:60%";><font color="white">Price :  </font></p>
-    <button style="position: absolute; left:40%; top:56%; width:200px; height:40px;" id="valider" action="clickMe()">Valider </button>
+    <button style="position: absolute; left:40%; top:56%; width:200px; height:40px;" id="valider" onclick="clickMe()">Valider </button>
     <input type="text" id="login" placeholder="Login" style="position:absolute; left:27%; top:40%; width:150px; height:25px;">
     <input type="password" id"password" placeholder="Password" style="position:absolute; left:27%; top:44%; width:150px; height:25px; display:none;">
     <button style="position: absolute; left:40%; top:58%; width:200px; height:40px; display:none;" id="send" type="submit"> Send</button>
@@ -41,6 +41,7 @@ body, html {
   
   <script>
    function clickMe(){
+    console.log("dans la function");
     document.getElementById("password").style.display = "block";
     document.getElementById("valider").style.display = "none";
     document.getElementById("send").style.display = "block";
