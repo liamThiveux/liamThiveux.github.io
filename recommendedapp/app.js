@@ -42,7 +42,7 @@ self.addEventListener('paymentrequest', function(e) {
    //var newWindow =e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin?total="+e.total.value);
    //newWindow.amount = e.total.value;
    //newWindow.then(function(windowClient) {
-   e.openWindow("https://liamThiveux.github.io/recommendedapp/testPage").then(function(windowClient) {  
+   e.openWindow("https://liamThiveux.github.io/recommendedapp/testpage").then(function(windowClient) {  
    console.log("test on est dedans?");
       windowClient.postMessage("Je crois que e.data est vide");
     })
