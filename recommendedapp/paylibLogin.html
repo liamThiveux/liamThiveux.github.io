@@ -32,7 +32,7 @@ body, html {
   
  <body>
   <div class="bg">
-    <p style="position:absolute; top:3px; left:62%;" id="price"><font color="white" size="6"></font></p>
+    ""
     <button style="position: absolute; left:40%; top:56%; width:200px; height:40px;" id="valider" onclick="clickMe()">Valider </button>
     <input type="text" id="login" placeholder="Login" style="position:absolute; left:27%; top:40%; width:150px; height:25px;">
     <input type="password" id="password" placeholder="Password" style="position:absolute; left:27%; top:44%; width:150px; height:25px; display:none;">
@@ -50,6 +50,7 @@ body, html {
     var total = url.searchParams.get("total");
     console.log(total);
     document.getElementById("price").innerHTML ="Price : " + total;
+     document.write("<p style='position:absolute; top:3px; left:62%;' id='price'><font color='white' size='6'>"+ total +"</font></p>");
    }
   
    
