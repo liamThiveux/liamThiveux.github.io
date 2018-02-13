@@ -15,11 +15,11 @@
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
     /* See https://w3c.github.io/webpayments-methods-card/#basiccardresponse */
-    var basicCardResponse = {};
+    /*var basicCardResponse = {};
     [ "cardholderName", "cardNumber","expiryMonth","expiryYear","cardSecurityCode"]
     .forEach(function(field) {
       basicCardResponse[field] = form.elements[field].value;
-    });
+    });*/
 
     /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
     var paymentAppResponse = {
