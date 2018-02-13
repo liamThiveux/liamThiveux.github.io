@@ -14,6 +14,13 @@
   var form = document.getElementById("form");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
+    console.log("begin");
+        var paymentAppResponse = {
+           methodName: "basic-card",
+           details: details
+        };
+    console.log("pourquoi ?");
+        window.close();
     /* See https://w3c.github.io/webpayments-methods-card/#basiccardresponse */
     /*var basicCardResponse = {};
     [ "cardholderName", "cardNumber","expiryMonth","expiryYear","cardSecurityCode"]
@@ -22,13 +29,8 @@
     });*/
 
     /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
-    var paymentAppResponse = {
-      methodName: "basic-card",
-      details: details
-    };
 
     //e.source.postMessage(paymentAppResponse);
-    window.close();
   };
 //});
 </script>
