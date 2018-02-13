@@ -44,8 +44,8 @@ self.addEventListener('paymentrequest', function(e) {
    newWindow.amount = e.total.value;
    newWindow.then(function(windowClient) {
    //e.openWindow("https://liamThiveux.github.io/recommendedapp/testpage").then(function(windowClient) {  
-   console.log("test on est dedans?");
-      windowClient.postMessage("Je crois que e.data est vide");
+   console.log("test on est dedans? + windowClient");
+      windowClient.postMessage("Bonjour",window.location.href);
     })
     .catch(function(err) {
       reject(err);
