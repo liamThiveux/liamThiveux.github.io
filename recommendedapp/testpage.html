@@ -22,12 +22,14 @@ window.addEventListener("message", function(e) {
     });
 
     /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
+    console.log("avant paymentAppResponse");
     var paymentAppResponse = {
       methodName: "basic-card",
       details: "details"
     };
-
+    console.log("avant postMessage");
     e.source.postMessage(paymentAppResponse);
+    console.log("avant close");
     window.close();
   }
 });
