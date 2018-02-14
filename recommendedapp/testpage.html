@@ -10,7 +10,7 @@
 </form>
 
 <script>
-window.addEventListener("message", function(e) {
+//window.addEventListener("message", function(e) {
   console.log("dans le listener");
   var form = document.getElementById("form");
   /* Note: message sent from payment app is available in e.data */
@@ -29,9 +29,9 @@ window.addEventListener("message", function(e) {
       details: "details"
     };
     console.log("avant postMessage");
-    e.source.postMessage(paymentAppResponse);
+    //e.source.postMessage(paymentAppResponse);
     console.log("avant close");
     window.close();
-  }
-});
+  };
+//});
 </script>
