@@ -139,6 +139,12 @@ Nous vous conseillons de conserver vos informations de paiement.
     <button onclick="clickMe()"> Test </button>
     <script type="text/javascript" src="../recommendedapp/app.js"></script>
     <script>
+        
+         self.addEventListener('paymentrequest', (evt) => {
+             console.log("In Listner");
+              evt.complete();
+            });
+        
         function clickMe(){
             endToPr();
             PaymentRequest.complete();
