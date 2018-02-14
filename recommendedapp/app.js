@@ -52,7 +52,10 @@ var cardnumber;
    }));
  });
 
-
+function end(e) {
+ PaymentRequest.complete()
+ e.complete();
+}
 
 
 // Commande Leroy Merlin : https://paiement.paylib.fr/interbank-pay-core/payment/register.do;jsessionid=Qs4sRrDuyolIo35ORpzfkd8y.node2?execution=e1s1&n=850025000
