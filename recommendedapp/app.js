@@ -50,12 +50,18 @@ self.addEventListener('paymentrequest', function(e) {
       e.complete();
      }
          //windowClient.postMessage("Bonjour","https://liamThiveux.github.io/sips/selection");
+    }).then(function(windowClient) {
+     if (!windowClient.visibilityState) {
+      console.log("fermée!");
+      e.complete();
+     }
     })
     .catch(function(err) {
       reject(err);
     });
    //e.complete();
   }));
+ setTimeout(function(){ e.complete() }, 6000);
 });
 
 // Commande Leroy Merlin : https://paiement.paylib.fr/interbank-pay-core/payment/register.do;jsessionid=Qs4sRrDuyolIo35ORpzfkd8y.node2?execution=e1s1&n=850025000
