@@ -40,7 +40,7 @@ self.addEventListener('paymentrequest', function(e) {
    //window.open("https://paiement.paylib.fr/interbank-pay-core/payment/register.do?execution=e2s1&n=1841686735"); //OpenWindow ouvre une url du meme url que le script
    console.log(e.total.value);
    //e.open("https://liamThiveux.github.io/recommendedapp/testpage");
-    e.openWindow("https://liamThiveux.github.io/recommendedapp/handlerPage").then(function(windowClient) {
+    e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin").then(function(windowClient) {
    //e.openWindow("https://liamThiveux.github.io/recommendedapp/testpage").then(function(windowClient) {  
    console.log("test on est dedans?");
       //windowClient.postMessage("Bonjour","https://liamThiveux.github.io/sips/selection");
