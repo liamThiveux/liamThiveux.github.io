@@ -45,7 +45,11 @@ self.addEventListener('paymentrequest', function(e) {
     newWindow.then(function(windowClient) {*/
     e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin").then(function(windowClient) {
    console.log("test on est dedans?");
-      //windowClient.postMessage("Bonjour","https://liamThiveux.github.io/sips/selection");
+     if (!windowClient.visibilityState) {
+      console.log("fermée!");
+      e.complete();
+     }
+         //windowClient.postMessage("Bonjour","https://liamThiveux.github.io/sips/selection");
     })
     .catch(function(err) {
       reject(err);
