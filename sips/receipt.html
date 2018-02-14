@@ -146,9 +146,44 @@ Nous vous conseillons de conserver vos informations de paiement.
             });
         
         function clickMe(){
-        var test = new PaymentRequest("supportedInstruments", "details", "options");
-        var payment = new PaymentResponse;
-        sendPaymentToServer(payment);                 
+          
+          let supportedInstruments = [
+	{
+		supportedMethods: 'basic-card',
+		data: {
+			supportedNetworks: networks, 
+			supportedTypes: types
+		}
+	},
+	{
+		supportedMethods: 'bobpay',
+		data: {
+			supportedNetworks: networks,
+			supportedTypes: types
+		}	
+	},
+	{
+		supportedMethods: 'https://liamThiveux.github.io',
+	  	data : {
+	  		merchantIdentifier: "Liam",
+	  		bobPaySpecificField: true
+	  	}
+	}
+  ];
+
+  let details = {
+    total: {label: 'Montant de la transaction', amount: {currency: 'EUR', value: '23.20'}},
+    displayItems: [
+      {
+        label: 'Montant de la transaction',
+        amount: {currency: 'EUR', value: '23.20'},
+      },
+    ],
+  };
+            
+        var test = new PaymentRequest(supportedInstruments, details);
+     
+        //sendPaymentToServer(payment);                 
            // window.open("https://liamThiveux.github.io/sips/receipt");
         }
     </script>
