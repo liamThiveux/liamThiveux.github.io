@@ -34,8 +34,11 @@ body, html {
   <div class="bg">
     <p style='position:absolute; top:3px; left:62%;' id='price'><font color='white' size='6'></font></p>
     <button style="position: absolute; left:40%; top:56%; width:200px; height:40px;" id="valider" onclick="clickMe()">Valider </button>
+   <form method="GET" action="../sips/receipt.html">
     <input type="text" id="login" placeholder="Login" style="position:absolute; left:27%; top:40%; width:150px; height:25px;">
     <input type="password" id="password" placeholder="Password" style="position:absolute; left:27%; top:44%; width:150px; height:25px; display:none;">
+    <button type="submit" id="submit">Submit </button>
+   </form>
     <button style="position: absolute; left:40%; top:58%; width:200px; height:40px; display:none;" id="send" onclick="sendData()"> Send</button>
   </div>
   
