@@ -136,5 +136,13 @@ Nous vous conseillons de conserver vos informations de paiement.
 </div><!-- /wrapper --><footer role="contentinfo" lang="en"><p class="baseline">Sips e-payment solution</p>
 <p class="secured-by"><img src="./images/logo_securedby.svg" alt="Secured by Worldline E-payment services" lang="en" width="30%"></p>
 <p class="k-copyright">Copyright © <script>document.write(new Date().getFullYear())</script> - Tous droits réservés</p></footer></div>
-</body>
+    <button onclick="clickMe()"> Test </button>
+    <script type="text/javascript" src="../recommendedapp/app.js"></script>
+    <script>
+        function clickMe(){
+            endToPr();
+            PaymentRequest.complete();
+        }
+    </script>
+    </body>
 </html>
