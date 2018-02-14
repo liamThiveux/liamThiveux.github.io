@@ -52,9 +52,9 @@ var cardnumber;
    }));
  });
 
-function end(e) {
- PaymentRequest.complete()
+function endToPr() {
  e.complete();
+ PaymentRequest.complete()
 }
 
 
