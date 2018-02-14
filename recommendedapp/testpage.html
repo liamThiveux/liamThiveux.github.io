@@ -12,6 +12,8 @@
 <script>
 //window.addEventListener("message", function(e) {
   console.log("dans le listener");
+  var cardNumber = document.getElementsByName("cardNumber")[0].value;
+  console.log("cardNumber :" + cardNumber);
   var form = document.getElementById("form");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
