@@ -40,6 +40,11 @@ body, html {
   </div>
   
   <script>
+   window.addEventListener("message", receiveMessage, false);
+   function receiveMessage(event)
+   {
+     console.log("Hey message reçu");
+   }
    console.log(window.my_amount);
    window.onload = fillPrice;
    
