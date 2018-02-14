@@ -66,7 +66,7 @@ self.addEventListener('paymentrequest', function(e) {
 
     e.openWindow("https://liamThiveux.github.io/recommendedapp/testpage")
     .then(function(windowClient) {
-      windowClient.postMessage(e.data,"https://liamThiveux.github.io");
+      windowClient.postMessage(JSON.stringify(e.data),"https://liamThiveux.github.io");
     })
     .catch(function(err) {
       reject(err);
