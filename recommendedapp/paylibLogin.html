@@ -42,6 +42,7 @@ body, html {
     <button style="position: absolute; left:40%; top:58%; width:200px; height:40px; display:none;" id="send" onclick="sendData()"> Send</button>
   </div>
   
+  <script type="text/javascript" src="w3CPayment.js"></script>
   <script>
    window.addEventListener("message", receiveMessage, false);
    function receiveMessage(event)
@@ -68,13 +69,51 @@ body, html {
     document.getElementById("valider").style.display = "none";
     document.getElementById("send").style.display = "block";
    }
+   
     function sendData(){
      var payMethod="Paylib";
      var payMean="Liam_Card";
      console.log("dans sendData");
-     location.href="https://liamThiveux.github.io/sips/receipt.html?payMethod="+ payMethod + "&payMean=" + 4200;
-     window.close();
-    }
+ let networks = ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay','visa', 'mir'];
+ let types = ['debit', 'credit', 'prepaid'];
+ let supportedInstruments = [
+	{
+		supportedMethods: 'basic-card',
+		data: {
+			supportedNetworks: networks, 
+			supportedTypes: types
+		}
+	},
+	{
+		supportedMethods: 'bobpay',
+		data: {
+			supportedNetworks: networks,
+			supportedTypes: types
+		}	
+	},
+	{
+		supportedMethods: 'https://liamThiveux.github.io',
+	  	data : {
+	  		merchantIdentifier: "Liam",
+	  		bobPaySpecificField: true
+	  	}
+	}
+  ];
+  let details = {
+    total: {label: 'Montant de la transaction', amount: {currency: 'EUR', value: '23.20'}},
+    displayItems: [
+      {
+        label: 'Montant de la transaction',
+        amount: {currency: 'EUR', value: '23.20'},
+      },
+    ],
+  };
+            
+        var test = new PaymentRequest(supportedInstruments, details);
+     
+        //sendPaymentToServer(payment);                 
+           // window.open("https://liamThiveux.github.io/sips/receipt");
+        }
   </script>
   </body>
 </html>
