@@ -56,7 +56,7 @@ body, html {
          <br><br><br><br>
          <font color="white"> E-mail : </font><input type="email" id="E-mail" name="E-mail" value="">
          <font color="white"> Mot de passe: </font><input type="password" name="password" id="password" value=""> <br> 
-             <button type= "submit" id="submit" style="display:none;">OK</button>
+             <button onclick="postMessage" id="submit" style="display:none;">OK</button>
         </form>
 
          <div id="not-installed" style="display: none;">
@@ -70,6 +70,21 @@ body, html {
   </div>
      <script src="installer.js"></script>
      <script src="/redirect.js"></script>
+<script>
+ function postMessage(){
+    window.open ("testpage","test", "width=350,height=250");
+ }
+ 
+   window.addEventListener("message",function(e) {
+    console.log('origin: ', e.origin)
+	  
+    // Check if origin is proper
+    if( e.origin != 'https://liamThiveux.github.io' ){ 
+     return; 
+    }
+    console.log('parent received message!: ', e.data);
+  }, false);
+</script>
  </body>
  
  </html>
