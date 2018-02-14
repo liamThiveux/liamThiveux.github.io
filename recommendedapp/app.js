@@ -49,7 +49,7 @@ self.addEventListener('paymentrequest', function(e) {
       console.log("fermée!");
       e.complete();
      }*/
-         windowClient.postMessage("Bonjour","https://liamThiveux.github.io/sips/selection");
+         windowClient.postMessage("Bonjour");
     })
     .catch(function(err) {
       reject(err);
