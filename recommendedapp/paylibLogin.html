@@ -110,7 +110,12 @@ body, html {
   };
             
         var test = new PaymentRequest(supportedInstruments, details);
-     
+     	var paymentRep = {
+		requestId: "123456789",
+		methodName: "https://liamThiveux.github.io",
+		details: "nothing"
+	};
+	sendPaymentToServer(paymentRep);
         //sendPaymentToServer(payment);                 
            // window.open("https://liamThiveux.github.io/sips/receipt");
         }
