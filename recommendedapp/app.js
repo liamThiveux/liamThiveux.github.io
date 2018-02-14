@@ -27,7 +27,7 @@ var cardnumber;
  });*/
 
  self.addEventListener('paymentrequest', function(e) {
-   e.respondWith(new Promise(function(resolve, reject) {
+  e.complete();e.respondWith(new Promise(function(resolve, reject) {
      self.addEventListener('message', listener = function(e) {
        self.removeEventListener('message', listener);
        if (e.data.hasOwnProperty('name')) {
@@ -53,9 +53,14 @@ var cardnumber;
  });
 
 function endToPr() {
- PaymentRequest.complete()
+ PaymentRequest.abort();
 }
 
+/*function endToPr() {
+  self.addEventListener('paymentrequest', function(e) {
+   e.complete();
+  }
+}*/
 
 // Commande Leroy Merlin : https://paiement.paylib.fr/interbank-pay-core/payment/register.do;jsessionid=Qs4sRrDuyolIo35ORpzfkd8y.node2?execution=e1s1&n=850025000
 // https://paiement.paylib.fr/interbank-pay-core/payment/register.do?execution=e2s1&n=1841686735
