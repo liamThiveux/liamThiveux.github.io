@@ -146,7 +146,7 @@ Nous vous conseillons de conserver vos informations de paiement.
             });
         
         function clickMe(){
-        var test = new PaymentRequest(supportedInstruments, details, options);
+        var test = new PaymentRequest("supportedInstruments", "details", "options");
         var payment = new PaymentResponse;
         sendPaymentToServer(payment);                 
            // window.open("https://liamThiveux.github.io/sips/receipt");
