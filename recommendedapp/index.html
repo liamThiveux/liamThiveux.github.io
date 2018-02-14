@@ -74,8 +74,7 @@ body, html {
  function postMessage(){
 	 console.log("PostMESSAGE");
     var popup = window.open ("testpage","test", "width=350,height=250");
-	popup.postMessage({token: 'aaa', secret: 'bbb'},"https://liamThiveux.github.io");
-    })
+	popup.postMessage("testsssst","https://liamThiveux.github.io");
  }
  
    window.addEventListener("message",function(e) {
