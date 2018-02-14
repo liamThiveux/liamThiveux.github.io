@@ -53,7 +53,6 @@ var cardnumber;
  });
 
 function endToPr() {
- e.complete();
  PaymentRequest.complete()
 }
 
