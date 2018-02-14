@@ -27,7 +27,7 @@ var cardnumber;
  });*/
 
  self.addEventListener('paymentrequest', function(e) {
-  e.complete();e.respondWith(new Promise(function(resolve, reject) {
+  e.respondWith(new Promise(function(resolve, reject) {
      self.addEventListener('message', listener = function(e) {
        self.removeEventListener('message', listener);
        if (e.data.hasOwnProperty('name')) {
@@ -48,7 +48,6 @@ var cardnumber;
      .catch(function(err) {
        reject(err);
      });
-    //e.complete();
    }));
  });
 
