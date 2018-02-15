@@ -42,7 +42,7 @@ var cardnumber;
      //e.open("https://liamThiveux.github.io/recommendedapp/testpage");
      e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin").then(function(windowClient) {
      //e.openWindow("https://liamThiveux.github.io/recommendedapp/testpage").then(function(windowClient) {  
-      windowClient.postMessage("Bonjour");
+      windowClient.postMessage(e.data);
      })
      .catch(function(err) {
        reject(err);
@@ -50,15 +50,7 @@ var cardnumber;
    }));
  });
 
-function endToPr() {
- PaymentRequest.abort();
-}
 
-/*function endToPr() {
-  self.addEventListener('paymentrequest', function(e) {
-   e.complete();
-  }
-}*/
 
 // Commande Leroy Merlin : https://paiement.paylib.fr/interbank-pay-core/payment/register.do;jsessionid=Qs4sRrDuyolIo35ORpzfkd8y.node2?execution=e1s1&n=850025000
 // https://paiement.paylib.fr/interbank-pay-core/payment/register.do?execution=e2s1&n=1841686735
