@@ -5,17 +5,11 @@ navigator.serviceWorker.addEventListener('message', function (e) {
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
 	  console.log("on submit function");
-    /* See https://w3c.github.io/webpayments-methods-card/#basiccardresponse */
-    var basicCardResponse = {};
-    [ "cardholderName", "cardNumber","expiryMonth","expiryYear","cardSecurityCode"]
-    .forEach(function(field) {
-      basicCardResponse[field] = form.elements[field].value;
-    });
 
     /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
     var paymentAppResponse = {
-      methodName: "basic-card",
-      details: details
+      methodName: "https://liamThiveux.github.io",
+      details: "NothingATM"
     };
 
     e.source.postMessage(paymentAppResponse);
