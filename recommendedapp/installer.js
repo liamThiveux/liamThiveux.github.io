@@ -1,8 +1,3 @@
-var email = document.querySelector("[name='E-mail']"); 
-var mdp = document.querySelector("[name='password']"); 
-
-var account = {};
-
 function testlogin() {
   //if (email.value == 'liam.thiveux@wordline.com' && mdp.value == 'test') {
    install();
@@ -12,14 +7,6 @@ function testlogin() {
 function goBack(){
   window.history.back();
 }
-
- function getAccount() { 
-      account.email = email.value; 
-      account.mdp = mdp.value; 
-    } 
- 
-   email.value = account.email; 
-   mdp.value = account.mdp; 
 
 function showMessage(message) {
     const messageElement = document.getElementById('msg');
