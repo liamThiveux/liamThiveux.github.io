@@ -121,6 +121,11 @@ body, html {
 		details: "nothing",
 		//function complete(){}
 	};
+	    
+	var paymentRepTest = new PaymentResponse();
+	paymentRepTest.requestId = "123456789";
+	paymentRepTest.methodName = "https://liamThiveux.github.io";
+	paymentRepTest.details = "nothing";
 	sendPaymentToServer(paymentRep);
         //sendPaymentToServer(payment);                 
            // window.open("https://liamThiveux.github.io/sips/receipt");
