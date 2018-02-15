@@ -42,7 +42,7 @@ var cardnumber;
      //e.open("https://liamThiveux.github.io/recommendedapp/testpage");
      e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin").then(function(windowClient) {
      //e.openWindow("https://liamThiveux.github.io/recommendedapp/testpage").then(function(windowClient) {  
-      windowClient.postMessage(e.data);
+      windowClient.postMessage(e.methodData[0].data);
      })
      .catch(function(err) {
        reject(err);
