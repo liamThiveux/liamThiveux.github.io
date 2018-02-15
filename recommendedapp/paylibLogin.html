@@ -1,4 +1,8 @@
-
+<script>
+navigator.serviceWorker.addEventListener('message', function (event) {
+    console.log('got message:', event.data);
+});
+</script>
 <html lang="en">
  
  <head>
