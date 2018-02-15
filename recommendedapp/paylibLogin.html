@@ -122,14 +122,11 @@ body, html {
 		//function complete(){}
 	};
 	    
-	var paymentRepTest = new PaymentResponse();
-	paymentRepTest.requestId = "123456789";
-	paymentRepTest.methodName = "https://liamThiveux.github.io";
-	paymentRepTest.details = "nothing";
-	sendPaymentToServer(paymentRep);
-        //sendPaymentToServer(payment);                 
-           // window.open("https://liamThiveux.github.io/sips/receipt");
-        }
+    var paymentAppResponse = {
+      methodName: "basic-card",
+      details: details
+    };
+	sendPaymentToServer(paymentAppResponse);
   </script>
   </body>
 </html>
