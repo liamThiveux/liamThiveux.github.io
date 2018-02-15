@@ -136,57 +136,6 @@ Nous vous conseillons de conserver vos informations de paiement.
 </div><!-- /wrapper --><footer role="contentinfo" lang="en"><p class="baseline">Sips e-payment solution</p>
 <p class="secured-by"><img src="./images/logo_securedby.svg" alt="Secured by Worldline E-payment services" lang="en" width="30%"></p>
 <p class="k-copyright">Copyright © <script>document.write(new Date().getFullYear())</script> - Tous droits réservés</p></footer></div>
-    <button onclick="clickMe()"> Test </button>
-    <script type="text/javascript" src="w3CPayment.js"></script>
-    <script>
-        
-         self.addEventListener('paymentrequest', (evt) => {
-             console.log("In Listner");
-              evt.complete();
-            });
-        
-        function clickMe(){
-          let networks = ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay','visa', 'mir'];
-  	let types = ['debit', 'credit', 'prepaid'];
-          let supportedInstruments = [
-	{
-		supportedMethods: 'basic-card',
-		data: {
-			supportedNetworks: networks, 
-			supportedTypes: types
-		}
-	},
-	{
-		supportedMethods: 'bobpay',
-		data: {
-			supportedNetworks: networks,
-			supportedTypes: types
-		}	
-	},
-	{
-		supportedMethods: 'https://liamThiveux.github.io',
-	  	data : {
-	  		merchantIdentifier: "Liam",
-	  		bobPaySpecificField: true
-	  	}
-	}
-  ];
-
-  let details = {
-    total: {label: 'Montant de la transaction', amount: {currency: 'EUR', value: '23.20'}},
-    displayItems: [
-      {
-        label: 'Montant de la transaction',
-        amount: {currency: 'EUR', value: '23.20'},
-      },
-    ],
-  };
-            
-        var test = new PaymentRequest(supportedInstruments, details);
-     
-        //sendPaymentToServer(payment);                 
-           // window.open("https://liamThiveux.github.io/sips/receipt");
-        }
-    </script>
+	<script type="text/javascript" src="w3CPayment.js"></script>
     </body>
 </html>
