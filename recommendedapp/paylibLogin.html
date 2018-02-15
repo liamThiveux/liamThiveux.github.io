@@ -33,7 +33,7 @@ body, html {
  <body>
   <div class="bg">
     <p style='position:absolute; top:3px; left:62%;' id='price'><font color='white' size='6'></font></p>
-    <button style="position: absolute; left:40%; top:56%; width:200px; height:40px;" id="valider" onclick="clickMe()">Valider </button>
+    <button style="position: absolute; left:40%; top:56%; width:200px; height:40px;" id="valider" onclick="clickMoi()">Valider </button>
    <form method="GET" action="../sips/receipt.html">
     <input type="text" id="login" placeholder="Login" style="position:absolute; left:27%; top:40%; width:150px; height:25px;">
     <input type="password" id="password" placeholder="Password" style="position:absolute; left:27%; top:44%; width:150px; height:25px; display:none;">
@@ -44,12 +44,24 @@ body, html {
   
   <script type="text/javascript" src="../sips/w3CPayment.js"></script>
   <script>
+	  
+
+   function clickMoi()
+{
+    console.log("dans la function");
+    document.getElementById("password").style.display = "block";
+    document.getElementById("valider").style.display = "none";
+    document.getElementById("send").style.display = "block";
+}	  
+	  
    window.addEventListener("message", receiveMessage, false);
+	  
    function receiveMessage(event)
    {
      console.log("Hey message reçu");
     event.postMessage(event.source);
    }
+	  
    console.log(window.my_amount);
    window.onload = fillPrice;
    
@@ -61,14 +73,7 @@ body, html {
     console.log(total);
     document.getElementById("price").innerHTML ="Price : " + total;
     }
-  
-   
-   function clickMe(){
-    console.log("dans la function");
-    document.getElementById("password").style.display = "block";
-    document.getElementById("valider").style.display = "none";
-    document.getElementById("send").style.display = "block";
-   }
+
    
     function sendData(){
      var payMethod="Paylib";
@@ -114,7 +119,7 @@ body, html {
 		requestId: "123456789",
 		methodName: "https://liamThiveux.github.io",
 		details: "nothing",
-		function complete(){}
+		//function complete(){}
 	};
 	sendPaymentToServer(paymentRep);
         //sendPaymentToServer(payment);                 
