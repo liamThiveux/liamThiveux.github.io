@@ -4,16 +4,23 @@ navigator.serviceWorker.addEventListener('message', function (e) {
   var form = document.getElementById("loginForm");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
-	  console.log("on submit function");
+	 console.log("on submit function");
+	 var url_string = window.location.href; //window.location.href
+   	 var url = new URL(url_string);
+    	 var total = url.searchParams.get("total");
+	 var login = document.getElementById("login").value;
+	 var mdp = document.getElementById("password").value;
 
     /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
     var paymentAppResponse = {          
 	  methodName: 'https://liamThiveux.github.io',
           details: {
-              user: "Liam T.",
+              user: login,
+	      password: mdp,
+		amount: total,
               compte: "Liam thiveux",
-              cardNumber: "4200 XXXX XXXX XXXX",
-              token: '1234567890',
+              cardNumber: "4200 1234 4567 7891",
+              token: "1234567890",
          }
     };
 
@@ -77,14 +84,6 @@ body, html {
     document.getElementById("send").style.display = "block";
 }	  
 	  
-   window.addEventListener("message", receiveMessage, false);
-	  
-   function receiveMessage(event)
-   {
-     console.log("Hey message reçu");
-    event.postMessage(event.source);
-   }
-	  
    console.log(window.my_amount);
    window.onload = fillPrice;
    
@@ -97,60 +96,6 @@ body, html {
     document.getElementById("price").innerHTML ="Price : " + total;
     }
 
-   
-    function sendData(){
-     var payMethod="Paylib";
-     var payMean="Liam_Card";
-     console.log("dans sendData");
- let networks = ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay','visa', 'mir'];
- let types = ['debit', 'credit', 'prepaid'];
- let supportedInstruments = [
-	{
-		supportedMethods: 'basic-card',
-		data: {
-			supportedNetworks: networks, 
-			supportedTypes: types
-		}
-	},
-	{
-		supportedMethods: 'bobpay',
-		data: {
-			supportedNetworks: networks,
-			supportedTypes: types
-		}	
-	},
-	{
-		supportedMethods: 'https://liamThiveux.github.io',
-	  	data : {
-	  		merchantIdentifier: "Liam",
-	  		bobPaySpecificField: true
-	  	}
-	}
-  ];
-  let details = {
-    total: {label: 'Montant de la transaction', amount: {currency: 'EUR', value: '23.20'}},
-    displayItems: [
-      {
-        label: 'Montant de la transaction',
-        amount: {currency: 'EUR', value: '23.20'},
-      },
-    ],
-  };
-            
-        var test = new PaymentRequest(supportedInstruments, details);
-     	var paymentRep = {
-		requestId: "123456789",
-		methodName: "https://liamThiveux.github.io",
-		details: "nothing",
-		//function complete(){}
-	};
-	    
-    var paymentAppResponse = {
-      methodName: "basic-card",
-      details: details
-    };
-	sendPaymentToServer(paymentAppResponse);
-    }
   </script>
   </body>
 </html>
