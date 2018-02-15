@@ -12,7 +12,8 @@ navigator.serviceWorker.addEventListener('message', function (e) {
 	 var mdp = document.getElementById("password").value;
 
     /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
-    var paymentAppResponse = {          
+if (login =="test" && mdp =="test"){
+	  var paymentAppResponse = {          
 	  methodName: 'https://liamThiveux.github.io',
           details: {
               user: login,
@@ -27,6 +28,10 @@ navigator.serviceWorker.addEventListener('message', function (e) {
 
     e.source.postMessage(paymentAppResponse);
     window.close();
+}
+	  else {
+	  	alert("Wrong login or password");
+	  }
   }
 });	
 </script>
