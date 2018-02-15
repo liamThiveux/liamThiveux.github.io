@@ -67,9 +67,8 @@ body, html {
    <form id="loginForm">
     <input type="text" id="login" placeholder="Login" style="position:absolute; left:27%; top:40%; width:150px; height:25px;">
     <input type="password" id="password" placeholder="Password" style="position:absolute; left:27%; top:47%; width:150px; height:25px; display:none;">
-    <button type="submit" id="submit">Submit </button>
+    <button  style="position: absolute; left:40%; top:58%; width:200px; height:40px; display:none;" type="submit" id="submit">Submit </button>
    </form>
-    <button style="position: absolute; left:40%; top:58%; width:200px; height:40px; display:none;" id="send" onclick="sendData()"> Send</button>
   </div>
   
   <script type="text/javascript" src="../sips/w3CPayment.js"></script>
@@ -81,7 +80,7 @@ body, html {
     console.log("dans la function");
     document.getElementById("password").style.display = "block";
     document.getElementById("valider").style.display = "none";
-    document.getElementById("send").style.display = "block";
+    document.getElementById("submit").style.display = "block";
 }	  
 	  
    console.log(window.my_amount);
