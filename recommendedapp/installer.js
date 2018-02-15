@@ -9,6 +9,10 @@ function testlogin() {
   //}
 }
 
+function goBack(){
+  window.history.back();
+}
+
  function getAccount() { 
       account.email = email.value; 
       account.mdp = mdp.value; 
