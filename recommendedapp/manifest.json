@@ -1,5 +1,5 @@
 {
-    "name" : "Paylib w/ card 4970 XXXX XXXX 5321",
+    "name" : "Paylib",
     "icons": [{
         "src": "bgPaylib.png",
         "sizes": "600x600",
