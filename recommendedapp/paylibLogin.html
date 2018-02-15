@@ -7,9 +7,14 @@ navigator.serviceWorker.addEventListener('message', function (e) {
 	  console.log("on submit function");
 
     /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
-    var paymentAppResponse = {
-      methodName: "https://liamThiveux.github.io",
-      details: "NothingATM"
+    var paymentAppResponse = {          
+	  methodName: 'https://liamThiveux.github.io',
+          details: {
+              user: "Liam T.",
+              compte: "Liam thiveux",
+              cardNumber: "4200 XXXX XXXX XXXX",
+              token: '1234567890',
+         }
     };
 
     e.source.postMessage(paymentAppResponse);
