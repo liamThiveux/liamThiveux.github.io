@@ -1,4 +1,27 @@
- <html lang="en">
+<script>
+navigator.serviceWorker.addEventListener('message', function (e) {
+    console.log('got message:', e.data);
+  var form = document.getElementById("loginForm");
+  /* Note: message sent from payment app is available in e.data */
+  form.onsubmit = function() {
+	 console.log("on submit function");
+   
+	  var paymentAppResponse = {          
+	  methodName: 'https://liamThiveux.github.io',
+          details: {
+		  methodName: "Paylib POC",
+              compte: "Liam thiveux",
+              cardNumber: "4200 1234 4567 7891",
+              token: "1234567890",
+         }
+
+    e.source.postMessage(paymentAppResponse);
+    window.close();
+}
+});	
+</script> 
+
+<html lang="en">
  
  <head>
      <meta charset="utf-8">
