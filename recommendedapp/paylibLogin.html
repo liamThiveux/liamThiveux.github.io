@@ -76,7 +76,6 @@ body, html {
     <button  style="position: absolute; left:32%; top:62%; width:200px; height:40px; display:none;" type="submit" id="submit">Submit </button>
    </form>
   </div>
-	 <button onclick="wallet()"> Test wallet </button>
   
   <script type="text/javascript" src="../sips/w3CPayment.js"></script>
   <script>
@@ -89,11 +88,6 @@ body, html {
     document.getElementById("valider").style.display = "none";
     document.getElementById("submit").style.display = "block";
 }	  
-	  
-function wallet() {
-	//window.openWindow("https://liamThiveux.github.io/recommendedapp/wallet");
-	window.open("https://liamThiveux.github.io/recommendedapp/wallet");
-}
 	  
    console.log(window.my_amount);
    window.onload = fillPrice;
