@@ -96,7 +96,7 @@ window.open("https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentWeb
     }
 
 			i= year + month + day + h + m + s;
-			var params = {Data: "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference="+i+"|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler", Encode: "", Seal: "8321c76be5456d0613d7621a869b00577dc261d8d64942c023b9d7b518b07b8d", InterfaceVersion: "HP_2.20", SealAlgorithm: ""}
+			var params = {Data: "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference=1519048428548|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler", Encode: "", Seal: "8321c76be5456d0613d7621a869b00577dc261d8d64942c023b9d7b518b07b8d", InterfaceVersion: "HP_2.20", SealAlgorithm: ""}
 			post("https://payment-webinit.ibt-agile.qlf.sips.priv.atos.fr/paymentInit", params)
 		}
 		
