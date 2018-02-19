@@ -66,8 +66,39 @@ top: 422px;  z-index: 1;" />
 </script>
 <!-- /WhatsHelp.io widget 	-->
 	<button onclick="testMe()"> Test pour sips </button>
+	<button onclick="postTry()"> Post try </button>
 	<script> function testMe(){
 window.open("https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentWebInitCNRT/v2/PaymentWebInitCNRT.jsp");		
-		}</script>
+		}
+	
+		function postTry(){
+			var params = {autocomplete: "MERCHANT_PAYLIB_B2R - 233118849141631 - SECRET", autocompleteResult: "233118849141631", secretKey: "his_dark_secret", merchantId: "233118849141631", keyVersion: "1", transactionReference: "1519042983743", amount: "1000", currencyCode: "978", transactionOrigin: "SIMS", interfaceVersion: "HP_2.20"}
+			post("https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentWebInitCNRT/v2/clientPaymentWebInitCNRT.jsp", params)
+		}
+		
+		function post(path, params) {
+    method = "post"; 
+
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentWebInitCNRT/v2/clientPaymentWebInitCNRT.jsp");
+
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "pwiForm");
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+        }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+}
+	</script>
 </body>
 </html>
