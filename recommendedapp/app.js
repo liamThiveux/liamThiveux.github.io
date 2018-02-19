@@ -40,8 +40,10 @@ var cardnumber;
      //window.open("https://paiement.paylib.fr/interbank-pay-core/payment/register.do?execution=e2s1&n=1841686735"); //OpenWindow ouvre une url du meme url que le script
      console.log(e.total.value);
      //e.open("https://liamThiveux.github.io/recommendedapp/testpage");
-     e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin?total="+e.total.value).then(function(windowClient) {
-      windowClient.postMessage(e.methodData[0].data);
+     //e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin?total="+e.total.value).then(function(windowClient) {
+   e.openWindow("https://rsolomakhin.github.io/pr/bob/").then(function(windowClient) {
+    console.log("we're in here");
+   //windowClient.postMessage(e.methodData[0].data);
      })
      .catch(function(err) {
        reject(err);
