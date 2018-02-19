@@ -72,8 +72,8 @@ window.open("https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentWeb
 		}
 	
 		function postTry(){
-			var params = {autocomplete: "MERCHANT_PAYLIB_B2R - 233118849141631 - SECRET", autocompleteResult: "233118849141631", secretKey: "his_dark_secret", merchantId: "233118849141631", keyVersion: "1", transactionReference: "1519042983743", amount: "1000", currencyCode: "978", transactionOrigin: "SIMS", interfaceVersion: "HP_2.20"}
-			post("https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentWebInitCNRT/v2/clientPaymentWebInitCNRT.jsp", params)
+			var params = {Data: "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference=1519044583583|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler", Encode: "", Seal: "8321c76be5456d0613d7621a869b00577dc261d8d64942c023b9d7b518b07b8d", InterfaceVersion: "HP_2.20", SealAlgorithm: ""}
+			post("https://payment-webinit.ibt-agile.qlf.sips.priv.atos.fr/paymentInit", params)
 		}
 		
 		function post(path, params) {
@@ -83,13 +83,13 @@ window.open("https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentWeb
     // It can be made less wordy if you use one.
     var form = document.createElement("form");
     form.setAttribute("method", "post");
-    form.setAttribute("action", "https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentWebInitCNRT/v2/clientPaymentWebInitCNRT.jsp");
+    form.setAttribute("action", path);
 
     for(var key in params) {
         if(params.hasOwnProperty(key)) {
             var hiddenField = document.createElement("input");
             hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", "pwiForm");
+            hiddenField.setAttribute("name", "pwi1");
             hiddenField.setAttribute("value", params[key]);
 
             form.appendChild(hiddenField);
