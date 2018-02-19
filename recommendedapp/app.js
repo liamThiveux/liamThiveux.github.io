@@ -41,7 +41,7 @@ var cardnumber;
      console.log(e.total.value);
      //e.open("https://liamThiveux.github.io/recommendedapp/testpage");
      //e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin?total="+e.total.value).then(function(windowClient) {
-     e.openWindow("https://www.paylib.fr/").then(function(windowClient) {  
+     e.openWindow("https://rsolomakhin.github.io/pr/bob/").then(function(windowClient) {  
       //windowClient.postMessage(e.methodData[0].data);
      })
      .catch(function(err) {
