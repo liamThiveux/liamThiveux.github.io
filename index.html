@@ -72,7 +72,31 @@ window.open("https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentWeb
 		}
 	
 		function postTry(){
-			var params = {Data: "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference=1519044583583|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler", Encode: "", Seal: "8321c76be5456d0613d7621a869b00577dc261d8d64942c023b9d7b518b07b8d", InterfaceVersion: "HP_2.20", SealAlgorithm: ""}
+			var today = new Date();
+			var year = today.getFullYear();
+			var month = today.getMonth() + 1;
+			if (month < 10) {
+        		month = "0" + month
+    			}
+			    var day = Maintenant.getDate();
+    if (day < 10) {
+        day = "0" + day
+    }
+    var h = Maintenant.getHours();
+    if (h < 10) {
+        h = "0" + h
+    }
+    var m = Maintenant.getMinutes();
+    if (m < 10) {
+        m = "0" + m
+    }
+    var s = Maintenant.getSeconds();
+    if (s < 10) {
+        s = "0" + s
+    }
+
+			i= year + month + day + h + m + s;
+			var params = {Data: "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference="+i+"|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler", Encode: "", Seal: "8321c76be5456d0613d7621a869b00577dc261d8d64942c023b9d7b518b07b8d", InterfaceVersion: "HP_2.20", SealAlgorithm: ""}
 			post("https://payment-webinit.ibt-agile.qlf.sips.priv.atos.fr/paymentInit", params)
 		}
 		
