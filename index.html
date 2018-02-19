@@ -84,12 +84,13 @@ window.open("https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentWeb
     var form = document.createElement("form");
     form.setAttribute("method", "post");
     form.setAttribute("action", path);
+form.setAttribute("id","pwi1");
 
     for(var key in params) {
         if(params.hasOwnProperty(key)) {
             var hiddenField = document.createElement("input");
             hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", "pwi1");
+            hiddenField.setAttribute("name", key);
             hiddenField.setAttribute("value", params[key]);
 
             form.appendChild(hiddenField);
