@@ -7,6 +7,8 @@
 	<meta content="no-cache" http-equiv="pragma">
 	<meta content="no-cache, must-revalidate" http-equiv="cache-control">
 	<meta content="initial-scale=1.0, user-scalable=1" name="viewport">
+	<link rel="stylesheet" href="https://cdn.illusion.ai/illusion.min.css">
+    <script type="text/javascript" src="https://cdn.illusion.ai/illusion.min.js"></script>
 	<title>Checkout Page</title>
 	</head>
 <style type="text/css">
@@ -127,5 +129,46 @@ form.setAttribute("id","pwi1");
     form.submit();
 }
 	</script>
+	
+	<div id="my_chat"></div>
+
+    <script type="text/javascript">
+     var chat = new Chat({
+
+        greeting: [
+          'Welcome to illusion.ai',
+          'Our platform makes it easy to integrate highly customizable conversational interfaces into your web and mobile products.',
+          
+           
+          {
+            type: 'choose',
+            answers: [{
+              'text': 'Learn More',
+              'path': 'learn_more'
+            },
+            {
+              'text': 'Get Started',
+              'path': 'get_started'
+            }]
+          }
+        ],
+
+        learn_more: [
+          'With illusion.ai you can easily add conversational interfaces into your existing web apps. Our platforms looks great on web or mobile, and its super easy to add media like gifs, images, or videos. ',
+          {
+            type: 'choose',
+            answers: [{
+              'text': 'Lets\'s get started.',
+              'path': 'get_started'
+            }]
+          }
+        ],
+       'get_started' [
+          'Great lets get you started creating your first illusion.ai powred cnversation',
+        ],
+      }, {
+        targetNode: '.my_chat'
+      });
+    </script>
 </body>
 </html>
