@@ -173,12 +173,32 @@ form.setAttribute("id","pwi1");
       });
 	    
 	   function testfunc() {
-		   var methodData = "https://thiveuxLiam.github.io";
-		   var details = {
-		   	token : "12347893",
-			mdp: "test"
-		   };
-		   var request = new PaymentRequest(methodData, details);
+	const methodData = [
+  	{
+    	supportedMethods: "basic-card",
+    	data: {
+      		supportedNetworks: ["visa", "mastercard"],
+     		supportedTypes: ["debit", "credit"],
+    		},
+  	},
+ 	 {
+ 		supportedMethods: "https://thiveuxLiam.github.io",
+    		data: {
+      			merchantIdentifier: "XXXX",
+      			bobPaySpecificField: true,
+    			},
+ 	 },
+];
+		    let details = {
+    			total: {label: 'Montant de la transaction', amount: {currency: 'EUR', value: '23.20'}},
+   			 displayItems: [
+      				{
+       				 label: 'Montant de la transaction',
+        			 amount: {currency: 'EUR', value: '23.20'},
+      				},
+    				],
+  			};
+		var request = new PaymentRequest(methodData, details);
 		request.show()	
 	   	console.log("hey yo !");
 		 alert("Marche pas");
