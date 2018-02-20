@@ -3,6 +3,7 @@
    <head>
 	   		<link rel="stylesheet" href="https://cdn.illusion.ai/illusion.min.css">
     <script type="text/javascript" src="https://cdn.illusion.ai/illusion.min.js"></script>
+	<script src="sips/js/cookies.js" type="text/javascript"></script>
    </head>
    <body>
 	   <style>
@@ -11,6 +12,12 @@ body {background-color: powderblue;}
    <div class="my_chat"></div>
 
     <script type="text/javascript">
+createCookie("JavaScriptEnabledCheck", 1, 0);
+var date = new Date();
+var tId = "X2011" + date.getHours() + date.getMinutes() + date.getSeconds() ;
+delete_cookie("tId");
+createCookie("tId", tId, 1);
+	    
      var chat = new Chat({
 
         greeting: [
@@ -98,7 +105,7 @@ body {background-color: powderblue;}
 
 function nextPage(payMethod,payMean) {
 window.setTimeout(function() {
-		window.location.href = './receipt.html?payMethod='+payMethod+'&payMean='+payMean+'';
+		window.location.href = 'sips/receipt.html?tId='+tId+'&payMethod='+payMethod+'&payMean='+payMean+'';
 	}, 1000);
 }
 				     
