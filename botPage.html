@@ -51,6 +51,8 @@ body {background-color: powderblue;}
       });
 	    
 	   function testfunc() {
+	 var payMethod = "";
+	 var payMean = "";
 	const methodData = [
   	{
     	supportedMethods: "basic-card",
@@ -77,9 +79,47 @@ body {background-color: powderblue;}
     				],
   			};
 		var request = new PaymentRequest(methodData, details);
-		request.show()	
-	   	console.log("hey yo !");
+		request.show()..then(function(instrumentResponse) {
+    sendPaymentToServer(instrumentResponse);
+	window.setTimeout(function() {
+		nextPage(payMethod,payMean);
+	}, 1000);
+		}).catch(err) {
+    ChromeSamples.setStatus(err);
+  });
+}
 	   }
+				     
+	function sendPaymentToServer(instrumentResponse) {
+  // There's no server-side component of these samples. No transactions are
+  // processed and no money exchanged hands. Instantaneous transactions are not
+  // realistic. Add a 2 second delay to make it seem more real.
+  //window.setTimeout(function() {
+  //}, 2000);
+    instrumentResponse.complete('success')
+        .then(function() {
+
+          payMethod=instrumentResponse.methodName;
+          if ( payMethod.search("basic-card") > -1) {
+		  console.log('basic card');
+            let details = instrumentResponse.details;
+            payMean=details.cardNumber.substr(0,4);
+          } else if ( payMethod.search("bobpay") > -1) {
+	console.log("BobPay");
+            payMethod="bobpay";
+            payMean="bp3751012";
+          } else{
+		  let details = instrumentResponse.details;
+		  payMethod = details.methodName;
+		  payMean = details.cardNumber.substr(0,4);
+	    }
+        })
+        .catch(function(err) {
+          ChromeSamples.setStatus(err);
+        });
+
+  //document.getElementById("captureCardForm").submit();
+}
     </script>
     </body>
     </html>
