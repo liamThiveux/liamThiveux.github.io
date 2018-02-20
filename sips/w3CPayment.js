@@ -27,8 +27,8 @@ function initPaymentRequest(networks) {
 	{
 		supportedMethods: 'https://liamThiveux.github.io',
 	  	data : {
-			//Data: Data,
-			//Seal: Seal,
+			Data: longdata,
+			Seal: seal,
 	  		merchantIdentifier: "Liam",
 	  		bobPaySpecificField: true
 	  	}
