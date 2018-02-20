@@ -2,7 +2,7 @@
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
 	console.log(e.data.Seal);	
-	postTry(e.data.Data, e.data.Seal);
+	//postTry(e.data.Data, e.data.Seal);
   var form = document.getElementById("loginForm");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
@@ -70,7 +70,7 @@ body, html {
   
  <body>
   <div class="bg">
-	  <iframe title="my_iframe" id="my_iframe" name="my_iframe" src="" width="250" height="250">
+	  <iframe title="my_iframe" id="my_iframe" name="my_iframe" src="https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentWebInitCNRT/v2/PaymentWebInitCNRT.jsp" width="250" height="250">
 		  <p> Doesn't support </p>
 	  </iframe>
     <p style='position:absolute; top:3px; left:62%;' id='price'><font color='white' size='6'></font></p>
