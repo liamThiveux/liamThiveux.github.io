@@ -28,7 +28,14 @@ function initPaymentRequest(networks) {
 	  		merchantIdentifier: "Liam",
 	  		bobPaySpecificField: true
 	  	}
-	}
+	},
+	  {
+	  	supportedMethods: 'https://thiveuxLiam.github.io',
+		data : {
+			merchantIdentifier: "Thiveux",
+			bobPaySpecificField: true
+		}
+	  }
   ];
 
   let details = {
