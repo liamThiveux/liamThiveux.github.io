@@ -15,16 +15,10 @@ navigator.serviceWorker.addEventListener('message', function (e) {
 
     /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
 if (login =="test" && mdp =="test"){
-	var data = "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference=1519139063723|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler";
-	var seal = "a316fd5008eda4c69c2c87f68b0c0aac1a0ef5c7b72a2d3e6e373a608899e4f7";
 	  var paymentAppResponse = {          
 	  methodName: 'https://liamThiveux.github.io',
           details: {
               user: login,
-	      Seal: seal,
-	      Data: data,
-	      InterfaceVersion: "HP_2.20",
-	      Encode: "",
 	      password: mdp,
 	      amount: total,
 	      methodName: "Paylib POC",
