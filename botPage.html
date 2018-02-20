@@ -89,7 +89,11 @@ body {background-color: powderblue;}
   });
 }
 
-
+function nextPage(payMethod,payMean) {
+window.setTimeout(function() {
+		window.location.href = './receipt.html?tId='+tId+'&payMethod='+payMethod+'&payMean='+payMean+'';
+	}, 1000);
+}
 				     
 	function sendPaymentToServer(instrumentResponse) {
   // There's no server-side component of these samples. No transactions are
