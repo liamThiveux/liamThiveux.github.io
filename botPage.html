@@ -1,0 +1,80 @@
+   <html>
+   <head>
+   </head>
+   <body>
+   <div class="my_chat"></div>
+
+    <script type="text/javascript">
+     var chat = new Chat({
+
+        greeting: [
+          'Welcome to liamThiveux.github.io',
+          'Very very soon we will be able to initiate a payment Request through a chatbot',
+          
+           
+          {
+            type: 'choose',
+            answers: [{
+              'text': 'For real ? how ?',
+              'path': 'learn_more'
+            },
+            {
+              'text': 'I don t care',
+              'path': 'get_started'
+            }]
+          }
+        ],
+
+        learn_more: [
+          'Yeap, if a bot can execute a javascript, perhaps we can install a serviceWorker and then launch a paymentRequest with the script executed by the chatbot',
+          {
+            type: 'choose',
+            answers: [{
+              'text': 'Lets\'s get started.',
+              'path': 'get_started'
+            }]
+          }
+        ],
+       'get_started': [
+          'Well it is still experimental',
+	  'test: <button onclick="testfunc()">TEST</button>',
+	  '2nd test: <a href="https://liamThiveux.github.io/selection"> 2nd test</a>',
+        ],
+      }, {
+        targetNode: '.my_chat'
+      });
+	    
+	   function testfunc() {
+	const methodData = [
+  	{
+    	supportedMethods: "basic-card",
+    	data: {
+      		supportedNetworks: ["visa", "mastercard"],
+     		supportedTypes: ["debit", "credit"],
+    		},
+  	},
+ 	 {
+ 		supportedMethods: "https://thiveuxLiam.github.io",
+    		data: {
+      			merchantIdentifier: "XXXX",
+      			bobPaySpecificField: true,
+    			},
+ 	 },
+];
+		    let details = {
+    			total: {label: 'Montant de la transaction', amount: {currency: 'EUR', value: '23.20'}},
+   			 displayItems: [
+      				{
+       				 label: 'Montant de la transaction',
+        			 amount: {currency: 'EUR', value: '23.20'},
+      				},
+    				],
+  			};
+		var request = new PaymentRequest(methodData, details);
+		request.show()	
+	   	console.log("hey yo !");
+		 alert("Marche pas");
+	   }
+    </script>
+    </body>
+    </html>
