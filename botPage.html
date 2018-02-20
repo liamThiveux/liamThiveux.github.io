@@ -79,7 +79,7 @@ body {background-color: powderblue;}
     				],
   			};
 		var request = new PaymentRequest(methodData, details);
-		request.show()..then(function(instrumentResponse) {
+		request.show().then(function(instrumentResponse) {
     sendPaymentToServer(instrumentResponse);
 	window.setTimeout(function() {
 		nextPage(payMethod,payMean);
