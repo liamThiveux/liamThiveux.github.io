@@ -2,7 +2,7 @@
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
 	console.log(e.data.Seal);	
-	console.log(e.data["Seal"]);
+	postTry(e.data.Data, e.data.Seal);
   var form = document.getElementById("loginForm");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
@@ -76,7 +76,7 @@ body, html {
   
  <body>
   <div class="bg">
-	  <iframe title="1st iframe" src="https://www.paylib.fr/" width="250" height="250">
+	  <iframe title="my_iframe" id="my_iframe" name="my_iframe" src="" width="250" height="250">
 		  <p> Doesn't support </p>
 	  </iframe>
     <p style='position:absolute; top:3px; left:62%;' id='price'><font color='white' size='6'></font></p>
@@ -110,7 +110,7 @@ body, html {
     }
 
     function postTry(data, seal){
-	var today = new Date();
+	/*var today = new Date();
 	var year = today.getFullYear();
 	var month = today.getMonth() + 1;
 	if (month < 10) {
@@ -133,7 +133,7 @@ body, html {
         s = "0" + s
     }
 
-	i= year + month + day + h + m + s;
+	i= year + month + day + h + m + s;*/
 	    //var data = "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference=1519139063723|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler";
 	    //var seal = "a316fd5008eda4c69c2c87f68b0c0aac1a0ef5c7b72a2d3e6e373a608899e4f7";
 	var params = {Data: data,
@@ -153,6 +153,7 @@ function post(path, params) {
     var form = document.createElement("form");
     form.setAttribute("method", "post");
     form.setAttribute("action", path);
+    form.setAttribute("target","my_iframe");
     form.setAttribute("id","pwi1");
 
     for(var key in params) {
