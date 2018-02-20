@@ -84,9 +84,10 @@ body {background-color: powderblue;}
 	window.setTimeout(function() {
 		nextPage(payMethod,payMean);
 	}, 1000);
-		}).catch(err) {
+		}).catch(function(err) {
     ChromeSamples.setStatus(err);
-  };
+  });
+}
 
 
 				     
