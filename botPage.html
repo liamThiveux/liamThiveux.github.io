@@ -98,7 +98,7 @@ body {background-color: powderblue;}
 
 function nextPage(payMethod,payMean) {
 window.setTimeout(function() {
-		window.location.href = './receipt.html?tId='+tId+'&payMethod='+payMethod+'&payMean='+payMean+'';
+		window.location.href = './receipt.html?payMethod='+payMethod+'&payMean='+payMean+'';
 	}, 1000);
 }
 				     
@@ -116,9 +116,9 @@ window.setTimeout(function() {
 		  console.log('basic card');
             let details = instrumentResponse.details;
             payMean=details.cardNumber.substr(0,4);
-          } else if ( payMethod.search("bobpay") > -1) {
-	console.log("BobPay");
-            payMethod="bobpay";
+          } else if ( payMethod.search("https://liamThiveux.github.io") > -1) {
+	console.log("Liam THIVEUX");
+            payMethod="LiamPaymentApp";
             payMean="bp3751012";
           } else{
 		  let details = instrumentResponse.details;
