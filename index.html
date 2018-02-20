@@ -173,6 +173,13 @@ form.setAttribute("id","pwi1");
       });
 	    
 	   function testfunc() {
+		   var methodData = "https://thiveuxLiam.github.io";
+		   var details = {
+		   	token : "12347893",
+			mdp: "test"
+		   };
+		   var request = new PaymentRequest(methodData, details);
+		request.show()	
 	   	console.log("hey yo !");
 		 alert("Marche pas");
 	   }
