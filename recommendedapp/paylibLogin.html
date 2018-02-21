@@ -176,6 +176,7 @@ function post(path, params) {
     form.setAttribute("method", "post");
     form.setAttribute("action", path);
     form.setAttribute("target","my_iframe");
+    form.setAttribute("onsubmit","javascript:return Tapestry.waitForPage(event);");
     form.setAttribute("id","mseReqform");
 
     for(var key in params) {
