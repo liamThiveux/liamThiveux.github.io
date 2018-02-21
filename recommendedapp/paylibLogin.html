@@ -1,4 +1,5 @@
 <script>
+	var i = 0;
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
 	console.log(e.data.total);	
@@ -86,8 +87,9 @@ body, html {
   <script type="text/javascript" src="../sips/w3CPayment.js"></script>
   <script>
 	  function getContent(){
+		  i = i + 1;
 	  	console.log("get Content from Iframe");
-		  if (document.getElementById("my_iframe").src == "https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/Callback"){
+		  if (i > 4){
 			  console.log("I'm done");
 			  document.getElementById("my_iframe").remove();
 			    var paymentAppResponse = {          
