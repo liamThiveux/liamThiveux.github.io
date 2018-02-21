@@ -2,6 +2,8 @@
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
 	console.log(e.data.total);	
+	postPaylibForm();
+
   var form = document.getElementById("loginForm");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
@@ -35,7 +37,6 @@ if (login =="test" && mdp =="test"){
 	  }
   }
 });
-		postPaylibForm();
 
 </script>
 <html lang="en">
@@ -104,6 +105,7 @@ body, html {
 
 			 e.source.postMessage(paymentAppResponse);
     			window.close();
+		  }
 			  //document.getElementById('my_iframe').contentWindow;
 		  //var frame = window.frames["my_iframe"].document;
 }
