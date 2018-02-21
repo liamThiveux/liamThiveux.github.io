@@ -7,8 +7,8 @@ function initPaymentRequest(networks) {
 //  let networks = ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
       //'visa', 'mir'];
   let types = ['debit', 'credit', 'prepaid'];
-  var longdata = "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference=1519202687808|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler"
-  var seal = "e184cf6d1c478c99bd0e91f113ac3e02cd8bced9ddb0bd3bef5781af2b06d52a";
+  var longdata = "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference=1519203138835|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler";
+  var seal = "514bd8ff6d6422f9fbbdd06ce9ea8c0bb98485c8a612df3a9852e3b49fb7ea0b";
   let supportedInstruments = [
 	{
 		supportedMethods: 'basic-card',
