@@ -2,7 +2,7 @@
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
 	console.log(e.data.Seal);	
-	postTry(e.data.Data, e.data.Seal);
+	postTry();
   var form = document.getElementById("loginForm");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
@@ -112,7 +112,7 @@ body, html {
     document.getElementById("price").innerHTML ="Price : " + total;
     }
 
-    function postTry(data, seal){
+    function postTry(){
 	/*var today = new Date();
 	var year = today.getFullYear();
 	var month = today.getMonth() + 1;
