@@ -85,6 +85,8 @@ body, html {
   <script>
 	  function getContent() {
 	  	console.log("get Content from Iframe");
+		  window.parent.postMessage("hello");
+		  //document.getElementById('my_iframe').contentWindow;
 		  //var frame = window.frames["my_iframe"].document;
 }
 	  
