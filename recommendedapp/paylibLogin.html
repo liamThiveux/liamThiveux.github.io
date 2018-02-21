@@ -174,7 +174,7 @@ body, html {
 		number: "1000000,00",
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "15785466406410051",
+		idRequest: "4343202547380793",
 		idRequestor: "12345678",
 		returnURL: "https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/Callback",
 		internalContext: "PSP-AtoS",
@@ -203,6 +203,7 @@ function post(path, params) {
             form.appendChild(hiddenField);
         }
     }
+	document.getElementById("my_iframe").src = path;
     document.body.appendChild(form);
     form.submit();
 }
