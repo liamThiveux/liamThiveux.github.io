@@ -106,8 +106,8 @@ function postTry(){
 		      SealAlgorithm: ""
 		     }*/
 	    var params = {
-		't:formdata': "gnVyK9di/rdHv+QtiTRYVcHGUmU=:H4sIAAAAAAAAAJVUzW4TMRAeigItQUKq+l9AHOC6udALnKJKlSqlCDX0Abxekxrt2s7YbpJLH4UnQH2JHnrrO/QBeuXUA9443gaT3Yib5/P3fTOeGfnXPbRG+7BbMKTnRJjOscjY+BPPAqARDiQOEqIIPWeJIYppg5ODhEpkOU+TlGiWdFMHEmqOOMuz931mrPpwdt2+27x5WIEnPWhTKQzK/AspmIH13g9yQTo5EYNO3yAXg89jZeAFz05mWZeV1P3fkr6ipEzrvk0LrjWX4voq+/j998/bFYCxGr2GvShdygWhQ8uRoR7CJYCBtsO6M6xZUQpaozewH1FCKFwbguvLAJa9WaLxvhuwHnEs5sHuqTsvZtSJC0orsTsvZnjxDmxFV1RaN9hJMHg+i+uZ3ujf7imUmaV/daY9w6aNaVR4023YjCjCFunj/J75sJbnXXZhO67cIjJBq0euBqCB6732YCe6NxPF3FoKHczWSuRbiTSx6+x4hmxo3fpXdjw79UgTu24IFUE+Ln1lKBct/ZyirkZ0vwGKuRVd88jZaa+J7e3ewds4ozAMBcnLH4WNq4e/Cvihx5cr68YtlZJGGlKNOwANXO+1BRvRPbFzrWxNozrW1OIP5mdQhY8FAAA=",
-	    	idMerchant: "947688",
+ 		't:formdata': "4UNx/N3+UBhBmPDj77kOheJquV8=:H4sIAAAAAAAAAJVUzW4TMRAeigItQUKq+l9AHOC6udALnKJKlSqlCDX0Abxekxrt2s7YbpJLH4UnQH2JHnrrO/QBeuXUA9443gaT3Yib5/P3fTOeGfnXPbRG+7BbMKTnRJjOscjY+BPPAqARDiQOEqIIPWeJIYppg5ODhEpkOU+TlGiWdFMHEmqOOMuz931mrPpwdt2+27x5WIEnPWhTKQzK/AspmIH13g9yQTo5EYNO3yAXg89jZeAFz05mWZeV1P3fkr6ipEzrvk0LrjWX4voq+/j998/bFYCxGr2GvShdygWhQ8uRoR7CJYCBtsO6M6xZUQpaozewH1FCKFwbguvLAJa9WaLxvhuwHnEs5sHuqTsvZtSJC0orsTsvZnjxDmxFV1RaN9hJMHg+i+uZ3ujf7imUmaV/daY9w6aNaVR4023YjCjCFunj/J75sJbnXXZhO67cIjJBq0euBqCB6732YCe6NxPF3FoKHczWSuRbiTSx6+x4hmxo3fpXdjw79UgTu24IFUE+Ln1lKBct/ZyirkZ0vwGKuRVd88jZaa+J7e3ewds4ozAMBcnLH4WNq4e/Cvihx5cr68YtlZJGGlKNOwANXO+1BRvRPbFzrWxNozrW1OIP5mdQhY8FAAA=",
+		idMerchant: "947688",
 		binAcquirer: "513141",
 		merchantName: "WorldlinetestMerchant",
 		url: "http://www.worldlinetestmerchant.com",
@@ -117,7 +117,7 @@ function postTry(){
 		number: "10.99",
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "3853975757503986",
+		idRequest: "19204433366103935",
 		idRequestor: "12345678",
 		returnURL: "https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/Callback",
 		internalContext: "PSP-AtoS",
@@ -125,7 +125,7 @@ function postTry(){
 		autor: "00"
 		    
 	    }
-	post("https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/index.msereqform;jsessionid=E9A15A83AC78AB99C86D4C19D7A75483.EDD2E1AEF091B2FAEF", params)
+	post("https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/index.msereqform", params)
 		}
 	  
 function post(path, params) {
@@ -135,7 +135,7 @@ function post(path, params) {
     var form = document.createElement("form");
     form.setAttribute("method", "post");
     form.setAttribute("action", path);
-    form.setAttribute("target","my_iframe");
+    //form.setAttribute("target","my_iframe");
     form.setAttribute("onsubmit","javascript:return Tapestry.waitForPage(event);");
     form.setAttribute("id","mseReqform");
     for(var key in params) {
