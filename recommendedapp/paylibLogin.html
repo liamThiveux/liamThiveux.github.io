@@ -85,7 +85,7 @@ body, html {
   <script>
 	  function getContent() {
 	  	console.log("get Content from Iframe");
-		  var frame = window.frames["my_iframe"].document;
+		  //var frame = window.frames["my_iframe"].document;
 }
 	  
    function clickMe()
@@ -94,6 +94,8 @@ body, html {
     document.getElementById("password").style.display = "block";
     document.getElementById("valider").style.display = "none";
     document.getElementById("submit").style.display = "block";
+	document.getElementById("my_iframe");
+	console.log("Click me");
 }	  
 	  
    console.log(window.my_amount);
