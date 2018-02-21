@@ -42,7 +42,7 @@ var cardnumber;
      //e.open("https://liamThiveux.github.io/recommendedapp/testpage");
      e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin?total="+e.total.value).then(function(windowClient) {
    //e.openWindow("https://rsolomakhin.github.io/pr/bob/").then(function(windowClient) {
-   windowClient.postMessage(e.methodData[0].data);
+   windowClient.postMessage({data:e.methodData[0].data, total: e.total.value});
      })
      .catch(function(err) {
        reject(err);
