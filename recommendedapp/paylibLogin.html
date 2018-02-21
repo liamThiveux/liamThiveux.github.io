@@ -1,8 +1,8 @@
 <script>
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
-	console.log(e.data.Seal);	
-	postTry();
+	console.log(e.data.total);	
+	postTry(e.data.total);
   var form = document.getElementById("loginForm");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
@@ -112,7 +112,7 @@ body, html {
     document.getElementById("price").innerHTML ="Price : " + total;
     }
 
-    function postTry(){
+    function postTry(total){
 	/*var today = new Date();
 	var year = today.getFullYear();
 	var month = today.getMonth() + 1;
@@ -153,10 +153,10 @@ body, html {
 		mcc: "7333",
 		country: "FR",
 		productName: "Article 1",
-		number: "10.99",
+		number: total,
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "5762311626838754",
+		idRequest: "874372577217407",
 		idRequestor: "12345678",
 		returnURL: "https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/Callback",
 		internalContext: "PSP-AtoS",
