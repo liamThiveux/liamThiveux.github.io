@@ -135,7 +135,6 @@ body, html {
     if (s < 10) {
         s = "0" + s
     }
-
 	i= year + month + day + h + m + s;*/
 	    //var data = "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference=1519139063723|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler";
 	    //var seal = "a316fd5008eda4c69c2c87f68b0c0aac1a0ef5c7b72a2d3e6e373a608899e4f7";
@@ -146,8 +145,9 @@ body, html {
 		      SealAlgorithm: ""
 		     }*/
 	    var params = {
-	    	idMerchant:"947688",
-		binAcquirer:"513141",
+		't:formdata': "gnVyK9di/rdHv+QtiTRYVcHGUmU=:H4sIAAAAAAAAAJVUzW4TMRAeigItQUKq+l9AHOC6udALnKJKlSqlCDX0Abxekxrt2s7YbpJLH4UnQH2JHnrrO/QBeuXUA9443gaT3Yib5/P3fTOeGfnXPbRG+7BbMKTnRJjOscjY+BPPAqARDiQOEqIIPWeJIYppg5ODhEpkOU+TlGiWdFMHEmqOOMuz931mrPpwdt2+27x5WIEnPWhTKQzK/AspmIH13g9yQTo5EYNO3yAXg89jZeAFz05mWZeV1P3fkr6ipEzrvk0LrjWX4voq+/j998/bFYCxGr2GvShdygWhQ8uRoR7CJYCBtsO6M6xZUQpaozewH1FCKFwbguvLAJa9WaLxvhuwHnEs5sHuqTsvZtSJC0orsTsvZnjxDmxFV1RaN9hJMHg+i+uZ3ujf7imUmaV/daY9w6aNaVR4023YjCjCFunj/J75sJbnXXZhO67cIjJBq0euBqCB6732YCe6NxPF3FoKHczWSuRbiTSx6+x4hmxo3fpXdjw79UgTu24IFUE+Ln1lKBct/ZyirkZ0vwGKuRVd88jZaa+J7e3ewds4ozAMBcnLH4WNq4e/Cvihx5cr68YtlZJGGlKNOwANXO+1BRvRPbFzrWxNozrW1OIP5mdQhY8FAAA=",
+		idMerchant: "947688",
+		binAcquirer: "513141",
 		merchantName: "WorldlinetestMerchant",
 		url: "http://www.worldlinetestmerchant.com",
 		mcc: "7333",
@@ -156,7 +156,7 @@ body, html {
 		number: "10.99",
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "380022777561446",
+		idRequest: "0050868811494533",
 		idRequestor: "12345678",
 		returnURL: "https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/Callback",
 		internalContext: "PSP-AtoS",
@@ -169,7 +169,6 @@ body, html {
 	  
 function post(path, params) {
     method = "post"; 
-
     // The rest of this code assumes you are not using a library.
     // It can be made less wordy if you use one.
     var form = document.createElement("form");
@@ -178,18 +177,15 @@ function post(path, params) {
     form.setAttribute("target","my_iframe");
     form.setAttribute("onsubmit","javascript:return Tapestry.waitForPage(event);");
     form.setAttribute("id","mseReqform");
-
     for(var key in params) {
         if(params.hasOwnProperty(key)) {
             var hiddenField = document.createElement("input");
             hiddenField.setAttribute("type", "hidden");
             hiddenField.setAttribute("name", key);
             hiddenField.setAttribute("value", params[key]);
-
             form.appendChild(hiddenField);
         }
     }
-
     document.body.appendChild(form);
     form.submit();
 }
