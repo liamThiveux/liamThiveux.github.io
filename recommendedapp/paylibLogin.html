@@ -70,7 +70,7 @@ body, html {
   
  <body>
   <div class="bg">
-	  <iframe title="my_iframe" id="my_iframe" name="my_iframe" src="" width="250" height="250">
+	  <iframe onload="getContent()" title="my_iframe" id="my_iframe" name="my_iframe" src="" width="250" height="250">
 		  <p> Doesn't support </p>
 	  </iframe>
     <p style='position:absolute; top:3px; left:62%;' id='price'><font color='white' size='6'></font></p>
@@ -83,6 +83,11 @@ body, html {
   </div>
   <script type="text/javascript" src="../sips/w3CPayment.js"></script>
   <script>
+	  function getContent() {
+	  	console.log("get Content from Iframe");
+		  var frame = window.frames["my_iframe"].document;
+}
+	  
    function clickMe()
 {
     console.log("dans la function");
