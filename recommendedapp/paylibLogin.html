@@ -94,7 +94,9 @@ body, html {
     document.getElementById("password").style.display = "block";
     document.getElementById("valider").style.display = "none";
     document.getElementById("submit").style.display = "block";
-	document.getElementById("my_iframe");
+    var ifr = document.getElementById("my_iframe");
+    var dom = ifr.contentWindow;
+    var ifrtest = ifr.contentDocument;
 	console.log("Click me");
 }	  
 	  
