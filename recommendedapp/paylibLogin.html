@@ -2,7 +2,7 @@
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
 	console.log(e.data.total);	
-	postTry();
+	postPaylibForm();
   var form = document.getElementById("loginForm");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
@@ -113,10 +113,6 @@ body, html {
     document.getElementById("password").style.display = "block";
     document.getElementById("valider").style.display = "none";
     document.getElementById("submit").style.display = "block";
-    var ifr = document.getElementById("my_iframe");
-    var dom = ifr.contentWindow;
-    var ifrtest = ifr.contentDocument;
-	console.log("Click me");
 }	  
 	  
    console.log(window.my_amount);
@@ -131,7 +127,7 @@ body, html {
     document.getElementById("price").innerHTML ="Price : " + total;
     }
 
-    function postTry(){
+    function postPaylibForm(){
 	/*var today = new Date();
 	var year = today.getFullYear();
 	var month = today.getMonth() + 1;
@@ -175,14 +171,13 @@ body, html {
 		number: "1000000,00",
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "108951477535166",
+		idRequest: "15785466406410051",
 		idRequestor: "12345678",
 		returnURL: "https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/Callback",
 		internalContext: "PSP-AtoS",
 		oppotota: "OY",
-		autor: "00"
-		    
-	    }
+		autor: "00"    
+	    };
 	post("https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/index.msereqform", params)
 		}
 	  
