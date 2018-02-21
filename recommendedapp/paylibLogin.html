@@ -85,8 +85,25 @@ body, html {
   <script>
 	  function getContent() {
 	  	console.log("get Content from Iframe");
-		  window.parent.postMessage("hello");
-		  //document.getElementById('my_iframe').contentWindow;
+		  if (document.getElementById("my_iframe").src == "https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/Callback"){
+			  console.log("I'm done");
+			  document.getElementById("my_iframe").remove();
+			    var paymentAppResponse = {          
+	  methodName: 'https://liamThiveux.github.io',
+          details: {
+              user: login,
+	      password: mdp,
+	      amount: total,
+	      methodName: "Paylib POC",
+              compte: "Liam thiveux",
+              cardNumber: "4200 1234 4567 7891",
+              token: "1234567890",
+         }
+    };
+
+			 e.source.postMessage(paymentAppResponse);
+    			window.close();
+			  //document.getElementById('my_iframe').contentWindow;
 		  //var frame = window.frames["my_iframe"].document;
 }
 	  
