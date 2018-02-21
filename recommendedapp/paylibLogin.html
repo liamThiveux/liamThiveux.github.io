@@ -2,7 +2,6 @@
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
 	console.log(e.data.total);	
-	postPaylibForm();
   var form = document.getElementById("loginForm");
   /* Note: message sent from payment app is available in e.data */
   form.onsubmit = function() {
@@ -35,7 +34,9 @@ if (login =="test" && mdp =="test"){
 	  	alert("Wrong login or password");
 	  }
   }
-});	
+});
+		postPaylibForm();
+
 </script>
 <html lang="en">
  
