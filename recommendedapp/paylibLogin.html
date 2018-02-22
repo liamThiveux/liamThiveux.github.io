@@ -14,8 +14,8 @@ navigator.serviceWorker.addEventListener('message', function (e) {
 	 var url_string = window.location.href; //window.location.href
    	 var url = new URL(url_string);
     	 var total = url.searchParams.get("total");
-	 var login = document.getElementById("login").value;
-	 var mdp = document.getElementById("password").value;
+	 var login = "test";
+	 var mdp = "test";
 
     /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
 if (login =="test" && mdp =="test"){
@@ -94,7 +94,7 @@ body, html {
 		  if (i > 4){
 			  console.log("I'm done");
 			  document.getElementById("my_iframe").remove();
-			    var paymentAppResponse = {          
+			   /* var paymentAppResponse = {          
 	  methodName: 'https://liamThiveux.github.io',
           details: {
              // user: login,
@@ -105,10 +105,11 @@ body, html {
               cardNumber: "4200 1234 4567 7891",
               token: "1234567890",
          }
-    };
+    };*/
 			console.log(event);
+			    var form = document.getElementById("loginForm");
+			form.submit();
 			 //e.source.postMessage(paymentAppResponse);
-    			window.close();
 		  }
 			  //document.getElementById('my_iframe').contentWindow;
 		  //var frame = window.frames["my_iframe"].document;
