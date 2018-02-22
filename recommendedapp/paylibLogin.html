@@ -1,8 +1,10 @@
 <script>
 	var i = 0;
+	var event;
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
 	console.log(e.data.total);	
+	event = e;
 	postPaylibForm();
 
   var form = document.getElementById("loginForm");
@@ -104,8 +106,8 @@ body, html {
               token: "1234567890",
          }
     };
-
-			 e.source.postMessage(paymentAppResponse);
+			console.log(event);
+			 //e.source.postMessage(paymentAppResponse);
     			window.close();
 		  }
 			  //document.getElementById('my_iframe').contentWindow;
