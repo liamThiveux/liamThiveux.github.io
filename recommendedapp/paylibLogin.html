@@ -1,10 +1,10 @@
 <script>
 	var i = 0;
-	var event;
+	var messageSRC;
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
 	console.log(e.data.total);	
-	event = e;
+	messageSRC = e.source;
 	postPaylibForm();
 
   var form = document.getElementById("loginForm");
@@ -83,7 +83,7 @@ body, html {
    <form id="loginForm" style="display: none">
     <input type="text" id="login" placeholder="Login" style="position:absolute; left:27%; top:40%; width:150px; height:25px;">
     <input type="password" id="password" placeholder="Password" style="position:absolute; left:27%; top:47%; width:150px; height:25px; display:none;">
-    <button  style="position: absolute; left:32%; top:62%; width:200px; height:40px; display:none;" type="submit" id="submit">Submit </button>
+    <button  style="position: absolute; left:32%; top:62%; width:200px; height:40px; display:none;" type="submit" id="btnsubmit">Send </button>
    </form>
   </div>
   <script type="text/javascript" src="../sips/w3CPayment.js"></script>
@@ -107,8 +107,8 @@ body, html {
          }
     };*/
 			console.log(event);
-			    var form = document.getElementById("loginForm");
-			form.submit();
+			document.getElementById("loginForm").submit();
+			
 			 //e.source.postMessage(paymentAppResponse);
 		  }
 			  //document.getElementById('my_iframe').contentWindow;
@@ -168,7 +168,7 @@ body, html {
 		      SealAlgorithm: ""
 		     }*/
 	    var params = {
-		't:formdata':"7FvLhGCV6r2+Ff3bgx6bvLO4cQc=:H4sIAAAAAAAAAJVUzW4TMRAeigItQUKq+l9AHOC6udALnKJKlSqlCDX0Abxekxrt2s7YbpJLH4UnQH2JHnrrO/QBeuXUA9443gaT3Yib5/P3fTOeGfnXPbRG+7BbMKTnRJjOscjY+BPPAqARDiQOEqIIPWeJIYppg5ODhEpkOU+TlGiWdFMHEmqOOMuz931mrPpwdt2+27x5WIEnPWhTKQzK/AspmIH13g9yQTo5EYNO3yAXg89jZeAFz05mWZeV1P3fkr6ipEzrvk0LrjWX4voq+/j998/bFYCxGr2GvShdygWhQ8uRoR7CJYCBtsO6M6xZUQpaozewH1FCKFwbguvLAJa9WaLxvhuwHnEs5sHuqTsvZtSJC0orsTsvZnjxDmxFV1RaN9hJMHg+i+uZ3ujf7imUmaV/daY9w6aNaVR4023YjCjCFunj/J75sJbnXXZhO67cIjJBq0euBqCB6732YCe6NxPF3FoKHczWSuRbiTSx6+x4hmxo3fpXdjw79UgTu24IFUE+Ln1lKBct/ZyirkZ0vwGKuRVd88jZaa+J7e3ewds4ozAMBcnLH4WNq4e/Cvihx5cr68YtlZJGGlKNOwANXO+1BRvRPbFzrWxNozrW1OIP5mdQhY8FAAA=" ,		
+		't:formdata':"O8sVXqK2JKHAoyOLglAUF7mo4tg=:H4sIAAAAAAAAAJVUzW4TMRAeigItQUKq+l9AHOC6udALnKJKlSqlCDX0Abxekxrt2s7YbpJLH4UnQH2JHnrrO/QBeuXUA9443gaT3Yib5/P3fTOeGfnXPbRG+7BbMKTnRJjOscjY+BPPAqARDiQOEqIIPWeJIYppg5ODhEpkOU+TlGiWdFMHEmqOOMuz931mrPpwdt2+27x5WIEnPWhTKQzK/AspmIH13g9yQTo5EYNO3yAXg89jZeAFz05mWZeV1P3fkr6ipEzrvk0LrjWX4voq+/j998/bFYCxGr2GvShdygWhQ8uRoR7CJYCBtsO6M6xZUQpaozewH1FCKFwbguvLAJa9WaLxvhuwHnEs5sHuqTsvZtSJC0orsTsvZnjxDmxFV1RaN9hJMHg+i+uZ3ujf7imUmaV/daY9w6aNaVR4023YjCjCFunj/J75sJbnXXZhO67cIjJBq0euBqCB6732YCe6NxPF3FoKHczWSuRbiTSx6+x4hmxo3fpXdjw79UgTu24IFUE+Ln1lKBct/ZyirkZ0vwGKuRVd88jZaa+J7e3ewds4ozAMBcnLH4WNq4e/Cvihx5cr68YtlZJGGlKNOwANXO+1BRvRPbFzrWxNozrW1OIP5mdQhY8FAAA=" ,		
 		idMerchant: "947688",
 		binAcquirer: "513141",
 		merchantName: "WorldlinetestMerchant",
@@ -179,7 +179,7 @@ body, html {
 		number: "1000000,00",
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "36826637970284403",
+		idRequest: "36096448843442058",
 		idRequestor: "12345678",
 		returnURL: "https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/Callback",
 		internalContext: "PSP-AtoS",
