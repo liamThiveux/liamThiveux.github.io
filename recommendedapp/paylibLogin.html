@@ -95,7 +95,7 @@ body, html {
   animation: spin 2s linear infinite;
   display: none;
 }
-
+	  </style>
 	  <div id="loader" class="loader" ></div>
   </div>
   <script type="text/javascript" src="../sips/w3CPayment.js"></script>
@@ -176,10 +176,10 @@ body, html {
     if (s < 10) {
         s = "0" + s
     }
-	i= year + month + day + h + m + s;*/
-	    //var data = "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference=1519139063723|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler";
-	    //var seal = "a316fd5008eda4c69c2c87f68b0c0aac1a0ef5c7b72a2d3e6e373a608899e4f7";
-	/*var params = {Data: data,
+	i= year + month + day + h + m + s;
+	    // var data = "automaticResponseURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmationCNRT/targetPaymentConfirmationAutoCNRT.jsp|normalReturnURL=https://sims.ibt-agile.qlf.sips.priv.atos.fr/webservices/PaymentConfirmation/PaymentConfirmation.jsp|merchantId=233118849141631|amount=1000|currencyCode=978|transactionReference=1519139063723|keyVersion=1|transactionOrigin=SIMS|automaticErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsAutomaticErrorInitResponseHandler|manualErrorResponseInitPOST=https://sims.ibt-agile.qlf.sips.priv.atos.fr/SipsManualResponseHandler";
+	    // var seal = "a316fd5008eda4c69c2c87f68b0c0aac1a0ef5c7b72a2d3e6e373a608899e4f7";
+	var params = {Data: data,
 		      Encode: "",
 		      Seal: seal,
 		      InterfaceVersion: "HP_2.20", 
@@ -197,7 +197,7 @@ body, html {
 		number: "1000000,00",
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "362779719472134",
+		idRequest: "4978109240685978",
 		idRequestor: "12345678",
 		returnURL: "https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/Callback",
 		internalContext: "PSP-AtoS",
