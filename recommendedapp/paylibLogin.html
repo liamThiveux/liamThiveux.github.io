@@ -91,6 +91,10 @@ body, html {
 	  function getContent(){
 		  i = i + 1;
 	  	console.log("get Content from Iframe");
+		  if (i==3){
+		  	var iframe = document.getElementById("my_iframe");
+			  iframe.style.visibility = "hidden";
+		  }
 		  if (i > 4){
 			  console.log("I'm done");
 			  document.getElementById("my_iframe").remove();
@@ -179,7 +183,7 @@ body, html {
 		number: "1000000,00",
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "930682273515816",
+		idRequest: "386989203712434",
 		idRequestor: "12345678",
 		returnURL: "https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/Callback",
 		internalContext: "PSP-AtoS",
