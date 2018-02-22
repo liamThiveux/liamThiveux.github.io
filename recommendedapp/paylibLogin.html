@@ -85,6 +85,18 @@ body, html {
     <input type="password" id="password" placeholder="Password" style="position:absolute; left:27%; top:47%; width:150px; height:25px; display:none;">
     <button  style="position: absolute; left:32%; top:62%; width:200px; height:40px; display:none;" type="submit" id="btnsubmit">Send </button>
    </form>
+	  <style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  display: none;
+}
+
+	  <div id="loader" class="loader" ></div>
   </div>
   <script type="text/javascript" src="../sips/w3CPayment.js"></script>
   <script>
@@ -92,7 +104,8 @@ body, html {
 		  i = i + 1;
 	  	console.log("get Content from Iframe");
 		  if (i==3){
-		  	var iframe = document.getElementById("my_iframe");
+			  document.getElementById("loader").style.display = "block";
+		  	  var iframe = document.getElementById("my_iframe");
 			  iframe.style.visibility = "hidden";
 		  }
 		  if (i > 4){
@@ -172,7 +185,7 @@ body, html {
 		      SealAlgorithm: ""
 		     }*/
 	    var params = {
-		't:formdata':"O8sVXqK2JKHAoyOLglAUF7mo4tg=:H4sIAAAAAAAAAJVUzW4TMRAeigItQUKq+l9AHOC6udALnKJKlSqlCDX0Abxekxrt2s7YbpJLH4UnQH2JHnrrO/QBeuXUA9443gaT3Yib5/P3fTOeGfnXPbRG+7BbMKTnRJjOscjY+BPPAqARDiQOEqIIPWeJIYppg5ODhEpkOU+TlGiWdFMHEmqOOMuz931mrPpwdt2+27x5WIEnPWhTKQzK/AspmIH13g9yQTo5EYNO3yAXg89jZeAFz05mWZeV1P3fkr6ipEzrvk0LrjWX4voq+/j998/bFYCxGr2GvShdygWhQ8uRoR7CJYCBtsO6M6xZUQpaozewH1FCKFwbguvLAJa9WaLxvhuwHnEs5sHuqTsvZtSJC0orsTsvZnjxDmxFV1RaN9hJMHg+i+uZ3ujf7imUmaV/daY9w6aNaVR4023YjCjCFunj/J75sJbnXXZhO67cIjJBq0euBqCB6732YCe6NxPF3FoKHczWSuRbiTSx6+x4hmxo3fpXdjw79UgTu24IFUE+Ln1lKBct/ZyirkZ0vwGKuRVd88jZaa+J7e3ewds4ozAMBcnLH4WNq4e/Cvihx5cr68YtlZJGGlKNOwANXO+1BRvRPbFzrWxNozrW1OIP5mdQhY8FAAA=" ,		
+		't:formdata':"7FvLhGCV6r2+Ff3bgx6bvLO4cQc=:H4sIAAAAAAAAAJVUzW4TMRAeigItQUKq+l9AHOC6udALnKJKlSqlCDX0Abxekxrt2s7YbpJLH4UnQH2JHnrrO/QBeuXUA9443gaT3Yib5/P3fTOeGfnXPbRG+7BbMKTnRJjOscjY+BPPAqARDiQOEqIIPWeJIYppg5ODhEpkOU+TlGiWdFMHEmqOOMuz931mrPpwdt2+27x5WIEnPWhTKQzK/AspmIH13g9yQTo5EYNO3yAXg89jZeAFz05mWZeV1P3fkr6ipEzrvk0LrjWX4voq+/j998/bFYCxGr2GvShdygWhQ8uRoR7CJYCBtsO6M6xZUQpaozewH1FCKFwbguvLAJa9WaLxvhuwHnEs5sHuqTsvZtSJC0orsTsvZnjxDmxFV1RaN9hJMHg+i+uZ3ujf7imUmaV/daY9w6aNaVR4023YjCjCFunj/J75sJbnXXZhO67cIjJBq0euBqCB6732YCe6NxPF3FoKHczWSuRbiTSx6+x4hmxo3fpXdjw79UgTu24IFUE+Ln1lKBct/ZyirkZ0vwGKuRVd88jZaa+J7e3ewds4ozAMBcnLH4WNq4e/Cvihx5cr68YtlZJGGlKNOwANXO+1BRvRPbFzrWxNozrW1OIP5mdQhY8FAAA=" ,		
 		idMerchant: "947688",
 		binAcquirer: "513141",
 		merchantName: "WorldlinetestMerchant",
@@ -183,7 +196,7 @@ body, html {
 		number: "1000000,00",
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "386989203712434",
+		idRequest: "362779719472134",
 		idRequestor: "12345678",
 		returnURL: "https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/Callback",
 		internalContext: "PSP-AtoS",
