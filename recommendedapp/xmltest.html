@@ -1,0 +1,21 @@
+<html>
+  <head>
+  
+  </head>
+  
+  <body>
+  
+    <script>
+      const req = new XMLHttpRequest();
+      req.open('GET', 'https://ssl-liv-paycore.ewallet.aw.atos.net/interbank-pay-core/payment/intent.do?execution=e19s2&n=1738924591', false); 
+      req.send(null);
+
+      if (req.status === 200) {
+         console.log("Réponse reçue: %s", req.responseText);
+      } else {
+        console.log("Status de la réponse: %d (%s)", req.status, req.statusText);
+    </script>
+    
+  </boby>
+  
+</html>
