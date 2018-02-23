@@ -1,6 +1,11 @@
 <script>
 	var i = 0;
 	var messageSRC;
+	window.addEventListenter('message', function(e) {
+		console.log("waaaahou");
+		console.log(e.data);
+	}
+	
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
 	console.log(e.data.total);	
