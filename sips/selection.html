@@ -147,6 +147,7 @@ window.setTimeout(function() {
     var form = document.createElement("form");
     var element1 = document.createElement("input"); 
     var element2 = document.createElement("input");  
+    var element3 = document.createElement("input");
 
     form.method = "POST";
     form.action = "http://localhost/POCw3c/sips/receipt.php";   
@@ -160,6 +161,11 @@ window.setTimeout(function() {
     element2.value=payMean;
     element2.name="payMean";
     form.appendChild(element2);
+	
+    element3.type="hidden";
+    element3.value=tId;
+    element3.name="tId";
+    form.appendChild(element3);
 
     document.body.appendChild(form);
 
