@@ -99,11 +99,10 @@ body, html {
 	  function getContent(){
 		  i = i + 1;
 	  	console.log("get Content from Iframe");
-		 /* if (i==3){
-			  document.getElementById("loader").style.display = "block";
+		  if (i==2){
 		  	  var iframe = document.getElementById("my_iframe");
 			  iframe.style.visibility = "hidden";
-		  }*/
+		  }
 		  if (i > 4){
 			  console.log("I'm done");
 			  document.getElementById("my_iframe").remove();
@@ -122,10 +121,10 @@ body, html {
               token: "1234567890",
          }
     };
-			var xhr = new XMLHttpRequest();
+			/*var xhr = new XMLHttpRequest();
 			xhr.open("POST", "http://localhost/POCw3C/sips/receipt.php", true);
 			xhr.setRequestHeader('Content-Type', 'application/json');
-			xhr.send("test=Im mr Meeseeks, look at meee");
+			xhr.send("test=hello");*/
 			//document.getElementById("loginForm").submit();
 			messageSRC.postMessage(paymentAppResponse);
     			window.close();
@@ -198,7 +197,7 @@ body, html {
 		number: "1000000,00",
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "5396993843014663",
+		idRequest: "17102862939785180",
 		idRequestor: "12345678",
 		returnURL: "https://localhost/test.php",
 		internalContext: "PSP-AtoS",
