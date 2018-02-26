@@ -122,6 +122,13 @@ body, html {
               token: "1234567890",
          }
     };
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "https://localhost/POCw3C/sips/receipt.php", true);
+			xhr.setRequestHeader('Content-Type', 'application/json');
+			xhr.send(JSON.stringify({
+   			 MSERes: testMSERes,
+			 internalContext: 'PSP-Atos'
+			}));
 			//document.getElementById("loginForm").submit();
 			messageSRC.postMessage(paymentAppResponse);
     			window.close();
