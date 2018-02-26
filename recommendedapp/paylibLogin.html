@@ -3,10 +3,10 @@
 	var messageSRC;
 	var dataFromIframe;
 	
-/*window.addEventListener('message',function(event) {
+window.addEventListener('message',function(event) {
 	console.log('got message from iframe:', event.data);
 	dataFromIframe= event.data;
-});*/
+});
 	
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
@@ -107,7 +107,7 @@ body, html {
 		  if (i > 4){
 			  console.log("I'm done");
 			  document.getElementById("my_iframe").remove();
-			  //var testMSERes = dataFromIframe;
+			  var testMSERes = dataFromIframe;
 			    var paymentAppResponse = {          
 	  methodName: 'https://liamThiveux.github.io',
           details: {
@@ -192,7 +192,7 @@ body, html {
 		number: "1000000,00",
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "9336127125513318",
+		idRequest: "782359165496172",
 		idRequestor: "12345678",
 		returnURL: "https://localhost/test.php",
 		internalContext: "PSP-AtoS",
