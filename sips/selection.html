@@ -142,10 +142,32 @@ function nextPage(payMethod,payMean) {
 	div2.style.display='inline';
 	div1.style.display='inline';
 window.setTimeout(function() {
-		window.location.href = 'http://localhost/POCw3c/sips/receipt.php?tId='+tId+'&payMethod='+payMethod+'&payMean='+payMean+'';
-	}, 1000);
+		//window.location.href = 'http://localhost/POCw3c/sips/receipt.php?tId='+tId+'&payMethod='+payMethod+'&payMean='+payMean+'';
+	
+    var form = document.createElement("form");
+    var element1 = document.createElement("input"); 
+    var element2 = document.createElement("input");  
 
+    form.method = "POST";
+    form.action = "http://localhost/POCw3c/sips/receipt.php";   
+
+    element1.type="hidden";
+    element1.value=payMethod;
+    element1.name="payMethod";
+    form.appendChild(element1);  
+
+    element2.type="hidden";
+    element2.value=payMean;
+    element2.name="payMean";
+    form.appendChild(element2);
+
+    document.body.appendChild(form);
+
+    form.submit();
+}, 1000);
+	
 }
+	
 var mList = document.getElementById("methodList");
 if (window.PaymentRequest) {
 	var url = new URL(window.location.href);
