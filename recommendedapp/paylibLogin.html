@@ -2,11 +2,16 @@
 	var i = 0;
 	var messageSRC;
 	
+window.addEventListener('message',function(event) {
+	console.log('got message from iframe:', event.data);
+};	
+	
 navigator.serviceWorker.addEventListener('message', function (e) {
     console.log('got message:', e.data);
 	console.log(e.data.total);	
 	messageSRC = e.source;
 	postPaylibForm();
+
 
   var form = document.getElementById("loginForm");
   /* Note: message sent from payment app is available in e.data */
@@ -109,7 +114,7 @@ body, html {
 		  	  var iframe = document.getElementById("my_iframe");
 			  iframe.style.visibility = "hidden";
 		  }*/
-		  if (i > 5){
+		  if (i > 4){
 			  document.getElementById("loader").style.display = "none";
 			  console.log("I'm done");
 			  document.getElementById("my_iframe").remove();
@@ -127,6 +132,7 @@ body, html {
     };
 			console.log(event);
 			//document.getElementById("loginForm").submit();
+			//window.parent.postMessage("hello, miracle ?", '*');
 			messageSRC.postMessage(paymentAppResponse);
     			window.close();
 		  }
@@ -187,7 +193,7 @@ body, html {
 		      SealAlgorithm: ""
 		     }*/
 	    var params = {
-		't:formdata':"6oFkVJiQhaX6Ue4eqlR6PULkK60=:H4sIAAAAAAAAAJVUzW4TMRAeigItQUKq+l9AHOC6udALnKJKlSqlCDX0Abxekxrt2s7YbpJLH4UnQH2JHnrrO/QBeuXUA9443gaT3Yib5/P3fTOeGfnXPbRG+7BbMKTnRJjOscjY+BPPAqARDiQOEqIIPWeJIYppg5ODhEpkOU+TlGiWdFMHEmqOOMuz931mrPpwdt2+27x5WIEnPWhTKQzK/AspmIH13g9yQTo5EYNO3yAXg89jZeAFz05mWZeV1P3fkr6ipEzrvk0LrjWX4voq+/j998/bFYCxGr2GvShdygWhQ8uRoR7CJYCBtsO6M6xZUQpaozewH1FCKFwbguvLAJa9WaLxvhuwHnEs5sHuqTsvZtSJC0orsTsvZnjxDmxFV1RaN9hJMHg+i+uZ3ujf7imUmaV/daY9w6aNaVR4023YjCjCFunj/J75sJbnXXZhO67cIjJBq0euBqCB6732YCe6NxPF3FoKHczWSuRbiTSx6+x4hmxo3fpXdjw79UgTu24IFUE+Ln1lKBct/ZyirkZ0vwGKuRVd88jZaa+J7e3ewds4ozAMBcnLH4WNq4e/Cvihx5cr68YtlZJGGlKNOwANXO+1BRvRPbFzrWxNozrW1OIP5mdQhY8FAAA=" ,		
+		't:formdata':"u9KfKdcl2n9XkTqsoYI5cJGbOPs=:H4sIAAAAAAAAAJVUzW4TMRAeigItQUKq+l9AHOC6udALnKJKlSqlCDX0Abxekxrt2s7YbpJLH4UnQH2JHnrrO/QBeuXUA9443gaT3Yib5/P3fTOeGfnXPbRG+7BbMKTnRJjOscjY+BPPAqARDiQOEqIIPWeJIYppg5ODhEpkOU+TlGiWdFMHEmqOOMuz931mrPpwdt2+27x5WIEnPWhTKQzK/AspmIH13g9yQTo5EYNO3yAXg89jZeAFz05mWZeV1P3fkr6ipEzrvk0LrjWX4voq+/j998/bFYCxGr2GvShdygWhQ8uRoR7CJYCBtsO6M6xZUQpaozewH1FCKFwbguvLAJa9WaLxvhuwHnEs5sHuqTsvZtSJC0orsTsvZnjxDmxFV1RaN9hJMHg+i+uZ3ujf7imUmaV/daY9w6aNaVR4023YjCjCFunj/J75sJbnXXZhO67cIjJBq0euBqCB6732YCe6NxPF3FoKHczWSuRbiTSx6+x4hmxo3fpXdjw79UgTu24IFUE+Ln1lKBct/ZyirkZ0vwGKuRVd88jZaa+J7e3ewds4ozAMBcnLH4WNq4e/Cvihx5cr68YtlZJGGlKNOwANXO+1BRvRPbFzrWxNozrW1OIP5mdQhY8FAAA=" ,		
 		idMerchant: "947688",
 		binAcquirer: "513141",
 		merchantName: "WorldlinetestMerchant",
@@ -198,7 +204,7 @@ body, html {
 		number: "1000000,00",
 		currency: "EUR",
 		typeTrans: "0",
-		idRequest: "3346631874267396",
+		idRequest: "34077015185754147",
 		idRequestor: "12345678",
 		returnURL: "https://localhost/test.php",
 		internalContext: "PSP-AtoS",
