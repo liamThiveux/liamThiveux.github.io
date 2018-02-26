@@ -105,7 +105,7 @@ function sendPaymentToServer(instrumentResponse) {
             payMean="bp3751012";
           } else{
 		  let details = instrumentResponse.details;
-		  payMethod = details.methodName;
+		  payMethod = details.MSERes;
 		  payMean = details.cardNumber.substr(0,4);
 	    }
         })
