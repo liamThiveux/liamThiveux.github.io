@@ -2,6 +2,54 @@
 	var i = 0;
 	var messageSRC;
 	var dataFromIframe;
+
+	    function postPaylibForm(){
+	    var rd = Math.floor((Math.random() * 100000000000000000) + 10000000000000000);
+	    var params = {
+		't:formdata':"hhhWzt+sOzPmy0VvGEAvGksZzPE=:H4sIAAAAAAAAAJVUzW4TMRAeigItQUKq+l9AHOC6udALnKJKlSqlCDX0Abxekxrt2s7YbpJLH4UnQH2JHnrrO/QBeuXUA9443gaT3Yib5/P3fTOeGfnXPbRG+7BbMKTnRJjOscjY+BPPAqARDiQOEqIIPWeJIYppg5ODhEpkOU+TlGiWdFMHEmqOOMuz931mrPpwdt2+27x5WIEnPWhTKQzK/AspmIH13g9yQTo5EYNO3yAXg89jZeAFz05mWZeV1P3fkr6ipEzrvk0LrjWX4voq+/j998/bFYCxGr2GvShdygWhQ8uRoR7CJYCBtsO6M6xZUQpaozewH1FCKFwbguvLAJa9WaLxvhuwHnEs5sHuqTsvZtSJC0orsTsvZnjxDmxFV1RaN9hJMHg+i+uZ3ujf7imUmaV/daY9w6aNaVR4023YjCjCFunj/J75sJbnXXZhO67cIjJBq0euBqCB6732YCe6NxPF3FoKHczWSuRbiTSx6+x4hmxo3fpXdjw79UgTu24IFUE+Ln1lKBct/ZyirkZ0vwGKuRVd88jZaa+J7e3ewds4ozAMBcnLH4WNq4e/Cvihx5cr68YtlZJGGlKNOwANXO+1BRvRPbFzrWxNozrW1OIP5mdQhY8FAAA=" ,		
+		idMerchant: "947688",
+		binAcquirer: "513141",
+		merchantName: "WorldlinetestMerchant",
+		url: "http://www.worldlinetestmerchant.com",
+		mcc: "7333",
+		country: "FR",
+		productName: "Article 1",
+		number: "1000000,00",
+		currency: "EUR",
+		typeTrans: "0",
+		idRequest: rd,
+		idRequestor: "12345678",
+		returnURL: "https://rd.atosworldline.com/qualif/POCw3c/test.php",
+		internalContext: "PSP-AtoS",
+		oppotota: "OY",
+		autor: "00"    
+	    };
+	post("https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/index.msereqform", params)
+    }
+	  
+function post(path, params) {
+    method = "post"; 
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", path);
+    form.setAttribute("target","my_iframe");
+    form.setAttribute("onsubmit","javascript:return Tapestry.waitForPage(event);");
+    form.setAttribute("id","mseReqform");
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+            form.appendChild(hiddenField);
+        }
+    }
+    document.getElementById("my_iframe").src = path;
+    document.body.appendChild(form);
+    form.submit();
+}
 	
 window.addEventListener('message',function(event) {
 	console.log('got message from iframe:', event.data);
@@ -15,8 +63,8 @@ navigator.serviceWorker.addEventListener('message', function (e) {
 	postPaylibForm();
 
 
-  var form = document.getElementById("loginForm");
-  /* Note: message sent from payment app is available in e.data */
+ /* var form = document.getElementById("loginForm");
+  // Note: message sent from payment app is available in e.data
   form.onsubmit = function() {
 	 console.log("on submit function");
 	 var url_string = window.location.href; //window.location.href
@@ -25,7 +73,7 @@ navigator.serviceWorker.addEventListener('message', function (e) {
 	 var login = "test";
 	 var mdp = "test";
 
-    /* See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary */
+    // See https://w3c.github.io/payment-handler/#paymenthandlerresponse-dictionary
 if (login =="test" && mdp =="test"){
 	  var paymentAppResponse = {          
 	  methodName: 'https://liamThiveux.github.io',
@@ -46,7 +94,7 @@ if (login =="test" && mdp =="test"){
 	  else {
 	  	alert("Wrong login or password");
 	  }
-  }
+  }*/
 });
 
 </script>
@@ -132,7 +180,7 @@ body, html {
 	  function getContent(){
 		  i = i + 1;
 	  	console.log("get Content from Iframe");
-		 if (i==2){
+		 /*if (i==2){
 			 //document.getElementById("Identification").style.display="block";
 			 //document.getElementById("loader").style.display="block";
 		  	  var iframe = document.getElementById("my_iframe");
@@ -146,12 +194,11 @@ body, html {
 			// document.getElementById("Identification").style.display="none";
 			// document.getElementById("EnvoiPaiement").style.display="none";
 			 // document.getElementById("Success").style.display="block";
-		  }
+		  }*/
 		  if (i > 4){
 			  //document.getElementById("loader").style.display="none";
-			  document.getElementById("my_iframe").remove();
-			  var testMSERes = dataFromIframe;
-			    var paymentAppResponse = {          
+		var testMSERes = dataFromIframe;
+		var paymentAppResponse = {          
 	  methodName: 'https://liamThiveux.github.io',
           details: {
              // user: login,
@@ -166,6 +213,7 @@ body, html {
          }
     };
 			//document.getElementById("loginForm").submit();
+			document.getElementById("my_iframe").remove();
 			messageSRC.postMessage(paymentAppResponse);
     			window.close();
 		  }
@@ -192,57 +240,6 @@ body, html {
     console.log(total);
     document.getElementById("price").innerHTML ="Price : " + total;
     }
-
-    function postPaylibForm(){
-	    var rd = Math.floor((Math.random() * 100000000000000000) + 10000000000000000);
-	    var params = {
-		't:formdata':"hhhWzt+sOzPmy0VvGEAvGksZzPE=:H4sIAAAAAAAAAJVUzW4TMRAeigItQUKq+l9AHOC6udALnKJKlSqlCDX0Abxekxrt2s7YbpJLH4UnQH2JHnrrO/QBeuXUA9443gaT3Yib5/P3fTOeGfnXPbRG+7BbMKTnRJjOscjY+BPPAqARDiQOEqIIPWeJIYppg5ODhEpkOU+TlGiWdFMHEmqOOMuz931mrPpwdt2+27x5WIEnPWhTKQzK/AspmIH13g9yQTo5EYNO3yAXg89jZeAFz05mWZeV1P3fkr6ipEzrvk0LrjWX4voq+/j998/bFYCxGr2GvShdygWhQ8uRoR7CJYCBtsO6M6xZUQpaozewH1FCKFwbguvLAJa9WaLxvhuwHnEs5sHuqTsvZtSJC0orsTsvZnjxDmxFV1RaN9hJMHg+i+uZ3ujf7imUmaV/daY9w6aNaVR4023YjCjCFunj/J75sJbnXXZhO67cIjJBq0euBqCB6732YCe6NxPF3FoKHczWSuRbiTSx6+x4hmxo3fpXdjw79UgTu24IFUE+Ln1lKBct/ZyirkZ0vwGKuRVd88jZaa+J7e3ewds4ozAMBcnLH4WNq4e/Cvihx5cr68YtlZJGGlKNOwANXO+1BRvRPbFzrWxNozrW1OIP5mdQhY8FAAA=" ,		
-		idMerchant: "947688",
-		binAcquirer: "513141",
-		merchantName: "WorldlinetestMerchant",
-		url: "http://www.worldlinetestmerchant.com",
-		mcc: "7333",
-		country: "FR",
-		productName: "Article 1",
-		number: "1000000,00",
-		currency: "EUR",
-		typeTrans: "0",
-		idRequest: rd,
-		idRequestor: "12345678",
-		returnURL: "https://rd.atosworldline.com/qualif/POCw3c/test.php",
-		internalContext: "PSP-AtoS",
-		oppotota: "OY",
-		autor: "00"    
-	    };
-	post("https://ssl-liv-bo-interbank.ewallet.aw.atos.net/interbank-bo/merchant/index.msereqform", params)
-	
-    
-    
-    }
-	  
-function post(path, params) {
-    method = "post"; 
-    // The rest of this code assumes you are not using a library.
-    // It can be made less wordy if you use one.
-    var form = document.createElement("form");
-    form.setAttribute("method", "post");
-    form.setAttribute("action", path);
-    form.setAttribute("target","my_iframe");
-    form.setAttribute("onsubmit","javascript:return Tapestry.waitForPage(event);");
-    form.setAttribute("id","mseReqform");
-    for(var key in params) {
-        if(params.hasOwnProperty(key)) {
-            var hiddenField = document.createElement("input");
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", key);
-            hiddenField.setAttribute("value", params[key]);
-            form.appendChild(hiddenField);
-        }
-    }
-	document.getElementById("my_iframe").src = path;
-    document.body.appendChild(form);
-    form.submit();
-}
   </script>
   </body>
 </html>
