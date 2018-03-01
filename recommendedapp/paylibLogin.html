@@ -156,7 +156,7 @@ body, html {
  <body>
 
 	 
-  <div class="bg">
+<!--  <div class="bg"> -->
 	<!--<div class="loaderText" style="position: absolute; top: 24%; left: 28%;">	 
 	 <p id="Identification" style="display:none;">En cours d'identification</p>
 	 <p id="EnvoiPaiement" style="display:none;">Envoi de la demande de paiement </p>
@@ -167,29 +167,19 @@ body, html {
 	<iframe onload="getContent();" title="my_iframe" id="my_iframe" name="my_iframe" src="" width="100%" height="100%" frameborder="0">
 		<p> Doesn't support </p>
 	</iframe>
-    <p style='position:absolute; top:3px; left:62%;display:none;' id='price'><font color='white' size='6'></font></p>
+    <!--<p style='position:absolute; top:3px; left:62%;display:none;' id='price'><font color='white' size='6'></font></p>
     <button style="position: absolute; left:32%; top:62%; width:200px; height:40px;display:none;" id="valider" onclick="clickMe()">Valider </button>
-   <form id="loginForm" style="display: none">
+    <form id="loginForm" style="display: none">
     <input type="text" id="login" placeholder="Login" style="position:absolute; left:27%; top:40%; width:150px; height:25px;">
     <input type="password" id="password" placeholder="Password" style="position:absolute; left:27%; top:47%; width:150px; height:25px; display:none;">
     <button  style="position: absolute; left:32%; top:62%; width:200px; height:40px; display:none;" type="submit" id="btnsubmit">Send </button>
-   </form>
-  </div>
+   </form> -->
+ <!-- </div> -->
   <script type="text/javascript" src="../sips/w3CPayment.js"></script>
   <script>
 	  function getContent(){
 		  i = i + 1;
 	  	console.log("get Content from Iframe");
-		 /*if (i==2){
-			 //document.getElementById("Identification").style.display="block";
-			 //document.getElementById("loader").style.display="block";
-		  	  var iframe = document.getElementById("my_iframe");
-			  //iframe.style.visibility = "hidden";
-		  }
-		   if (i==3){
-			// document.getElementById("Identification").style.display="none";
-			// document.getElementById("EnvoiPaiement").style.display="block";
-		  }*/
 		  if (i==4){
 			  i = i+1;
 			// document.getElementById("Identification").style.display="none";
@@ -202,8 +192,6 @@ body, html {
 		var paymentAppResponse = {          
 	  methodName: 'https://liamThiveux.github.io',
           details: {
-             // user: login,
-	     // password: mdp,
 	      MSERes: testMSERes,
 	      internalContext: "PSP-Atos",
 	      amount: "1000000,00",
