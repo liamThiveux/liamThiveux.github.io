@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Shopping Cart</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/custom.css"/>		
+
+<script>	
+
+
+(function(d, s, id){
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'Messenger'));
+</script> 
+
+	</head>
+
+	<body>
+		
+		<nav class="navbar">
+			<div class="container">
+				<a class="navbar-brand" href="#" id="vendor-name">Your online store</a>
+				<div class="navbar-right">
+					<div class="container minicart"></div>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container-fluid breadcrumbBox text-center">
+			<ol class="breadcrumb">
+				<li><a href="#">Review</a></li>
+				<li><a href="#">Order</a></li>
+				<li class="active"><a href="#">Payment</a></li>
+			</ol>
+		</div>
+		
+		<div class="container text-center">
+
+			<!--div class="col-md-5 col-sm-12">
+				<div class="bigcart"></div>
+			</div-->
+			
+			<div class="col-md-7 col-sm-12 text-left">
+				<ul>
+					<li class="row list-inline columnCaptions">
+						<span>QTY</span>
+						<span>ITEM</span>
+						<span>Price</span>
+					</li>
+					<li class="row">
+						<span class="quantity">1</span>
+						<span class="itemName" id="itemLabel">Beverage</span>
+						<span class="popbtn"><a class="arrow"></a></span>
+						<span class="price"></span>
+					</li>
+					
+					<li class="row totals">
+						<span class="itemName">Total:</span>
+						<span class="price" id="total"></span>
+						<span class="order"> Pay with <a  class="text-center" id="c4p-btn" onclick="myFunc();">Payment Request</a></span>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<!-- The popover content -->
+
+		<div id="popover" style="display: none">
+			<a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+			<a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+		</div>
+		
+		<!-- JavaScript includes -->
+
+		<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> 
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/w3c_customjs.js"></script>
+		<script src="assets/js/w3cPayment.js"></script>
+
+	</body>
+<script>
+/*function myFunc(){
+let methodData = [{
+  supportedMethods: ['fb'], //only 'fb' is supported
+  data: {
+    merchantTitle: 'LiamThiveux', // optional, defaults to the Facebook Page name
+    merchantImageUrl: 'imageURL', //optional, defaults to the app icon
+    confirmationText: 'Thank you!', // optional, defaults to "Thank you for your payment"
+    merchantFBPageId: 'Merchant Page ID', // page id with onboarded payment method. Need to be the same with the page id in thread or messenger extension
+    termsUrl: 'https://liamThiveux.github.io' // Merchant payment privacy terms and conditions.
+  }
+}];
+
+let paymentDetails = displayItems: [ /r
+    {
+      label: 'T-shirt',
+      amount: {
+        currency: 'USD',
+        value : '15.00'
+      }
+    },
+  ],
+  total: {
+    label: 'Total', // defaults to "Total"
+    amount: { 
+      currency: 'USD', 
+      value : '16.23' 
+    }
+  },
+  shippingOptions: [ // Optional. Array of options for user to select
+    {
+      id: 'free-shipping', // custom ID
+      label: 'Free shipping in US', //human-readable name
+      amount: {currency: 'USD', value: '0.00'},
+      selected: true
+    },
+  ]
+};
+
+let additionalOptions = {
+  requestShipping: true, // If shipping is required. If true, handle shippingoptionchange and shippingaddresschange events.
+  requestPayerName: false, // Name of the payer sent with the final response
+  requestPayerEmail: false, // Email address, same as above
+  requestPayerPhone: false // Phone number, same as above
+};
+
+let request = new MessengerExtensions.PaymentRequest(
+  methodData, // array of payment methods and their setup
+  paymentDetails, // array of items, total, shipping options
+  additionalOptions, // request shipping information, payee email address, etc
+);
+
+request.show();
+};*/
+
+function closeWebView() {
+	MessengerExtensions.requestCloseBrowser(function success() {
+
+	}, function error(err) {
+
+	});
+}
+var openedWindow;
+
+function myFunc(){
+	//closeWebView();
+	var test = getParameterByName("PR");
+		var networks = ["visa","mastercard"]; 
+	var amount = getParameterByName('amount');
+	if (!amount) {
+		amount = "0";
+	}
+	if (!test) {
+		var newWindow = window.open(window.location.href + "&PR=true");
+	}
+	else {
+	var request = initPaymentRequest(networks,amount);
+	onBuyClicked(request, window);
+	}
+};
+
+
+  window.extAsyncInit = function() {
+
+    var isSupported = MessengerExtensions.isInExtension();   
+    
+    if ( isSupported ) {
+      $('#backLinkFB').html('<a href="#" onclick="closeWebView();">Return to the conversation</a>.');
+    } else {
+      $('#backLinkFB').html('<a href="http://m.me/922087841226659">Return to the conversation</a>.');
+    }
+
+  };
+function nextPage(payMethod,payMean) {
+closeWebView();
+/*
+	var div1 = document.getElementById("onClickMessage");
+	var div2 = document.getElementById("onClickOverlay");
+	div2.style.display='inline';
+	div1.style.display='inline';
+window.setTimeout(function() {
+		window.location.href = './receipt.php?tId='+tId+'&payMethod='+payMethod+'&payMean='+payMean+'';
+	}, 1000);
+*/
+}
+</script>
+
+
+</html>
