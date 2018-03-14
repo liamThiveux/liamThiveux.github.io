@@ -30,9 +30,9 @@ function initPaymentRequest(networks) {
 	  	}
 	},
 	  {
-	  	supportedMethods: 'https://thiveuxLiam.github.io',
+	  	supportedMethods: 'https://rd.atosworldline.com/qualif/POCw3c',
 		data : {
-			merchantIdentifier: "Thiveux",
+			merchantIdentifier: "Paylib one click",
 			bobPaySpecificField: true
 		}
 	  }
