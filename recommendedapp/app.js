@@ -1,4 +1,5 @@
 var cardnumber;
+var bilyap;
  var uliam = "THIVEUX";
  function editapp(edcard){
   cardnumber = edcard;
@@ -39,8 +40,12 @@ var cardnumber;
  
      //window.open("https://paiement.paylib.fr/interbank-pay-core/payment/register.do?execution=e2s1&n=1841686735"); //OpenWindow ouvre une url du meme url que le script
      console.log(e.total.value);
+     console.log("bilyap value" + bilyap);
      //e.open("https://liamThiveux.github.io/recommendedapp/testpage");
      e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin?total="+e.total.value).then(function(windowClient) {
+      bilyap = true;
+      console.log("bilyap value apres true" + bilyap);
+
    //e.openWindow("https://rsolomakhin.github.io/pr/bob/").then(function(windowClient) {
    windowClient.postMessage({data:e.methodData[0].data, total: e.total.value});
      })
