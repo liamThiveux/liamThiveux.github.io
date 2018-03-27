@@ -21,7 +21,7 @@ navigator.serviceWorker.addEventListener('message', function (e) {
   
   function payer() {
      var cvc = document.getElementById("cvc").value; 
-     if (cvc && cvc.lenght==3) {
+     if (cvc && cvc.length==3) {
         		var paymentAppResponse = {          
 	  methodName: 'https://liamThiveux.github.io',
           details: {
