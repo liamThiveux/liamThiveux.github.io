@@ -76,6 +76,13 @@ request.addEventListener('shippingaddresschange', (event) => {
   console.log(paymentRequest.shippingAddress);
 
   event.updateWith({
+    total: {
+      label: 'Total',
+      amount: {
+        currency: 'EUR',
+        value: '23,20',
+      },
+    },
     shippingOptions: [
       {
         id: 'economy',
