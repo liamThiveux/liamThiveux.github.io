@@ -54,8 +54,10 @@ function initPaymentRequest(networks) {
       },
     ],
   };
-
-  return new PaymentRequest(supportedInstruments, details);
+const options = {
+  requestShipping: true,
+};
+  return new PaymentRequest(supportedInstruments, details, options);
 }
 
 /**
