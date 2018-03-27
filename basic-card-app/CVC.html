@@ -2,8 +2,9 @@
 <body>
 <p style="text-align:center"> Saisissez le cryptogramme visuel de votre carte 4970 XXXX XXXX XX90 (CVC) </p>
 <img src="CVC.png" width="50" height="40"> 
-	<input style="text-align:center" pattern={3,3} required type="password" name="cvc" id="cvc" value=""></br>
-	<input style="text-align:center" type="submit" name="payer" id="payer" value="Payer" onclick="payer();">
+	<input pattern=".{3,3}" required title="3 characters minimum">
+	<input style="text-align:center" pattern=".{3,4}" required type="password" name="cvc" id="cvc" value="">
+	<p style=" text-align:center"> <input type="submit" name="payer" id="payer" value="Payer" onclick="payer();"> </p>
 
 <script>
 var messageSRC;
