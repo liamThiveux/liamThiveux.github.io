@@ -68,8 +68,9 @@ const options = {
  */
  var payMethod = "";
  var payMean = "";
+ const request = initPaymentRequest(networks);
 
-paymentRequest.addEventListener('shippingaddresschange', (event) => {
+request.addEventListener('shippingaddresschange', (event) => {
   const paymentRequest = event.target;
   console.log(paymentRequest.shippingAddress);
 
