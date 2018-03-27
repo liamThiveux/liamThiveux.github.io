@@ -38,8 +38,9 @@ else {
 	alert("Veuillez saisir un CVC de 3 chiffres");
 	      }
   }
-	
-document.getElementById("titre").innerHTML = "Saisissez le cryptogramme visuel de votre carte" + cardNumber;
+ document.addEventListener("DOMContentLoaded", function(event) {
+	document.getElementById("titre").innerHTML = "Saisissez le cryptogramme visuel de votre carte" + cardNumber;
+  });
 </script>
 </body>
 </html>
