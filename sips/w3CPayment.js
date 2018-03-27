@@ -71,44 +71,16 @@ const options = {
 
 function onBuyClicked(request) {
 	
-request.addEventListener('shippingaddresschange', (event) => {
-  const paymentRequest = event.target;
-  console.log(paymentRequest.shippingAddress);
-
-  event.updateWith({
-    total: {
-      label: 'Total',
-      amount: {
-        currency: 'EUR',
-        value: '23,20',
-      },
-    },
-    shippingOptions: [
+    request.shippingOptions: [
       {
         id: 'economy',
         label: 'Economy Shipping (5-7 Days)',
         amount: {
           currency: 'EUR',
           value: '0',
-        },
-      }, {
-        id: 'express',
-        label: 'Express Shipping (2-3 Days)',
-        amount: {
-          currency: 'EUR',
-          value: '5',
-        },
-      }, {
-        id: 'next-day',
-        label: 'Next Day Delivery',
-        amount: {
-          currency: 'EUR',
-          value: '12',
-        },
-      },
-    ],
-  });
-});
+        }
+      } 
+    ];
 
   request.show().then(function(instrumentResponse) {
     sendPaymentToServer(instrumentResponse);
