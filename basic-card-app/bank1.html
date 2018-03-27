@@ -1,6 +1,63 @@
-<html>
-<head>
-</head>
-<body>
-</body>
-</html>
+ <html lang="en">
+ 
+ <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Payment Handler for Paylib</title>
+     <link rel="icon" href="/favicon.ico">
+     <link rel="manifest" href="manifest.json">
+
+ </head>
+   <header>
+  <h1>Titre principal</h1>
+  <img src="LCL-header.png" alt="MDN logo">
+</header>
+ <style type="text/css">
+body, html {
+    height: 100%;
+}
+
+.contents {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+  }
+  </style>
+  
+ <body>
+     <div class="contents" id="contents" align="center">
+         <p id="checking"><font color="white">Checking whether the payment handler is installed...</font></p>
+ 
+         <div id="installed" style="display: none;">
+          <p><font color="white">The payment handler is installed. </font><a href="../sips/selection.html">Test it out</a>.</p>
+
+<font color="white">Scope: <code id="scope">N/A</code></font></li>
+<font color="white">Method: <code id="method">N/A</code></font></li>
+
+             <p><button onclick="uninstall();">Uninstall</button> <button onclick="goBack();"> Go back </button></p>
+         </div>
+ 
+         <p id="installing" style="display: none;">Installing...</p>
+ 
+         <p id="uninstalling" style="display: none;">Uninstalling...</p>
+ 
+       <!-- <form action="wallet.html" method="GET">
+         <br><br><br><br>
+         <font color="white"> E-mail : </font><input type="email" id="E-mail" name="E-mail" value="">
+         <font color="white"> Mot de passe: </font><input type="password" name="password" id="password" value=""> <br> 
+        </form>-->
+
+         <div id="not-installed" style="display: none;">
+          <p><font color="white">The payment handler is not installed. </font><a href="../sips/selection.html">Verify</a>.</p>
+             <p><button onclick="testlogin();">Install</button></p>
+         </div>
+ 
+         <pre id="msg"></pre>
+     </div>
+     <script src="install1C.js"></script>
+     <script src="redirect.js"></script>
+</script>
+ </body>
+ 
+ </html>
