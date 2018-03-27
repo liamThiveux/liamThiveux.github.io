@@ -71,7 +71,7 @@ const options = {
 
 function onBuyClicked(request) {
 	
-    request.shippingOptions: [
+    request.shippingOptions= [
       {
         id: 'economy',
         label: 'Economy Shipping (5-7 Days)',
