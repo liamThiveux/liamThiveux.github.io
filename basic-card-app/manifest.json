@@ -1,0 +1,8 @@
+{
+    "name" : "LCL card",
+    "icons": [{
+        "src": "cbicon.jpg",
+        "sizes": "600x600",
+        "type": "image/png"
+    }]
+}
