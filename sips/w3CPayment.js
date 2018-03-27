@@ -76,33 +76,26 @@ request.addEventListener('shippingaddresschange', (event) => {
   console.log(paymentRequest.shippingAddress);
 
   event.updateWith({
-    total: {
-      label: 'Total',
-      amount: {
-        currency: 'USD',
-        value: '0',
-      },
-    },
     shippingOptions: [
       {
         id: 'economy',
         label: 'Economy Shipping (5-7 Days)',
         amount: {
-          currency: 'USD',
+          currency: 'EUR',
           value: '0',
         },
       }, {
         id: 'express',
         label: 'Express Shipping (2-3 Days)',
         amount: {
-          currency: 'USD',
+          currency: 'EUR',
           value: '5',
         },
       }, {
         id: 'next-day',
         label: 'Next Day Delivery',
         amount: {
-          currency: 'USD',
+          currency: 'EUR',
           value: '12',
         },
       },
