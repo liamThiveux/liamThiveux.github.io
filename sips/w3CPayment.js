@@ -30,6 +30,13 @@ function initPaymentRequest(networks) {
 	  	}
 	},
 	  {
+		supportedMethods: 'https://liamThiveux.github.io/basic-card-app',
+	  	data : {
+	  		bank: "LCL",
+	  		cardPan: "4200"
+	  	}
+	},
+	  {
 	  	supportedMethods: 'https://rd.atosworldline.com/qualif/POCw3c',
 		data : {
 			merchantIdentifier: "Paylib one click",
