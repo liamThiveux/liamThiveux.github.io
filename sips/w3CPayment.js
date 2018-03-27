@@ -143,7 +143,7 @@ function sendPaymentToServer(instrumentResponse) {
         .then(function() {
 
           payMethod=instrumentResponse.methodName;
-	  let address=instrumentResponse.shippingAddress
+	  address=instrumentResponse.shippingAddress
           if ( payMethod.search("basic-card") > -1) {
 		  console.log('basic card');
             let details = instrumentResponse.details;
