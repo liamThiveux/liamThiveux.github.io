@@ -54,11 +54,11 @@ function initPaymentRequest(networks) {
       },
     ],
   };
-const options = {
-  requestShipping: true,
-};
+//const options = {
+//  requestShipping: true,
+//};
 	
-  return new PaymentRequest(supportedInstruments, details, options);
+  return new PaymentRequest(supportedInstruments, details);
 }
 
 /**
@@ -70,18 +70,6 @@ const options = {
  var payMean = "";
 
 function onBuyClicked(request) {
-	
-    request.shippingOptions= [
-      {
-        id: 'economy',
-        label: 'Economy Shipping (5-7 Days)',
-        amount: {
-          currency: 'EUR',
-          value: '0',
-        }
-      } 
-    ];
-
   request.show().then(function(instrumentResponse) {
     sendPaymentToServer(instrumentResponse);
 	window.setTimeout(function() {
