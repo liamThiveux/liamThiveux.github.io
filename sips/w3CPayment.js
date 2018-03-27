@@ -91,6 +91,7 @@ request.addEventListener('shippingoptionchange', function(evt) {
  */
  var payMethod = "";
  var payMean = "";
+ var address = ""; 
 
 function updateDetails(details, shippingOption, resolve, reject) {
   if (shippingOption === 'standard') {
