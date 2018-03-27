@@ -1,0 +1,37 @@
+<html>
+<body>
+
+<p style="text-align:center"> Saisissez le cryptogramme visuel de votre carte 4970 XXXX XXXX XX90 (CVC) </p>
+
+<input type="password" name="cvc" id="cvc" value="">
+<input type="submit" name="payer" id="payer" value="Payer" onclick="payer();">
+
+<script>
+var messageSRC;
+
+navigator.serviceWorker.addEventListener('message', function (e) {
+  console.log('got message:', e.data);
+	messageSRC = e.source; 
+	});
+  
+  function payer() {
+     var cvc = document.getElementById("cvc").value; 
+     if (cvc) {
+        		var paymentAppResponse = {          
+	  methodName: 'https://liamThiveux.github.io',
+          details: {
+	      internalContext: "PSP-Atos",
+	      amount: "1000000,00",
+	      methodName: "Paylib POC",
+              compte: "Liam thiveux",
+              cardNumber: "4200 1234 4567 7891",
+              token: "1234567890",
+         }
+    };
+        messageSRC.postMessage(paymentAppResponse);
+        window.close();
+      }
+  }
+</script>
+</body>
+</html>
