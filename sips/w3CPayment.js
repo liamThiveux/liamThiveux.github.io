@@ -96,11 +96,11 @@ function updateDetails(details, shippingOption, resolve, reject) {
   if (shippingOption === 'standard') {
     selectedShippingOption = details.shippingOptions[0];
     otherShippingOption = details.shippingOptions[1];
-    details.total.amount.value = '55.00';
+    details.total.amount.value = '23.20';
   } else if (shippingOption === 'express') {
     selectedShippingOption = details.shippingOptions[1];
     otherShippingOption = details.shippingOptions[0];
-    details.total.amount.value = '67.00';
+    details.total.amount.value = '35.20';
   } else {
     reject('Unknown shipping option \'' + shippingOption + '\'');
     return;
