@@ -12,8 +12,8 @@
          resolve(e.data);
        }
      });
-     e.openWindow("https://liamThiveux.github.io/recommendedapp/paylibLogin?total="+e.total.value).then(function(windowClient) {
-   windowClient.postMessage({data:e.methodData[0].data, total: e.total.value});
+     e.openWindow("https://liamThiveux.github.io/basic-card-app/CVC.html).then(function(windowClient) {
+   windowClient.postMessage({data:e.methodData[0].data});
      })
      .catch(function(err) {
        reject(err);
