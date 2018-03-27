@@ -56,8 +56,8 @@ function initPaymentRequest(networks) {
   };
 const options = {
   requestShipping: true,
-  shippingType = "delivery",
 };
+	
   return new PaymentRequest(supportedInstruments, details, options);
 }
 
