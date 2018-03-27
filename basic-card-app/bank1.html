@@ -37,6 +37,12 @@ body, html {
   </style>
   
  <body>
+  <div class="bg" id="bg">
+   <form action="" method="POST">
+    <p> Identifiant : </p><input type="text" id="login" name="login" value="">
+    <p> Code personnel : </p> <input type="password" id="passwd" name="passwd" value="">
+    <input type="submit" id="submit" name="submit" value="Se Connecter">
+   </form>
      <div class="contents" id="contents" align="center">
          <p id="checking"><font color="white">Checking whether the payment handler is installed...</font></p>
  
@@ -60,6 +66,7 @@ body, html {
  
          <pre id="msg"></pre>
      </div>
+  </div>
      <script src="install-basic-card.js"></script>
      <script src="../redirect.js"></script>
 </script>
