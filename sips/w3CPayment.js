@@ -69,6 +69,45 @@ const options = {
  var payMethod = "";
  var payMean = "";
 
+paymentRequest.addEventListener('shippingaddresschange', (event) => {
+  const paymentRequest = event.target;
+  console.log(paymentRequest.shippingAddress);
+
+  event.updateWith({
+    total: {
+      label: 'Total',
+      amount: {
+        currency: 'USD',
+        value: '0',
+      },
+    },
+    shippingOptions: [
+      {
+        id: 'economy',
+        label: 'Economy Shipping (5-7 Days)',
+        amount: {
+          currency: 'USD',
+          value: '0',
+        },
+      }, {
+        id: 'express',
+        label: 'Express Shipping (2-3 Days)',
+        amount: {
+          currency: 'USD',
+          value: '5',
+        },
+      }, {
+        id: 'next-day',
+        label: 'Next Day Delivery',
+        amount: {
+          currency: 'USD',
+          value: '12',
+        },
+      },
+    ],
+  });
+});
+
 function onBuyClicked(request) {
 
   request.show().then(function(instrumentResponse) {
