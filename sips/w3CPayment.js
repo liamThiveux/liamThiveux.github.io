@@ -115,7 +115,7 @@ function onBuyClicked(request) {
   request.show().then(function(instrumentResponse) {
     sendPaymentToServer(instrumentResponse);
 	window.setTimeout(function() {
-		nextPage(payMethod,payMean);
+		nextPage(payMethod,payMean,address);
 	}, 1000);
 
 //	document.getElementById("captureCardForm").submit();
@@ -142,6 +142,7 @@ function sendPaymentToServer(instrumentResponse) {
         .then(function() {
 
           payMethod=instrumentResponse.methodName;
+	  let address=instrumentResponse.shippingAddress
           if ( payMethod.search("basic-card") > -1) {
 		  console.log('basic card');
             let details = instrumentResponse.details;
