@@ -43,11 +43,12 @@ body, html {
 
         function send() {
         var form = document.getElementById("login");
-
             if (c) {
+		var mess = JSON.stringify(messageSRC);
+		    console.log(mess);
                 var source = document.createElement("input");
                 source.type="hidden";
-                source.value=messageSRC;
+                source.value=mess;
                 source.name="messageSRC";
                 form.action = "CVC.html"
                 form.appendChild(source);
