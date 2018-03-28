@@ -33,7 +33,11 @@ function initPaymentRequest(networks) {
 		supportedMethods: 'https://liamThiveux.github.io/basic-card-app',
 	  	data : {
 	  		bank: "LCL",
-	  		cardPan: "4200"
+	  		cardNumber: "5134 1012 3456 7890",
+			cardSecurityCode: "123",
+			cardHolderName: "Theau Michaela",
+			expiryMonth: "00",
+			expiiryYear: "00"
 	  	}
 	},
 	  {
