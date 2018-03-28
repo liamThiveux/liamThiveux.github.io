@@ -20,7 +20,6 @@ body, html {
         var messageSRC; 
         var cardNumber;
         var expDate;
-  console.log(window.opener);    
   navigator.serviceWorker.addEventListener('message', function (e) {
   console.log('got message:', e.data);
 	messageSRC = e.source; 
@@ -43,7 +42,6 @@ body, html {
     console.log(c);
 
         function send() {
-        console.log("in send");
         var form = document.getElementById("login");
 
             if (c) {
