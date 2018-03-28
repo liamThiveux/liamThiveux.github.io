@@ -22,16 +22,16 @@ navigator.serviceWorker.addEventListener('message', function (e) {
   function payer() {
      var cvc = document.getElementById("cvc").value; 
      if (cvc && cvc.length==3) {
-        		var paymentAppResponse = {          
-	  methodName: 'https://liamThiveux.github.io',
+        var paymentAppResponse = {          
+	  methodName: 'LCL basic-card',
           details: {
-	      internalContext: "PSP-Atos",
-	      amount: "1000000,00",
-	      methodName: "Paylib POC",
-              compte: "Liam thiveux",
-              cardNumber: "4200 1234 4567 7891",
-              token: "1234567890",
-         }
+	      methodName: "LCL basic-card",
+              cardNumber: "5134 1012 3456 7890",
+	      cardSecurityCode: "123",
+	      cardHolderName: "Theau Michaela",
+	      expiryMonth: "00",
+	      expiryYear: "0000"
+	  }
     };
         messageSRC.postMessage(paymentAppResponse);
         window.close();
