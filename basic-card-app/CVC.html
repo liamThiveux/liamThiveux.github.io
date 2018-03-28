@@ -50,19 +50,7 @@ body, html {
 		document.getElementById("divCVC").style.display="block";
 		document.getElementById("bg").style.display="none";
         }
-	
-var messageSRC = "https://liamthiveux.github.io/basic-card-app/basic-card.js";
-var cardNumber;
-var expDate;	
 
-navigator.serviceWorker.addEventListener('message', function (e) {
-  console.log('got message:', e.data);
-	messageSRC = e.source; 
-	cardNumber = e.cardNumber;
-	expDate = e.date;
-	document.getElementById("titre").innerHTML = "Saisissez le cryptogramme visuel de votre carte" + cardNumber;
-
-	});
   
   function payer() {
 	console.log(window.opener);
