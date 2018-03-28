@@ -20,6 +20,7 @@ navigator.serviceWorker.addEventListener('message', function (e) {
 	});
   
   function payer() {
+	console.log(window.opener);
      var cvc = document.getElementById("cvc").value; 
      if (cvc && cvc.length==3) {
         var paymentAppResponse = {          
