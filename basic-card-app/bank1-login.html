@@ -24,6 +24,7 @@ body, html {
    navigator.serviceWorker.addEventListener('message', function (e) {
   console.log('got message:', e.data);
 	messageSRC = e.source; 
+	console.log(messageSRC);
 	});
     </script>
 <body>
