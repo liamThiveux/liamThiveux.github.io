@@ -4,10 +4,6 @@ function testlogin() {
   //}
 }
 
-function goBack(){
-  window.history.back();
-}
-
 function showMessage(message) {
     const messageElement = document.getElementById('msg');
     messageElement.innerHTML = message + '\n' + messageElement.innerHTML;
