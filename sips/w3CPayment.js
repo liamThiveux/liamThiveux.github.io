@@ -144,7 +144,7 @@ function sendPaymentToServer(instrumentResponse) {
 
           payMethod=instrumentResponse.methodName;
 	  address=instrumentResponse.shippingAddress.addressLine[0] + ",  " + instrumentResponse.shippingAddress.postalCode + " " + instrumentResponse.shippingAddress.city;
-          if ( payMethod.search("basic-card") > -1) {
+          if ( payMethod.search("basic-card") > -1 || payMethod.search("LCL basic-card")) {
 		  console.log('basic card');
             let details = instrumentResponse.details;
             payMean=details.cardNumber.substr(0,4);
