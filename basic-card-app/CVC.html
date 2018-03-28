@@ -36,22 +36,21 @@ body, html {
           <input style="position:absolute;left:25%;top:68%" type="submit" id="connexion" name="connexion" value="Se connecter" onclick="send();">
       </form>
   </div>
-	
-    <script>
 
-        function send() {
-		document.getElementById("divCVC").style.display="block";
-		document.getElementById("bg").style.display="none";
-        }
-    </script>
-	
-	<div id="divCvc" style="display:none;">
+	<div id="divCVC" style="display:none;">
 <p style="text-align:center" id="titre" name="titre"></p>
 <img src="CVC.png" width="50" height="40" style="position:absolute;top:10%;left:20%;"> 
 	<p style=" text-align:center"><input style="text-align:center" pattern=".{3,3}" required type="password" name="cvc" id="cvc" value=""> </p>
 	<p style=" text-align:center"><input type="submit" name="payer" id="payer" value="Payer" onclick="payer();"> </p>
 	</div>
 <script>
+	
+	
+        function send() {
+		document.getElementById("divCVC").style.display="block";
+		document.getElementById("bg").style.display="none";
+        }
+	
 var messageSRC = "https://liamthiveux.github.io/basic-card-app/basic-card.js";
 var cardNumber;
 var expDate;	
