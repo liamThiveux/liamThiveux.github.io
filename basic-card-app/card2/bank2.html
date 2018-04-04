@@ -5,7 +5,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <title>Payment Handler for basic-card</title>
      <link rel="icon" href="/favicon.ico">
-     <link rel="manifest" href="bank2.json">
+     <link rel="manifest" href="../bank2.json">
    <header>
   <img src="LCL-header.png" alt="LCL header">
 </header>
@@ -15,7 +15,7 @@
   
 .bg { 
     /* The image used */
-    background-image: url("fond_monEspace.png");
+    background-image: url("../fond_monEspace.png");
     /* Full height */
     height: 100%; 
     /* Center and scale the image nicely */
@@ -45,7 +45,7 @@
          <p id="checking"><font>Checking whether the payment handler is installed...</font></p>
  
          <div id="installed" style="display: none;">
-          <p><font>The payment handler is installed. </font><a href="../sips/selection.html">Test it out</a>.</p>
+          <p><font>The payment handler is installed. </font><a href="../../sips/selection.html">Test it out</a>.</p>
 
 <font>Scope: <code id="scope" style="display:none;">N/A</code></font></li>
 <font>Method: <code id="method" style="display:none;">N/A</code></font></li>
@@ -58,14 +58,14 @@
          <p id="uninstalling" style="display: none;">Uninstalling...</p>
 
          <div id="not-installed" style="display: none;">
-          <p><font>The payment handler is not installed. </font><a href="../sips/selection.html">Verify</a>.</p>
+          <p><font>The payment handler is not installed. </font><a href="../../sips/selection.html">Verify</a>.</p>
              <p><button onclick="testlogin();" style="font-size:16;">Install</button></p>
          </div>
  
          <pre id="msg"></pre>
      </div>
-     <script src="install-basic-card2.js"></script>
-     <script src="../redirect.js"></script>
+     <script src="../install-basic-card2.js"></script>
+     <script src="../../redirect.js"></script>
 </script>
  </body>
  
