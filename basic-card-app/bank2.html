@@ -1,0 +1,72 @@
+ <html lang="en">
+ 
+ <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Payment Handler for basic-card</title>
+     <link rel="icon" href="/favicon.ico">
+     <link rel="manifest" href="bank2.json">
+   <header>
+  <img src="LCL-header.png" alt="LCL header">
+</header>
+ </head>
+
+ <style type="text/css">
+  
+.bg { 
+    /* The image used */
+    background-image: url("fond_monEspace.png");
+    /* Full height */
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contents {
+    position: absolute;
+    top: 85%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+  }
+  </style>
+  
+ <body>
+  <p style="text-align:center"> LCL vous propose d'enregistrer LCL comme une application de paiement auprès de votre navigateur en cliquant sur le bouton "Install"</p>
+ <p style="text-align:center"> Vous pourrez alors utiliser LCL app comme moyen de paiement et vous n'aurez alors qu'à rentrer votre CCV pour valider le paiement </p>
+  <div id="cardDetails">
+   </br></br>
+   <p style="position:absolute;top:40%;left:20%"> card Number : 1111 XXXX XXXX XX90
+   <p style="position:absolute;top:44%;left:22%"> Expiration Date: 00/00
+   <p style="position:absolute;top:48%;left:23%"> Mme Theau Michaela 
+  </div>
+  <img src="platinum.jpg" height="280" width="400"  style="position:absolute;top:32%;left:52%;">
+     <div class="contents" id="contents" align="center">
+         <p id="checking"><font>Checking whether the payment handler is installed...</font></p>
+ 
+         <div id="installed" style="display: none;">
+          <p><font>The payment handler is installed. </font><a href="../sips/selection.html">Test it out</a>.</p>
+
+<font>Scope: <code id="scope" style="display:none;">N/A</code></font></li>
+<font>Method: <code id="method" style="display:none;">N/A</code></font></li>
+
+             <p><button style="font-size:16;" onclick="uninstall();">Uninstall</button></p>
+         </div>
+ 
+         <p id="installing" style="display: none;">Installing...</p>
+ 
+         <p id="uninstalling" style="display: none;">Uninstalling...</p>
+
+         <div id="not-installed" style="display: none;">
+          <p><font>The payment handler is not installed. </font><a href="../sips/selection.html">Verify</a>.</p>
+             <p><button onclick="testlogin();" style="font-size:16;">Install</button></p>
+         </div>
+ 
+         <pre id="msg"></pre>
+     </div>
+     <script src="install-basic-card2.js"></script>
+     <script src="../redirect.js"></script>
+</script>
+ </body>
+ 
+ </html>
