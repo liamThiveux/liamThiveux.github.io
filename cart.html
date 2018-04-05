@@ -86,6 +86,7 @@ top: 422px;  z-index: 1;" />
 		}
 		
 		function addArticle(id,art,value){
+    var name = id+1;
     var elmt = document.getElementById("recap");
     var tr = document.createElement('tr');
     elmt.appendChild(tr);
@@ -101,7 +102,7 @@ top: 422px;  z-index: 1;" />
     tdDesc.appendChild(tdTextDesc);
 			
     var tdPrix = document.createElement('td');
-    tdPrix.id = 'article'+id+1;
+    tdPrix.id = 'article'+name;
     tr.appendChild(tdPrix);
     var tdTextPrix = document.createTextNode(value);
     tdPrix.appendChild(tdTextPrix);
