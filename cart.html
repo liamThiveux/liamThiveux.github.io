@@ -52,7 +52,7 @@ top: 422px;  z-index: 1;" />
 		var amount = 0;
 		var i=1;
 		while (document.getElementById("article"+i)) {
-			amount= amount + document.getElementById("article"+i).innetHTML;
+			amount= amount + Number(document.getElementById("article"+i).innerHTML);
 			i++;
 	}
 		total.innerHTML = amount + " €";
