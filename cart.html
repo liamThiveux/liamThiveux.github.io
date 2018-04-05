@@ -30,6 +30,7 @@ th, td {
 	
 .photo{
     text-align: center;
+    background-color: white; 
 	}
 	
 .delete{
@@ -44,25 +45,25 @@ th, td {
 	console.log(c);
 	</script>
 	
-<div class="commande" style="background-color:white; width:75%;text-align:center;">
+<div class="commande" style="width:75%; position:absolute; top:15%; left:15%;">
 <table id="recap">
    <tr>
-       <th>Produit</th>
-       <th>Description</th>
-       <th>Prix</th>
+       <th style="background-color:white; ">Produit</th>
+       <th style="background-color:white; ">Description</th>
+       <th style="background-color:white; ">Prix</th>
 	   <th class="delete"> </th>
    </tr>
 
    <tr>
        <td class='photo'><img src="basket.jpg" width="50" height="50"></td>
-       <td>Article 1</td>
-       <td id="article1">12.00</td>
+       <td  style="background-color:white; ">Article 1</td>
+       <td  style="background-color:white; "id="article1">12.00</td>
 	   <td class="delete"><button id="del1" onclick="deleteArticle(this);"><img src="del.png" width="30" height="30"></button></td>
    </tr>
    <tr>
        <td class='photo'><img src="basket.jpg" width="50" height="50"></td>
-       <td>Article 2</td>
-       <td id="article2">10.00</td>
+       <td  style="background-color:white;">Article 2</td>
+       <td  style="background-color:white;" id="article2">10.00</td>
 	   <td class="delete"> <button id="del2" onclick="deleteArticle(this);"><img src="del.png" width="30" height="30"></button> </td>
    </tr>
 </table>
@@ -100,17 +101,20 @@ top: 422px;  z-index: 1;" />
     elmt.appendChild(tr);
      
     var td = document.createElement('td');
+    td.style.backgroundColor="white";
     tr.appendChild(td);
     var tdText = document.createTextNode("");
     td.appendChild(tdText);
 
     var tdDesc = document.createElement('td');
+    tdDesc.style.backgroundColor ="white";
     tr.appendChild(tdDesc);
     var tdTextDesc = document.createTextNode(art);
     tdDesc.appendChild(tdTextDesc);
 			
     var tdPrix = document.createElement('td');
     tdPrix.id = 'article'+name;
+    tdPrix.style.backgroundColor="white";
     tr.appendChild(tdPrix);
     var tdTextPrix = document.createTextNode(value);
     tdPrix.appendChild(tdTextPrix);
