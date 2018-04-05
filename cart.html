@@ -94,8 +94,8 @@ top: 422px;  z-index: 1;" />
 	<div class="autreArticle" style="position: fixed;bottom: 0;right: 25%;width: 600px;">
 	<p style="text-align:center;position:absolute;top:;left:;">
 	<p> Articles pouvant vous intéresser </p>
-	<button class="button" id="art3" onclick="addArticle(2,'Article 3', '65.00');"><img src="chaussures.jpg" width="100" height="100"></button>
-	<button class="button" id="art4" onclick="addArticle(3,'Article 4', '17.00');"><img src="bandeau.jpg" width="100" height="100"></button>
+	<button class="button" id="art3" onclick="addArticle(2,'Article 3', '65.00','chaussures.jpg');"><img src="chaussures.jpg" width="100" height="100"></button>
+	<button class="button" id="art4" onclick="addArticle(3,'Article 4', '17.00','bandeau.jpg');"><img src="bandeau.jpg" width="100" height="100"></button>
 	</p>
 	</div>
 														       	<script>
@@ -106,7 +106,7 @@ top: 422px;  z-index: 1;" />
 		calculTotal();
 	}
 		
-    function addArticle(id,art,value){
+    function addArticle(id,art,value,image){
     var rowCount = document.getElementById('recap').rows.length;
     var name = rowCount+1;
     var elmt = document.getElementById("recap");
@@ -116,8 +116,9 @@ top: 422px;  z-index: 1;" />
     var td = document.createElement('td');
     td.style.backgroundColor="white";
     tr.appendChild(td);
-    var tdText = document.createTextNode("");
-    td.appendChild(tdText);
+     var imag = new Image(30,30); // width, height values are optional params 
+    img.src = image;
+    td.appendChild(imag);
 
     var tdDesc = document.createElement('td');
     tdDesc.style.backgroundColor ="white";
