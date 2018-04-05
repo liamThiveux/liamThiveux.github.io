@@ -49,7 +49,7 @@ th, td {
        <td><img src="basket.jpg" width="50" height="50"></td>
        <td>Article 1</td>
        <td id="article1">12.00</td>
-	   <td><button id="del1" onclick="deleteArticle(1);"> del </button></td>
+	   <td><button id="del1" onclick="deleteArticle(this);"> del </button></td>
    </tr>
    <tr>
        <td><img src="basket.jpg" width="50" height="50"></td>
@@ -114,7 +114,7 @@ top: 422px;  z-index: 1;" />
     tr.appendChild(tdDel);
     var del = document.createElement('BUTTON');
     del.onclick= function () {
-	deleteArticle(rowCount);
+	deleteArticle(this);
 };
     tdDel.appendChild(del);
     var t = document.createTextNode("del");
