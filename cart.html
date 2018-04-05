@@ -29,8 +29,8 @@ img {
 	
 <div class="commande" style="background-color:white;">
 	<div class="article" id="article">
-		<p> Article 1 </p> <p id="article1"> 12,00</p>
-		<p> Article 2 </p> <p id="article2"> 10,00</p>
+		<p> Article 1 </p> <p id="article1"> 12.00</p>
+		<p> Article 2 </p> <p id="article2"> 10.00</p>
 	</div>
 	
 	<div class="total" id="total">
@@ -49,6 +49,7 @@ top: 422px;  z-index: 1;" />
 	
 	<button id="payer" onclick="payer();"> Payer </button>
 	<script>
+		console.log(parseFloat(document.getElementById("article1")));
 	calculTotal();
 		
 		function addArticle(){
@@ -59,7 +60,7 @@ top: 422px;  z-index: 1;" />
 			var amount = 0;
 			var i=1;
 			while (document.getElementById("article"+i)) {
-			amount= amount + Number(document.getElementById("article"+i).innerHTML);
+			amount= amount + parseFloat(document.getElementById("article"+i).innerHTML);
 			i++;
 			}	
 			total.innerHTML = amount + " €";
