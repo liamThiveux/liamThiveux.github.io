@@ -111,6 +111,7 @@ top: 422px;  z-index: 1;" />
      
     var td = document.createElement('td');
     td.style.backgroundColor="white";
+    td.style.textAlign="center";
     tr.appendChild(td);
     var imag = new Image(30,30); // width, height values are optional params 
     imag.src = imageP;
@@ -130,7 +131,7 @@ top: 422px;  z-index: 1;" />
     tdPrix.appendChild(tdTextPrix);
 			
     var tdDel = document.createElement('td');
-    tdDel.class="delete";
+    tdDel.style.border="none";
     tr.appendChild(tdDel);
     var del = document.createElement('BUTTON');
     del.onclick= function () {
