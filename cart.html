@@ -17,6 +17,7 @@ img {
    margin-left: -375px;
    z-index: -1;/* Half the width */
 }
+		
 	</style>
 	<body style="background-image:url(bg.png); z-index: -1;">
 
@@ -26,6 +27,17 @@ img {
 	console.log(c);
 	</script>
 	
+<div class="commande" style="background-color:white;">
+	<div class="article" id="article">
+		<p id="article1"> Article 1 </p> <p> 12,00</p>
+		<p id="article2"> Article 2 </p> <p> 10,00</p>
+	</div>
+	
+	<div class="total" id="total">
+		<p id="totalLabel"> Total : </p>
+		<p id="totalAmount"> </p>
+	</div>
+</div>
 <p class="img">
 	<p style="position: absolute; left: 400px; top: 410px"> Install and try: </p>
 	<a href="recommendedapp/index.html">
@@ -34,6 +46,16 @@ left: 65%;
 top: 422px;  z-index: 1;" />
 	</a>
 </p>
+	<script>
 	
+		var total = document.getElementById("totalAmount");
+		var amount = 0;
+		var i=1;
+		while (document.getElementById("article"+i)) {
+			amount= amount + document.getElementById("article"+i).innetHTML;
+			i++;
+	}
+		total.innerHTML = amount + " €";
+	</script>	
 </body>
 </html>
