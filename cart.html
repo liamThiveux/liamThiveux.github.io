@@ -57,7 +57,11 @@ th, td {
        <th style="background-color:white; ">Prix</th>
 	   <th class="delete"> </th>
    </tr>
-
+  <tfoot>
+    <tr>
+      <td id="totalAmount" colspan="3"></td>
+    </tr>
+  </tfoot>
    <tr>
        <td class='photo'><img src="basket.jpg" width="50" height="50"></td>
        <td  style="background-color:white; ">Ballon de basket</td>
@@ -72,7 +76,7 @@ th, td {
    </tr>
 </table>
 	<div class="total" id="total" style="text-align:right;">
-		<p id="totalAmount"><font color="white"></font></p>
+		<p><font color="white"></font></p>
 	</div class="delete">
 	<div style="text-align:center">
 	 	<button id="payer" onclick="payer();"> Payer </button>
