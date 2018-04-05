@@ -48,13 +48,13 @@ td, th /* Mettre une bordure sur les td ET les th */
    <tr>
        <td></td>
        <td>Article 1</td>
-       <td>12.00</td>
+       <td id="article1">12.00</td>
 	   <td><button id="del1" onclick="deleteArticle(1);"> del </button></td>
    </tr>
    <tr>
        <td></td>
        <td>Article 2</td>
-       <td>10.00</td>
+       <td id="article2">10.00</td>
 	   <td> <button id="del2" onclick="deleteArticle(2);"> del </button> </td>
    </tr>
 </table>
@@ -106,6 +106,7 @@ top: 422px;  z-index: 1;" />
     tdDesc.appendChild(tdTextDesc);
 			
     var tdPrix = document.createElement('td');
+    tdPrix.id = id;
     tr.appendChild(tdPrix);
     var tdTextPrix = document.createTextNode(value);
     tdPrix.appendChild(tdTextPrix);
