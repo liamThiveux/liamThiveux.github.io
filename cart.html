@@ -56,14 +56,14 @@ th, td {
 
    <tr>
        <td class='photo'><img src="basket.jpg" width="50" height="50"></td>
-       <td  style="background-color:white; ">Article 1</td>
+       <td  style="background-color:white; ">Ballon de basket</td>
        <td  style="background-color:white; "id="article1">12.00</td>
 	   <td class="delete"><button id="del1" onclick="deleteArticle(this);"><img src="del.png" width="30" height="30"></button></td>
    </tr>
    <tr>
-       <td class='photo'><img src="basket.jpg" width="50" height="50"></td>
-       <td  style="background-color:white;">Article 2</td>
-       <td  style="background-color:white;" id="article2">10.00</td>
+       <td class='photo'><img src="panier.jpg" width="50" height="50"></td>
+       <td  style="background-color:white;">Panier de basket</td>
+       <td  style="background-color:white;" id="article2">80.00</td>
 	   <td class="delete"> <button id="del2" onclick="deleteArticle(this);"><img src="del.png" width="30" height="30"></button> </td>
    </tr>
 </table>
@@ -79,12 +79,12 @@ left: 65%;
 top: 422px;  z-index: 1;" />
 	</a>
 </p>
-	
+	<p style="text-align:center">
+	<p> Articles pouvant vous intéresser </p>
 	<button id="payer" onclick="payer();"> Payer </button>
-	<button id="click" onclick="addArticle(2,'Article 3', '15.00');"> <img src="basket.jpg" width="50" height="50"> </button>
-	<button id="art3" onclick="addArticle(2,'Article 3', '15.00');"> Article 3 </button>
-	<button id="art4" onclick="addArticle(3,'Article 4', '22.00');"> Article 4 </button>
-
+	<button id="art3" onclick="addArticle(2,'Article 3', '65.00');"><img src="chaussures.jpg" width="50" height="50"></button>
+	<button id="art4" onclick="addArticle(3,'Article 4', '17.00');"><img src="bandeau.jpg" width="50" height="50"></button>
+	</p>
 	<script>
 	calculTotal();
 		
