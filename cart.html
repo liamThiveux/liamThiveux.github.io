@@ -42,22 +42,25 @@ td, th /* Mettre une bordure sur les td ET les th */
        <th>Produit</th>
        <th>Description</th>
        <th>Prix</th>
+	   <th> </th>
    </tr>
 
    <tr>
        <td></td>
        <td>Article 1</td>
        <td>12.00</td>
+	   <td><button id="del1" onclick="delete(0);"> del </button></td>
    </tr>
    <tr>
        <td></td>
        <td>Article 2</td>
        <td>10.00</td>
+	   <td> <button id="del2" onclick="delete(1);"> del </button> </td>
    </tr>
 </table>
 	<div class="article" id="article">
-		<p> Article 1 </p> <p id="article1"> 12.00</p>
-		<p> Article 2 </p> <p id="article2"> 10.00</p>
+		<p> Article 1 </p> <p id="article1"> 12.00</p> <button id="del1" onclick="delete(0);"> del </button>
+		<p> Article 2 </p> <p id="article2"> 10.00</p> <button id="del2" onclick="delete(1);"> del </button>
 	</div>
 	
 	<div class="total" id="total">
@@ -75,11 +78,18 @@ top: 422px;  z-index: 1;" />
 </p>
 	
 	<button id="payer" onclick="payer();"> Payer </button>
-	<button id="ajouter" onclick="addArticle('Article 3', '15.00');"> Article 3 </button>
+	<button id="art3" onclick="addArticle(2,'Article 3', '15.00');"> Article 3 </button>
+	<button id="art4" onclick="addArticle(3,'Article 4', '22.00');"> Article 4 </button>
+
 	<script>
 	calculTotal();
 		
-		function addArticle(art,value){
+		function deleteArticle(id){
+			var table = document.getElementById("recap");
+			table.deleteRow(id);
+		}
+		
+		function addArticle(id,art,value){
     var elmt = document.getElementById("recap");
     var tr = document.createElement('tr');
     elmt.appendChild(tr);
@@ -98,6 +108,16 @@ top: 422px;  z-index: 1;" />
     tr.appendChild(tdPrix);
     var tdTextPrix = document.createTextNode(value);
     tdPrix.appendChild(tdTextPrix);
+			
+    var tdDel = document.createElement('td');
+    tr.appendChild(tdDel);
+    var del = document.createElement('BUTTON');
+    del.onclick="deleteArticle("+id+");";
+    tdDel.appendChild(del);
+    var t = document.createTextNode("del");
+    del.appendChild(t);
+    
+    calculTotal();
 		}
 	
 		function calculTotal(){
