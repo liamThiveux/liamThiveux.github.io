@@ -47,13 +47,7 @@ th, td {
 }	
 	
 </style>
-	<body style="background-image:url(bg.png); z-index: -1;">
-
-		<script>
-	var url = new URL(window.location.href);
-	var c = url.searchParams.get("numcard");
-	console.log(c);
-	</script>
+	<body style="background-image:url(bgBasket.png); z-index: -1;">
 	
 <div class="commande" style="width:75%; position:absolute; top:15%; left:15%;">
 <table id="recap">
@@ -158,7 +152,6 @@ top: 422px;  z-index: 1;" />
 			total.innerHTML ="Total : " + amount + " €";
 		}
 		
-//var mList = document.getElementById("methodList");
 	
 function getAmount() {	
 	var table = document.getElementById('recap');
@@ -183,10 +176,7 @@ if (window.PaymentRequest) {
 				    
 function nextPage(payMethod,payMean,address) {
 	var tId = "X201114826";
-	//var div1 = document.getElementById("onClickMessage");
-	//var div2 = document.getElementById("onClickOverlay");
-	//div2.style.display='inline';
-	//div1.style.display='inline';
+
 window.setTimeout(function() {
 		//window.location.href = 'http://localhost/POCw3c/sips/receipt.php?tId='+tId+'&payMethod='+payMethod+'&payMean='+payMean+'';
 	
