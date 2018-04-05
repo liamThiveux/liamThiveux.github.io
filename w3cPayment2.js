@@ -183,9 +183,9 @@ function instrumentToJsonString(instrument) {
   }, undefined, 2);
 }
 
-function launchPayment(networks) {
+function launchPayment(networks, amount) {
 if (window.PaymentRequest) {
-  let request = initPaymentRequest(networks);
+  let request = initPaymentRequest(networks,amount);
     onBuyClicked(request);
     request = initPaymentRequest();
 } else {
