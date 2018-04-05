@@ -54,13 +54,13 @@ th, td {
        <td class='photo'><img src="basket.jpg" width="50" height="50"></td>
        <td>Article 1</td>
        <td id="article1">12.00</td>
-	   <td><button id="del1" onclick="deleteArticle(this);"> del </button></td>
+	   <td><button id="del1" onclick="deleteArticle(this);"><img src="del.png" width="30" height="30"></button></td>
    </tr>
    <tr>
        <td class='photo'><img src="basket.jpg" width="50" height="50"></td>
        <td>Article 2</td>
        <td id="article2">10.00</td>
-	   <td> <button id="del2" onclick="deleteArticle(this);"> del </button> </td>
+	   <td> <button id="del2" onclick="deleteArticle(this);"><img src="del.png" width="30" height="30"></button> </td>
    </tr>
 </table>
 	<div class="total" id="total" style="text-align:right;">
@@ -86,9 +86,7 @@ top: 422px;  z-index: 1;" />
 	calculTotal();
 		
 	function deleteArticle(id){
-		    id.parentNode.parentNode.parentNode.removeChild(id.parentNode.parentNode);
-		//var table = document.getElementById("recap");
-		//table.deleteRow(id);
+		id.parentNode.parentNode.parentNode.removeChild(id.parentNode.parentNode);
 		calculTotal();
 	}
 		
@@ -122,8 +120,9 @@ top: 422px;  z-index: 1;" />
 	deleteArticle(this);
 };
     tdDel.appendChild(del);
-    var t = document.createTextNode("del");
-    del.appendChild(t);
+    var img = new Image(30,30); // width, height values are optional params 
+    img.src = 'del.png';
+    del.appendChild(img);
     
     calculTotal();
 		}
