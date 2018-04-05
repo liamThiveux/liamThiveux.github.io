@@ -82,13 +82,13 @@ top: 422px;  z-index: 1;" />
 	<script>
 	calculTotal();
 		
-		function deleteArticle(id){
-			var table = document.getElementById("recap");
-			table.deleteRow(id);
-			calculTotal();
-		}
+	function deleteArticle(id){
+		var table = document.getElementById("recap");
+		table.deleteRow(id);
+		calculTotal();
+	}
 		
-		function addArticle(id,art,value){
+    function addArticle(id,art,value){
     var name = id+1;
     var elmt = document.getElementById("recap");
     var tr = document.createElement('tr');
@@ -137,7 +137,7 @@ top: 422px;  z-index: 1;" />
 function payer(){
 if (window.PaymentRequest) {
 	var url = new URL(window.location.href);
-	mList.style.display="none";
+	//mList.style.display="none";
 		launchPayment(['amex', 'visa', 'mastercard']);
 	}
 }
