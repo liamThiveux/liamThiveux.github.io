@@ -20,16 +20,21 @@ img {
    z-index: -1;/* Half the width */
 }
 		
-table
-{
+<style>
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
     border-collapse: collapse;
+    width: 100%;
 }
-	
-td, th /* Mettre une bordure sur les td ET les th */
-{
-    border: 1px solid black;
+
+th, td {
+    padding: 15px;
 }
-	</style>
+</style>
 	<body style="background-image:url(bg.png); z-index: -1;">
 
 		<script>
