@@ -75,7 +75,6 @@ top: 422px;  z-index: 1;" />
 </p>
 	
 	<button id="payer" onclick="payer();"> Payer </button>
-	<button id="close-image" onclick="addArticle(2,'Article 3', '15.00');"><img src="basket.jpg" width=50 height=50></button>
 	<button id="art3" onclick="addArticle(2,'Article 3', '15.00');"> Article 3 </button>
 	<button id="art4" onclick="addArticle(3,'Article 4', '22.00');"> Article 4 </button>
 
@@ -122,11 +121,13 @@ top: 422px;  z-index: 1;" />
 		}
 	
 		function calculTotal(){
+			var table = document.getElementById('recap');
 			var rowCount = document.getElementById('recap').rows.length;
 			console.log(rowCount);
 			var total = document.getElementById("totalAmount");
 			var amount = 0;
 			for (i=1;i<rowCount;i++){
+				alert(table.rows[i].cells[2].innerHTML);
 				amount= amount + parseFloat(document.getElementById("article"+i).innerHTML);
 			}
 			total.innerHTML = amount + " €";
