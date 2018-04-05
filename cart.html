@@ -87,6 +87,7 @@ top: 422px;  z-index: 1;" />
 		function deleteArticle(id){
 			var table = document.getElementById("recap");
 			table.deleteRow(id);
+			calculTotal();
 		}
 		
 		function addArticle(id,art,value){
@@ -121,13 +122,13 @@ top: 422px;  z-index: 1;" />
 		}
 	
 		function calculTotal(){
+			var rowCount = document.getElementById('recap').rows.length;
+			console.log(rowCount);
 			var total = document.getElementById("totalAmount");
 			var amount = 0;
-			var i=1;
-			while (document.getElementById("article"+i)) {
-			amount= amount + parseFloat(document.getElementById("article"+i).innerHTML);
-			i++;
-			}	
+			for (i=1;i<rowCount+1;i++){
+				amount= amount + parseFloat(document.getElementById("article"+i).innerHTML);
+			}
 			total.innerHTML = amount + " €";
 		}
 		
