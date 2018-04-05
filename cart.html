@@ -179,7 +179,46 @@ if (window.PaymentRequest) {
 		launchPayment(['amex', 'visa', 'mastercard'],amount);
 	}
 }
-		
+	
+				    
+function nextPage(payMethod,payMean,address) {
+	var div1 = document.getElementById("onClickMessage");
+	var div2 = document.getElementById("onClickOverlay");
+	div2.style.display='inline';
+	div1.style.display='inline';
+window.setTimeout(function() {
+		//window.location.href = 'http://localhost/POCw3c/sips/receipt.php?tId='+tId+'&payMethod='+payMethod+'&payMean='+payMean+'';
+	
+    var form = document.createElement("form");
+    var element1 = document.createElement("input"); 
+    var element2 = document.createElement("input");  
+    var element3 = document.createElement("input");
+    var element4 = document.createElement("input");
+    form.method = "POST";
+    form.action = "https://rd.atosworldline.com/qualif/POCw3c/receipt.php";   
+    element1.type="hidden";
+    element1.value=payMethod;
+    element1.name="payMethod";
+    form.appendChild(element1);  
+    element2.type="hidden";
+    element2.value=payMean;
+    element2.name="payMean";
+    form.appendChild(element2);
+	
+    element3.type="hidden";
+    element3.value=tId;
+    element3.name="tId";
+    form.appendChild(element3);
+	
+    element4.type="hidden";
+    element4.value=address;
+    element4.name="address";
+    form.appendChild(element4);
+    document.body.appendChild(form);
+    form.submit();
+}, 1000);
+	
+}
 	</script>	
 </body>
 </html>
