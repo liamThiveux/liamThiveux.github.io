@@ -46,16 +46,26 @@ left: 65%;
 top: 422px;  z-index: 1;" />
 	</a>
 </p>
-	<script>
 	
-		var total = document.getElementById("totalAmount");
-		var amount = 0;
-		var i=1;
-		while (document.getElementById("article"+i)) {
+	<button id="payer" onclick="payer();"> Payer </button>
+	<script>
+	calculTotal();
+		
+		function addArticle(){
+		}
+		
+		function calculTotal(){
+			var total = document.getElementById("totalAmount");
+			var amount = 0;
+			var i=1;
+			while (document.getElementById("article"+i)) {
 			amount= amount + Number(document.getElementById("article"+i).innerHTML);
 			i++;
-	}
-		total.innerHTML = amount + " €";
+			}	
+			total.innerHTML = amount + " €";
+		}
+		
+
 	</script>	
 </body>
 </html>
