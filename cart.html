@@ -49,18 +49,18 @@ td, th /* Mettre une bordure sur les td ET les th */
        <td></td>
        <td>Article 1</td>
        <td>12.00</td>
-	   <td><button id="del1" onclick="deleteArticle(0);"> del </button></td>
+	   <td><button id="del1" onclick="deleteArticle(1);"> del </button></td>
    </tr>
    <tr>
        <td></td>
        <td>Article 2</td>
        <td>10.00</td>
-	   <td> <button id="del2" onclick="deleteArticle(1);"> del </button> </td>
+	   <td> <button id="del2" onclick="deleteArticle(2);"> del </button> </td>
    </tr>
 </table>
 	<div class="article" id="article">
-		<p> Article 1 </p> <p id="article1"> 12.00</p> <button id="del1" onclick="delete(0);"> del </button>
-		<p> Article 2 </p> <p id="article2"> 10.00</p> <button id="del2" onclick="delete(1);"> del </button>
+		<p> Article 1 </p> <p id="article1"> 12.00</p> <button id="del1" onclick="delete(1);"> del </button>
+		<p> Article 2 </p> <p id="article2"> 10.00</p> <button id="del2" onclick="delete(2);"> del </button>
 	</div>
 	
 	<div class="total" id="total">
@@ -126,7 +126,7 @@ top: 422px;  z-index: 1;" />
 			console.log(rowCount);
 			var total = document.getElementById("totalAmount");
 			var amount = 0;
-			for (i=1;i<rowCount+1;i++){
+			for (i=1;i<rowCount;i++){
 				amount= amount + parseFloat(document.getElementById("article"+i).innerHTML);
 			}
 			total.innerHTML = amount + " €";
