@@ -88,7 +88,8 @@ top: 422px;  z-index: 1;" />
 	}
 		
     function addArticle(id,art,value){
-    var name = id+1;
+    var rowCount = document.getElementById('recap').rows.length;
+    var name = rowCount+1;
     var elmt = document.getElementById("recap");
     var tr = document.createElement('tr');
     elmt.appendChild(tr);
