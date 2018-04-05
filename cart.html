@@ -146,19 +146,21 @@ top: 422px;  z-index: 1;" />
 		}
 		
 //var mList = document.getElementById("methodList");
+	
+function getAmount() {	
+	var table = document.getElementById('recap');
+	var rowCount = document.getElementById('recap').rows.length;
+	var total = document.getElementById("totalAmount");
+	var amount = 0;
+	for (i=1;i<rowCount;i++){
+		amount= amount + parseFloat(table.rows[i].cells[2].innerHTML);
+		} 
+	return amount
+};
 		
 function payer(){
 if (window.PaymentRequest) {
-	var amount = function() {	
-		var table = document.getElementById('recap');
-			var rowCount = document.getElementById('recap').rows.length;
-			console.log(rowCount);
-			var total = document.getElementById("totalAmount");
-			var amount = 0;
-			for (i=1;i<rowCount;i++){
-				amount= amount + parseFloat(table.rows[i].cells[2].innerHTML);
-			} 
-			return amount};
+	var amount = getAmount();
 	var url = new URL(window.location.href);
 	//mList.style.display="none";
 		launchPayment(['amex', 'visa', 'mastercard'],amount);
