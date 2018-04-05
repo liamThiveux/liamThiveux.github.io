@@ -74,6 +74,10 @@ th, td {
 	<div class="total" id="total" style="text-align:right;">
 		<p id="totalAmount"><font color="white"></font></p>
 	</div class="delete">
+	<div style="text-align:center">
+	 	<button id="payer" onclick="payer();"> Payer </button>
+	</div>
+
 </div>
 <p class="img">
 	<p style="position: absolute; left: 400px; top: 410px"> Install and try: </p>
@@ -90,9 +94,7 @@ top: 422px;  z-index: 1;" />
 	<button class="button" id="art4" onclick="addArticle(3,'Article 4', '17.00');"><img src="bandeau.jpg" width="100" height="100"></button>
 	</p>
 	</div>
-														       
- 	<button style="position:absolute;top:60%;left:40%;" id="payer" onclick="payer();"> Payer </button>
-	<script>
+														       	<script>
 	calculTotal();
 		
 	function deleteArticle(id){
