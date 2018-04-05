@@ -101,7 +101,7 @@ top: 422px;  z-index: 1;" />
 		calculTotal();
 	}
 		
-    function addArticle(id,art,value,image){
+    function addArticle(id,art,value,imageP){
     document.getElementById(id).style.display="none";
     var rowCount = document.getElementById('recap').rows.length;
     var name = rowCount+1;
@@ -113,7 +113,7 @@ top: 422px;  z-index: 1;" />
     td.style.backgroundColor="white";
     tr.appendChild(td);
      var imag = new Image(30,30); // width, height values are optional params 
-    img.src = image;
+    img.src = imageP;
     td.appendChild(imag);
 
     var tdDesc = document.createElement('td');
