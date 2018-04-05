@@ -133,12 +133,15 @@ top: 422px;  z-index: 1;" />
 		}
 		
 //var mList = document.getElementById("methodList");
+		
+function payer(){
 if (window.PaymentRequest) {
 	var url = new URL(window.location.href);
 	mList.style.display="none";
 		launchPayment(['amex', 'visa', 'mastercard']);
 	}
-	
+}
+		
 	</script>	
 </body>
 </html>
