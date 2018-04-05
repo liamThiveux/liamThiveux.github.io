@@ -75,11 +75,11 @@ top: 422px;  z-index: 1;" />
 </p>
 	
 	<button id="payer" onclick="payer();"> Payer </button>
-	<button id="ajouter" onclick="addArticle();"> Article 3 </button>
+	<button id="ajouter" onclick="addArticle('Article 3', '15.00');"> Article 3 </button>
 	<script>
 	calculTotal();
 		
-		function addArticle(){
+		function addArticle(art,value){
     var elmt = document.getElementById("recap");
     var tr = document.createElement('tr');
     elmt.appendChild(tr);
@@ -91,13 +91,13 @@ top: 422px;  z-index: 1;" />
 
     var tdDesc = document.createElement('td');
     tr.appendChild(tdDesc);
-    var tdTextDesc = document.createTextNode("Article 3");
-    td.appendChild(tdTextDesc);
+    var tdTextDesc = document.createTextNode(art);
+    tdDesc.appendChild(tdTextDesc);
 			
     var tdPrix = document.createElement('td');
     tr.appendChild(tdPrix);
-    var tdTextPrix = document.createTextNode("15.00");
-    td.appendChild(tdTextPrix);
+    var tdTextPrix = document.createTextNode(value);
+    tdPrix.appendChild(tdTextPrix);
 		}
 	
 		function calculTotal(){
