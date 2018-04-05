@@ -18,6 +18,15 @@ img {
    z-index: -1;/* Half the width */
 }
 		
+table
+{
+    border-collapse: collapse;
+}
+	
+td, th /* Mettre une bordure sur les td ET les th */
+{
+    border: 1px solid black;
+}
 	</style>
 	<body style="background-image:url(bg.png); z-index: -1;">
 
@@ -28,6 +37,24 @@ img {
 	</script>
 	
 <div class="commande" style="background-color:white;">
+<table id="recap">
+   <tr>
+       <th>Produit</th>
+       <th>Description</th>
+       <th>Prix</th>
+   </tr>
+
+   <tr>
+       <td></td>
+       <td>Article 1</td>
+       <td>12.00</td>
+   </tr>
+   <tr>
+       <td></td>
+       <td>Article 2</td>
+       <td>10.00</td>
+   </tr>
+</table>
 	<div class="article" id="article">
 		<p> Article 1 </p> <p id="article1"> 12.00</p>
 		<p> Article 2 </p> <p id="article2"> 10.00</p>
@@ -48,13 +75,31 @@ top: 422px;  z-index: 1;" />
 </p>
 	
 	<button id="payer" onclick="payer();"> Payer </button>
+	<button id="ajouter" onclick="addArticle();"> Article 3 </button>
 	<script>
-		console.log(parseFloat(document.getElementById("article1")));
 	calculTotal();
 		
 		function addArticle(){
+    var elmt = document.getElementById("recap");
+    var tr = document.createElement('tr');
+    elmt.appendChild(tr);
+     
+    var td = document.createElement('td');
+    tr.appendChild(td);
+    var tdText = document.createTextNode("");
+    td.appendChild(tdText);
+
+    var tdDesc = document.createElement('td');
+    tr.appendChild(tdDesc);
+    var tdTextDesc = document.createTextNode("Article 3");
+    td.appendChild(tdTextDesc);
+			
+    var tdPrix = document.createElement('td');
+    tr.appendChild(tdPrix);
+    var tdTextPrix = document.createTextNode("15.00");
+    td.appendChild(tdTextPrix);
 		}
-		
+	
 		function calculTotal(){
 			var total = document.getElementById("totalAmount");
 			var amount = 0;
