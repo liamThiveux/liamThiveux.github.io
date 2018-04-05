@@ -113,7 +113,7 @@ top: 422px;  z-index: 1;" />
     var tdDel = document.createElement('td');
     tr.appendChild(tdDel);
     var del = document.createElement('BUTTON');
-    del.onclick=deleteArticle("+id+");
+    del.onclick="deleteArticle("+id+")";
     tdDel.appendChild(del);
     var t = document.createTextNode("del");
     del.appendChild(t);
