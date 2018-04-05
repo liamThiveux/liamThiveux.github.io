@@ -27,6 +27,11 @@ th, td {
     border: 1px solid black;
     padding: 15px;
 }
+	
+.photo{
+    text-align: center;
+	}	
+	
 </style>
 	<body style="background-image:url(bg.png); z-index: -1;">
 
@@ -46,13 +51,13 @@ th, td {
    </tr>
 
    <tr>
-       <td><img src="basket.jpg" width="50" height="50"></td>
+       <td class='photo'><img src="basket.jpg" width="50" height="50"></td>
        <td>Article 1</td>
        <td id="article1">12.00</td>
 	   <td><button id="del1" onclick="deleteArticle(this);"> del </button></td>
    </tr>
    <tr>
-       <td><img src="basket.jpg" width="50" height="50"></td>
+       <td class='photo'><img src="basket.jpg" width="50" height="50"></td>
        <td>Article 2</td>
        <td id="article2">10.00</td>
 	   <td> <button id="del2" onclick="deleteArticle(this);"> del </button> </td>
