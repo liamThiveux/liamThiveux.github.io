@@ -46,13 +46,13 @@ td, th /* Mettre une bordure sur les td ET les th */
    </tr>
 
    <tr>
-       <td><img src="basket.jpg" alt="" border=3 height=50 width=50></img></td>
+       <td></td>
        <td>Article 1</td>
        <td id="article1">12.00</td>
 	   <td><button id="del1" onclick="deleteArticle(1);"> del </button></td>
    </tr>
    <tr>
-       <td><img src="basket.jpg" alt="" border=3 height=50 width=50></img></td>
+       <td></td>
        <td>Article 2</td>
        <td id="article2">10.00</td>
 	   <td> <button id="del2" onclick="deleteArticle(2);"> del </button> </td>
@@ -73,6 +73,7 @@ top: 422px;  z-index: 1;" />
 </p>
 	
 	<button id="payer" onclick="payer();"> Payer </button>
+	<button id="close-image" onclick="addArticle(2,'Article 3', '15.00');"><img src="basket.jpg"></button>
 	<button id="art3" onclick="addArticle(2,'Article 3', '15.00');"> Article 3 </button>
 	<button id="art4" onclick="addArticle(3,'Article 4', '22.00');"> Article 4 </button>
 
