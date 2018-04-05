@@ -30,8 +30,11 @@ th, td {
 	
 .photo{
     text-align: center;
-	}	
+	}
 	
+.delete{
+    border: none;
+        }	
 </style>
 	<body style="background-image:url(bg.png); z-index: -1;">
 
@@ -47,25 +50,25 @@ th, td {
        <th>Produit</th>
        <th>Description</th>
        <th>Prix</th>
-	   <th> </th>
+	   <th class="delete"> </th>
    </tr>
 
    <tr>
        <td class='photo'><img src="basket.jpg" width="50" height="50"></td>
        <td>Article 1</td>
        <td id="article1">12.00</td>
-	   <td><button id="del1" onclick="deleteArticle(this);"><img src="del.png" width="30" height="30"></button></td>
+	   <td class="delete"><button id="del1" onclick="deleteArticle(this);"><img src="del.png" width="30" height="30"></button></td>
    </tr>
    <tr>
        <td class='photo'><img src="basket.jpg" width="50" height="50"></td>
        <td>Article 2</td>
        <td id="article2">10.00</td>
-	   <td> <button id="del2" onclick="deleteArticle(this);"><img src="del.png" width="30" height="30"></button> </td>
+	   <td class="delete"> <button id="del2" onclick="deleteArticle(this);"><img src="del.png" width="30" height="30"></button> </td>
    </tr>
 </table>
 	<div class="total" id="total" style="text-align:right;">
 		Total : <p id="totalAmount"> </p>
-	</div>
+	</div class="delete">
 </div>
 <p class="img">
 	<p style="position: absolute; left: 400px; top: 410px"> Install and try: </p>
