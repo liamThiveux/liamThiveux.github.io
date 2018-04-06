@@ -116,7 +116,7 @@ function updateDetails(details, shippingOption, resolve, reject) {
   }
   selectedShippingOption.selected = true;
   otherShippingOption.selected = false;
-  details.displayItems.splice(2, 1, selectedShippingOption);
+  details.displayItems.splice(1, 1, selectedShippingOption);
   resolve(details);
 }
 
