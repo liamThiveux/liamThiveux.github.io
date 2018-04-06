@@ -190,7 +190,7 @@ if (window.PaymentRequest) {
 }
 	
 				    
-function nextPage(payMethod,payMean,address) {
+function nextPage(payMethod,payMean,address,total) {
 	var tId = "X201114826";
 
 window.setTimeout(function() {
@@ -201,6 +201,8 @@ window.setTimeout(function() {
     var element2 = document.createElement("input");  
     var element3 = document.createElement("input");
     var element4 = document.createElement("input");
+    var element5 = document.createElement("input");
+
     form.method = "POST";
     form.action = "https://rd.atosworldline.com/qualif/POCw3c/receipt.php";   
     element1.type="hidden";
@@ -221,6 +223,11 @@ window.setTimeout(function() {
     element4.value=address;
     element4.name="address";
     form.appendChild(element4);
+	
+    element4.type="hidden";
+    element4.value=total;
+    element4.name="total";
+    form.appendChild(element5);
     document.body.appendChild(form);
     form.submit();
 }, 1000);
