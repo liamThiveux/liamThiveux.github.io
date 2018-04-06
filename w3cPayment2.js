@@ -3,6 +3,8 @@
  *
  * @return {PaymentRequest} The PaymentRequest object.
  */
+
+var total = 0;
 function initPaymentRequest(networks,amount) {
 //  let networks = ['amex', 'diners', 'discover', 'jcb', 'mastercard', 'unionpay',
       //'visa', 'mir'];
@@ -80,7 +82,8 @@ request.addEventListener('shippingoptionchange', function(evt) {
       updateDetails(details, request.shippingOption, resolve, reject);
     }));
   });
-	
+
+total = amount;
   return request;
 }
 
@@ -93,6 +96,7 @@ request.addEventListener('shippingoptionchange', function(evt) {
  var payMean = "";
  var address = ""; 
  var express = false;
+
 
 function updateDetails(details, shippingOption, resolve, reject) {
   if (shippingOption === 'standard') {
@@ -117,6 +121,7 @@ function updateDetails(details, shippingOption, resolve, reject) {
   selectedShippingOption.selected = true;
   otherShippingOption.selected = false;
   details.displayItems.splice(1, 1, selectedShippingOption);
+  total = details.total.amount.value;
   resolve(details);
 }
 
@@ -147,6 +152,7 @@ function sendPaymentToServer(instrumentResponse) {
   // realistic. Add a 2 second delay to make it seem more real.
   //window.setTimeout(function() {
   //}, 2000);
+	console.log("total:" + total);
     instrumentResponse.complete('success')
         .then(function() {
 
