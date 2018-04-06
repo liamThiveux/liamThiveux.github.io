@@ -92,16 +92,24 @@ request.addEventListener('shippingoptionchange', function(evt) {
  var payMethod = "";
  var payMean = "";
  var address = ""; 
+ var express = false;
 
 function updateDetails(details, shippingOption, resolve, reject) {
   if (shippingOption === 'standard') {
     selectedShippingOption = details.shippingOptions[0];
     otherShippingOption = details.shippingOptions[1];
-    details.total.amount.value = details.total.amount.value;
+	  if (express==true) {
+	      details.total.amount.value = details.total.amount.value - 12;
+	      express=false;
+	  }
+	  else {
+	      details.total.amount.value = details.total.amount.value;
+	  }
   } else if (shippingOption === 'express') {
     selectedShippingOption = details.shippingOptions[1];
     otherShippingOption = details.shippingOptions[0];
     details.total.amount.value = details.total.amount.value + 12;
+    express=true;
   } else {
     reject('Unknown shipping option \'' + shippingOption + '\'');
     return;
