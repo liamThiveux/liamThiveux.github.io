@@ -109,6 +109,7 @@ top: 422px;  z-index: 1;" />
 		
 	function deleteArticle(id){
 		id.parentNode.parentNode.parentNode.removeChild(id.parentNode.parentNode);
+		document.getElementById(id.parentNode.parentNode.title).style.display ='block';
 		calculTotal();
 	}
 		
@@ -118,6 +119,7 @@ top: 422px;  z-index: 1;" />
     var name = rowCount+1;
     var elmt = document.getElementById("recap");
     var tr = document.createElement('tr');
+    tr.title=id;
     elmt.appendChild(tr);
      
     var td = document.createElement('td');
