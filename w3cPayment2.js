@@ -129,7 +129,7 @@ function onBuyClicked(request) {
   request.show().then(function(instrumentResponse) {
     sendPaymentToServer(instrumentResponse);
 	window.setTimeout(function() {
-		nextPage(payMethod,payMean,address);
+		nextPage(payMethod,payMean,address,total);
 	}, 1000);
 
 //	document.getElementById("captureCardForm").submit();
@@ -152,7 +152,6 @@ function sendPaymentToServer(instrumentResponse) {
   // realistic. Add a 2 second delay to make it seem more real.
   //window.setTimeout(function() {
   //}, 2000);
-	console.log("total:" + total);
     instrumentResponse.complete('success')
         .then(function() {
 
