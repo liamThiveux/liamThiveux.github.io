@@ -89,6 +89,15 @@ th, td {
 	</div>
 
 </div>
+		
+	<div class="t-zone" id="WaitZone">
+	</div>
+	<div style="display:none;" class="target" id="onClickMessage" align="center">
+		<div><img src="./images/ajax_loader.gif" height="16px" width="48px"></div>
+		<div>Votre paiement est en cours de traitement. Veuillez patienter...</div>
+	</div>
+	<div style="display:none;" class="screenOverlay" id="onClickOverlay">
+	</div>
 <!-- <p class="img">
 	<p style="position: absolute; left: 400px; top: 410px"> Install and try: </p>
 	<a href="recommendedapp/index.html">
@@ -194,7 +203,10 @@ if (window.PaymentRequest) {
 				    
 function nextPage(payMethod,payMean,address,total) {
 	var tId = "X201114826";
-
+	var div1 = document.getElementById("onClickMessage");
+	var div2 = document.getElementById("onClickOverlay");
+	div2.style.display='inline';
+	div1.style.display='inline';
 window.setTimeout(function() {
 		//window.location.href = 'http://localhost/POCw3c/sips/receipt.php?tId='+tId+'&payMethod='+payMethod+'&payMean='+payMean+'';
 	
