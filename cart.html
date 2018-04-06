@@ -107,7 +107,9 @@ top: 422px;  z-index: 1;" />
 		
 	function deleteArticle(id){
 		id.parentNode.parentNode.parentNode.removeChild(id.parentNode.parentNode);
+		if (id.parentNode.parentNode.title){
 		document.getElementById(id.parentNode.parentNode.title).style.display ='inline';
+		}
 		calculTotal();
 	}
 		
