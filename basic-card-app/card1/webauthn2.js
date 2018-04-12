@@ -493,7 +493,8 @@ swal({
 	  
       /* Decode Client Data */
       let clientData = JSON.parse(buffer2string(state.createResponse.response.clientDataJSON));
-
+	document.getElementById("divCVC").style.display="block";
+	document.getElementById("createButton").style.display="none";
 
     }).then(function (){
       append("createOut", JSON.stringify(createRequest, null, 2) + "\n\n");
