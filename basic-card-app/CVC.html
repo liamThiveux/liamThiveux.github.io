@@ -1,6 +1,13 @@
 <html>
-<body>
-	
+<head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="base64.js"></script>
+<script type="text/javascript" src="cbor.js"></script>
+<script type="text/javascript" src="webauthn2.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
 	<style>
 body, html {
     height: 100%;
@@ -18,6 +25,27 @@ body, html {
     background-size: cover;
 }
 </style>
+<body>
+<div id="container" style="display:none">
+ <div class="row">
+  <p id="error"></p>
+
+  <!-- registration -->
+  <!-- <div class="box">
+    <button id="createButton">Create Credential</button>-->
+    <pre id="createOut"></pre>
+ <!-- </div> -->
+
+  <!-- sign -->
+  <!-- <div class="box">
+    <button id="getButton">Get Assertion</button> -->
+    <pre id="getOut"></pre>
+ <!-- </div> -->
+
+
+ </div>
+</div>
+
     <script>
         var messageSRC; 
         var cardNumber;
@@ -33,6 +61,10 @@ body, html {
           <input style="position:absolute;left:15%;top:33%;font-size:7;" type="text" id="id" name="id" size="8" value="">
           <input style="position:absolute;left:17%;top:60%;font-size:7;" type="password" id="pwd" name="pwd" size="8" value="">
           <input style="position:absolute;left:17%;top:80%;font-size:8;" type="submit" id="connexion" name="connexion" value="Se connecter" onclick="send();">
+  
+  	<div style="text-align:center" class="text-center buttons">                    
+			<button id="getButton" style="width 60%" class="btn btn-primary btn-lg" type="button" onclick="getAssertion()">Login with Credential</button>
+	</div>
   </div>
 
 	<div id="divCVC" style="display:none;">
@@ -48,7 +80,6 @@ body, html {
 		document.getElementById("divCVC").style.display="block";
 		document.getElementById("bg").style.display="none";
         }
-
   
   function payer() {
 	console.log(window.opener);
