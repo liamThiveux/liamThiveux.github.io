@@ -12,7 +12,16 @@
 body, html {
     height: 100%;
 }
-  
+ div.centre {
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 300px;
+    margin-left: -150px; /* Cette valeur doit être la moitié négative de la valeur du width */
+    margin-top: -150px; /* Cette valeur doit être la moitié négative de la valeur du height */
+}
+		
 </style>
 <body>
 <div id="container" style="display:none">
@@ -46,11 +55,11 @@ body, html {
 	});
     </script>
 	
-  	<div style="text-align:center" class="text-center buttons">                    
+  	<div style="text-align:center" class="text-center buttons centre">                    
 			<button id="createButton" style="width 60%" class="btn btn-primary btn-lg" type="button">Login with Credential</button>
 	</div>
 
-	<div id="divCVC" style="display:none;">
+	<div id="divCVC" style="display:none;" class="centre">
 <p style="text-align:center" id="titre" name="titre"></p>
 <img src="CVC.png" width="50" height="40" style="position:absolute;left:20%;"> 
 	<p style=" text-align:center"><input style="text-align:center" pattern=".{3,3}" required type="password" name="cvc" id="cvc" value=""> </p>
