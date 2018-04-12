@@ -58,6 +58,13 @@ body, html {
 	</div>
 <script>
 	
+var button = document.getElementById("createButton");
+
+button.addEventListener('click', function(e) {
+	document.getElementById("createButton").style.display="none";
+	document.getElementById("divCVC").style.display="block";
+});
+	
   function payer() {
 	console.log(window.opener);
      var cvc = document.getElementById("cvc").value; 
