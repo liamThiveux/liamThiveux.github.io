@@ -13,17 +13,6 @@ body, html {
     height: 100%;
 }
   
-  
-.bg { 
-    /* The image used */
-    background-image: url("fond_monEspace2.png");
-    /* Full height */
-    height: 100%; 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 </style>
 <body>
 <div id="container" style="display:none">
@@ -57,15 +46,9 @@ body, html {
 	});
     </script>
 	
-  <div class="bg" id="bg">
-          <input style="position:absolute;left:15%;top:33%;font-size:7;" type="text" id="id" name="id" size="8" value="">
-          <input style="position:absolute;left:17%;top:60%;font-size:7;" type="password" id="pwd" name="pwd" size="8" value="">
-          <input style="position:absolute;left:17%;top:80%;font-size:8;" type="submit" id="connexion" name="connexion" value="Se connecter" onclick="send();">
-  
   	<div style="text-align:center" class="text-center buttons">                    
 			<button id="createButton" style="width 60%" class="btn btn-primary btn-lg" type="button">Login with Credential</button>
 	</div>
-  </div>
 
 	<div id="divCVC" style="display:none;">
 <p style="text-align:center" id="titre" name="titre"></p>
@@ -75,12 +58,6 @@ body, html {
 	</div>
 <script>
 	
-	
-        function send() {
-		document.getElementById("divCVC").style.display="block";
-		document.getElementById("bg").style.display="none";
-        }
-  
   function payer() {
 	console.log(window.opener);
      var cvc = document.getElementById("cvc").value; 
