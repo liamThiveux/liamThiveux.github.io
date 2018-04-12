@@ -407,15 +407,16 @@ $(document).ready(function() {
 swal({
   title: "Registering...",
   text: "Tap your security key to finish registration.",
-   buttons: {
+  buttons: {
     cancel: true,
     confirm: false,
   },
-  	closeOnClickOutside: true,
-	timer: 6000,
-	content: {
-    element: "img",
-    attributes: {
+  customClass: 'swal-wide',
+  closeOnClickOutside: true,
+  timer: 6000,
+  content: {
+  element: "img",
+  attributes: {
       src: "securitykey.min.svg",
 	  width: "400",
 	  height: "300",
