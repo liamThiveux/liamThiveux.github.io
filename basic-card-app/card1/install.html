@@ -4,10 +4,17 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <title>Payment Handler for basic-card</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="base64.js"></script>
+<script type="text/javascript" src="cbor.js"></script>
+<script type="text/javascript" src="webauthn2.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
      <link rel="icon" href="/favicon.ico">
      <link rel="manifest" href="manifest.json">
    <header>
-  <img src="../LCL-header.png" alt="LCL header">
+  <img src="LCL-header.png" alt="LCL header">
 </header>
  </head>
 
@@ -23,7 +30,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .contents {
     position: absolute;
     top: 85%;
@@ -33,25 +39,60 @@
   </style>
   
  <body>
-  <p style="text-align:center"> LCL vous propose d'enregistrer LCL comme une application de paiement auprès de votre navigateur en cliquant sur le bouton "Install"</p>
- <p style="text-align:center"> Vous pourrez alors utiliser LCL app comme moyen de paiement et vous n'aurez alors qu'à rentrer votre CCV pour valider le paiement </p>
+<h2 class="form-signin-heading text-center">Your VISA Card</h2>
+<div style="display:none;" id="container">
+                    <div class="row">
+                        <div class="mx-auto">
+                            <div class="input-group">
+                                <input class="form-control" placeholder="Username" aria-label="email" id="input-email" type="text">
+                                <span class="input-group-addon" id="email-site">@example.com</span>
+                            </div>                
+                        </div>                            
+                    </div>
+
+
+
+ <div class="row">
+  <p id="error"></p>
+
+  <!-- registration -->
+  <!-- <div class="box">
+    <button id="createButton">Create Credential</button>-->
+    <pre id="createOut"></pre>
+ <!-- </div> -->
+
+  <!-- sign -->
+  <!-- <div class="box">
+    <button id="getButton">Get Assertion</button> -->
+	<div style="text-align:center" class="text-center buttons">                    
+			<button id="getButton" style="width 60%" class="btn btn-primary btn-lg" type="button" onclick="getAssertion()">Login with Credential</button>
+	</div>
+    <pre id="getOut"></pre>
+ <!-- </div> -->
+
+
+ </div>
+</div>
+	<p style="text-align:center"> You can now register your credit card as a entire web payment application, to do so just press "Install" </p>
+	<p style="text-align:center"> You will only need to type your cryptogram and authenticate with the credential you about to create </p> 
+     <br/><br/>
   <div id="cardDetails">
-   </br></br>
    <p style="position:absolute;top:40%;left:20%"> card Number : 5134 XXXX XXXX XX90
    <p style="position:absolute;top:44%;left:22%"> Expiration Date: 00/00
-   <p style="position:absolute;top:48%;left:23%"> Mme Theau Michaela 
+   <p style="position:absolute;top:48%;left:23%"> Ms. Theau Michaela 
   </div>
-  <img src="../platinum.jpg" height="280" width="400"  style="position:absolute;top:32%;left:52%;">
-     <div class="contents" id="contents" align="center">
+     <div class="contents" id="contents" align="center" style="position:absolute;top:72%;left:30%">
          <p id="checking"><font>Checking whether the payment handler is installed...</font></p>
- 
+
          <div id="installed" style="display: none;">
-          <p><font>The payment handler is installed. </font><a href="../sips/selection.html">Test it out</a>.</p>
+          <p><font>Now press "Make a credential" to be able to authenticate when</font></p>
+		  <p><font>you will proceed to the payment using this web payment application </font></p>
 
 <font>Scope: <code id="scope" style="display:none;">N/A</code></font></li>
 <font>Method: <code id="method" style="display:none;">N/A</code></font></li>
 
-             <p><button style="font-size:16;" onclick="uninstall();">Uninstall</button></p>
+             <p><button class="btn btn-danger btn-lg" onclick="uninstall();">Uninstall</button></p>
+			  <button id="createButton" style="width 60%" class="btn btn-primary btn-lg" type="button" onclick="makeCredential()">Register a User/Credential</button>
          </div>
  
          <p id="installing" style="display: none;">Installing...</p>
@@ -60,13 +101,15 @@
 
          <div id="not-installed" style="display: none;">
           <p><font>The payment handler is not installed. </font><a href="../sips/selection.html">Verify</a>.</p>
-             <p><button onclick="testlogin();" style="font-size:16;">Install</button></p>
+             <p><button onclick="testlogin();" class="btn btn-success btn-lg">Install</button></p>
          </div>
  
          <pre id="msg"></pre>
      </div>
+	   <img src="../platinum.jpg" height="280" width="400"  style="position:absolute;top:33%;left:52%;">
+
      <script src="install-basic-card.js"></script>
-     <script src="../../redirect.js"></script>
+     <script src="../redirect.js"></script>
 </script>
  </body>
  
