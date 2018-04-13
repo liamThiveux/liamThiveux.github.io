@@ -411,15 +411,14 @@ swal({
     cancel: true,
     confirm: false,
   },
-  customClass: 'swal-wide',
   closeOnClickOutside: true,
   timer: 6000,
   content: {
   element: "img",
   attributes: {
       src: "securitykey.min.svg",
-	  width: "300",
-	  height: "140",
+	  width: "100",
+	  height: "100",
     },
   },
 });
