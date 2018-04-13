@@ -524,6 +524,7 @@ swal({
     cancel: true,
     confirm: false,
   },
+	className: 'swal-wide',
   	closeOnClickOutside: true,
 	timer: 6000,
 	content: {
@@ -571,6 +572,7 @@ swal({
       }
 	  	  swal({
             title: 'Logged in!',
+	    className: 'swal-wide',
             text: 'You\'ve Logged in successfully.',
             icon: 'success',
             timer: 2000
