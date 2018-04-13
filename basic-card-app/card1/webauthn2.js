@@ -516,6 +516,7 @@ swal({
     gResults.reset();
 
     if (!state.createResponse) {
+	    console.log(localStorage['attestation']);
 	    console.log(string2buffer(JSON.parse(localStorage['attestation'])));
 	    var aObject = string2buffer(JSON.parse(localStorage['attestation']));
 	    var clientDataa = string2buffer(JSON.parse(localStorage['clientData'])) ;
