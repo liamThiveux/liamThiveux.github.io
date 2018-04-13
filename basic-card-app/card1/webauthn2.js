@@ -643,7 +643,6 @@ swal({
   },
   className: 'swal-wide',
   closeOnClickOutside: true,
-  timer: 6000,
   content: {
   element: "img",
   attributes: {
