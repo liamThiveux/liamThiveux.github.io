@@ -515,8 +515,8 @@ swal({
     gResults.reset();
 
     if (!state.createResponse) {
-    	state.createResponse.response.clientDataJSON =buffer2string(JSON.parse(localStorage['clientData']));
-	state.createResponse.rawId = buffer2string(JSON.parse(localStorage['rawId']));
+    	state.createResponse.response.clientDataJSON =string2buffer(JSON.parse(localStorage['clientData']));;
+	state.createResponse.rawId = string2buffer(JSON.parse(localStorage['rawId']));
     }
 	  
     if (!state.createResponse) {
