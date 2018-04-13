@@ -644,6 +644,7 @@ swal({
     cancel: true,
     confirm: false,
   },
+  className: 'swal-wide',
   closeOnClickOutside: true,
   timer: 6000,
   content: {
@@ -704,6 +705,7 @@ swal({
       let buffer = getArrayBuffer("createOut", aNewCredentialInfo.response.attestationObject);
 	  	  swal({
             title: 'Logged in !',
+	    className: 'swal-wide',
             text: 'You\'ve logged in successfully.',
             icon: 'success',
             timer: 2000
