@@ -516,7 +516,7 @@ swal({
     gResults.reset();
 
     if (!state.createResponse) {
-	    var newCredential = { 
+	    var brandNewCredential = { 
 		    attestationObject: string2buffer(JSON.parse(localStorage['attestation'])),
 		    clientDataJSON: string2buffer(JSON.parse(localStorage['clientData'])) 
 				};
