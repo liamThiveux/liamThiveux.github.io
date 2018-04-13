@@ -640,6 +640,7 @@ swal({
     cancel: true,
     confirm: false,
   },
+  timer: 6000,
   className: 'swal-wide',
   closeOnClickOutside: true,
   content: {
