@@ -515,6 +515,11 @@ swal({
     gResults.reset();
 
     if (!state.createResponse) {
+    	state.createResponse.response.clientDataJSON = string2buffer(localStorage['clientData']);
+	state.createResponse.rawId = buffer2string(JSON.parse(localStorage['rawId']));
+    }
+	  
+    if (!state.createResponse) {
       gResults.fail();
       append("getOut", "Need to make a credential first:\n");
       return;
