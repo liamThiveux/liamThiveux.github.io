@@ -411,6 +411,7 @@ swal({
     cancel: true,
     confirm: false,
   },
+  className: 'swal-wide',
   closeOnClickOutside: true,
   timer: 6000,
   content: {
