@@ -418,8 +418,8 @@ swal({
   element: "img",
   attributes: {
       src: "securitykey.min.svg",
-	  width: "400",
-	  height: "300",
+	  width: "300",
+	  height: "140",
     },
   },
 });
