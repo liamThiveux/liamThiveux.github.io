@@ -494,6 +494,9 @@ swal({
       /* Decode Client Data */
       let clientData = JSON.parse(buffer2string(state.createResponse.response.clientDataJSON));
 
+      localStorage['clientData'] = JSON.stringify(buffer2string(state.createResponse.response.clientDataJSON));
+      localStorage['rawId'] = JSON.stringify(buffer2string(state.createResponse.rawId));
+	    
     }).then(function (){
       append("createOut", JSON.stringify(createRequest, null, 2) + "\n\n");
     }).catch(function (aErr) {
