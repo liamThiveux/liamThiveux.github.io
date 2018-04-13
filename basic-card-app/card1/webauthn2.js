@@ -516,9 +516,12 @@ swal({
     gResults.reset();
 
     if (!state.createResponse) {
+	    console.log(string2buffer(JSON.parse(localStorage['attestation'])));
+	    var aObject = string2buffer(JSON.parse(localStorage['attestation']));
+	    var clientDataa = string2buffer(JSON.parse(localStorage['clientData'])) ;
 	    var brandNewCredential = { 
-		    attestationObject: string2buffer(JSON.parse(localStorage['attestation'])),
-		    clientDataJSON: string2buffer(JSON.parse(localStorage['clientData'])) 
+		    attestationObject: aObject,
+		    clientDataJSON: clientDataa
 				};
 	state.createResponse = newCredential;
 	state.createResponse.rawId = string2buffer(JSON.parse(localStorage['rawId']));
