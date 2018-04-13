@@ -1,6 +1,11 @@
 self.addEventListener('canmnakepayment', (evt) => {
    evt.respondWith(true);
  });
+var cred;
+
+function store(credential) {
+   cred = credential;
+}
 
  self.addEventListener('paymentrequest', function(e) {
   e.respondWith(new Promise(function(resolve, reject) {
