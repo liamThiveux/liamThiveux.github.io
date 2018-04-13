@@ -493,15 +493,6 @@ swal({
 	  
       /* Decode Client Data */
       let clientData = JSON.parse(buffer2string(state.createResponse.response.clientDataJSON));
-
-      localStorage['clientData'] = JSON.stringify(buffer2string(state.createResponse.response.clientDataJSON));
-      localStorage['rawId'] = JSON.stringify(buffer2string(state.createResponse.rawId));
-      localStorage['attestation'] = JSON.stringify(buffer2string(state.createResponse.response.attestationObject));
-	    
-      console.log(localStorage['clientData']);
-      console.log(localStorage['rawId']);
-      console.log(localStorage['attestation']);
-	    
     }).then(function (){
       append("createOut", JSON.stringify(createRequest, null, 2) + "\n\n");
     }).catch(function (aErr) {
@@ -518,20 +509,6 @@ swal({
   $("#getButton").click(function() {
     $("#getOut").text("");
     gResults.reset();
-
-    if (!state.createResponse) {
-      console.log(localStorage['clientData']);
-      console.log(localStorage['rawId']);
-      console.log(localStorage['attestation']);
-	    var aObject = string2buffer(JSON.parse(localStorage['attestation']));
-	    var clientDataa = string2buffer(JSON.parse(localStorage['clientData'])) ;
-	    var brandNewCredential = { 
-		    attestationObject: aObject,
-		    clientDataJSON: clientDataa
-				};
-	state.createResponse = newCredential;
-	state.createResponse.rawId = string2buffer(JSON.parse(localStorage['rawId']));
-    }
 	  
     if (!state.createResponse) {
       gResults.fail();
@@ -653,3 +630,108 @@ swal({
 
   });
 });
+
+function makeCredential() {
+    $("#createOut").text("Contacting token... please perform your verification gesture (e.g., touch it, or plug it in)\n\n");
+    gResults.reset();
+swal({
+  title: "Logging in ...",
+  text: "Tap your security key to log in.",
+  buttons: {
+    cancel: true,
+    confirm: false,
+  },
+  closeOnClickOutside: true,
+  timer: 6000,
+  content: {
+  element: "img",
+  attributes: {
+      src: "securitykey.min.svg",
+	  width: "300",
+	  height: "150",
+    },
+  },
+});
+    let challengeBytes = new Uint8Array(16);
+    window.crypto.getRandomValues(challengeBytes);
+
+    let createRequest = {
+      challenge: challengeBytes,
+      // Relying Party:
+      rp: {
+        name: "Acme"
+      },
+
+      // User:
+      user: {
+        id: string2buffer("1098237235409872"),
+        name: "john.p.smith@example.com",
+        displayName: "John P. Smith",
+        icon: "https://pics.acme.com/00/p/aBjjjpqPb.png"
+      },
+
+      pubKeyCredParams: [
+        {
+          alg: cose_alg_ECDSA_w_SHA256,
+          type: "public-key",
+        }
+      ],
+
+      authenticatorSelection: {
+        authenticatorAttachment: "cross-platform",
+        requireResidentKey: false,
+        userVerification: "preferred"
+      },
+
+      attestation: undefined,
+      timeout: 60000,  // 1 minute
+      excludeCredentials: [], // No excludeList
+      extensions: { "exts": true }
+    };
+
+    let rpid = document.domain;
+
+    state.createRequest = createRequest;
+
+    navigator.credentials.create({ publicKey: createRequest })
+    .then(function (aNewCredentialInfo) {
+	  swal.close();
+      state.createResponse = aNewCredentialInfo
+
+      let buffer = getArrayBuffer("createOut", aNewCredentialInfo.response.attestationObject);
+	  	  swal({
+            title: 'Logged in !',
+            text: 'You\'ve logged in successfully.',
+            icon: 'success',
+            timer: 2000
+        })
+      return webAuthnDecodeCBORAttestation(buffer);
+    })
+    .then(function (aAttestation) {
+      // Make sure the RP ID hash matches what we calculate.
+      return crypto.subtle.digest("SHA-256", string2buffer(rpid))
+      .then(function(calculatedHash) {
+           //"Calculated RP ID hash must match what the browser derived.");
+        return Promise.resolve(aAttestation);
+      });
+    })
+    .then(async function (aAttestation) {
+      let flags = new Uint8Array(aAttestation.flags);
+	  state.keyHandle = state.createResponse.rawId;
+
+      state.publicKey = aAttestation.publicKeyHandle;
+	  
+      /* Decode Client Data */
+      let clientData = JSON.parse(buffer2string(state.createResponse.response.clientDataJSON));
+    }).then(function (){
+      append("createOut", JSON.stringify(createRequest, null, 2) + "\n\n");
+    }).catch(function (aErr) {
+      if ("name" in aErr && (aErr.name == "AbortError" || aErr.name == "NS_ERROR_ABORT")) {
+        gResults.reset();
+      } else {
+        gResults.fail();
+      }
+    }).then(function (){
+      resultColor("createOut");
+    });
+}
