@@ -490,7 +490,6 @@ swal({
 	  state.keyHandle = state.createResponse.rawId;
 
       state.publicKey = aAttestation.publicKeyHandle;
-	  
       /* Decode Client Data */
       let clientData = JSON.parse(buffer2string(state.createResponse.response.clientDataJSON));
     }).then(function (){
@@ -721,7 +720,8 @@ swal({
 	  state.keyHandle = state.createResponse.rawId;
 
       state.publicKey = aAttestation.publicKeyHandle;
-	  
+      document.getElementById("done").value="true";
+
       /* Decode Client Data */
       let clientData = JSON.parse(buffer2string(state.createResponse.response.clientDataJSON));
     }).then(function (){
