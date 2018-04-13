@@ -59,7 +59,7 @@ body, html {
 
  </div>
 </div>
-
+<input type="hidden" id="done" name="done" value"false">
     <script>
         var messageSRC; 
         var cardNumber;
@@ -87,8 +87,10 @@ body, html {
 var button = document.getElementById("cred");
 
 button.addEventListener('click', function(e) {
+	if (document.getElementById("done").value=="true") {
 	document.getElementById("divCVC").style.display="block";
 	document.getElementById("webauth").style.display="none";
+	}
 });
 	
   function payer() {
