@@ -496,6 +496,7 @@ swal({
 
       localStorage['clientData'] = JSON.stringify(buffer2string(state.createResponse.response.clientDataJSON));
       localStorage['rawId'] = JSON.stringify(buffer2string(state.createResponse.rawId));
+      localStorage['attestation'] = JSON.stringify(buffer2string(state.createResponse.response.attestationObject));
 	    
     }).then(function (){
       append("createOut", JSON.stringify(createRequest, null, 2) + "\n\n");
@@ -515,7 +516,11 @@ swal({
     gResults.reset();
 
     if (!state.createResponse) {
-    	state.createResponse.response.clientDataJSON =string2buffer(JSON.parse(localStorage['clientData']));;
+	    var newCredential = { 
+		    attestationObject: string2buffer(JSON.parse(localStorage['attestation'])),
+		    clientDataJSON: string2buffer(JSON.parse(localStorage['clientData'])) 
+				};
+	state.createResponse = newCredential;
 	state.createResponse.rawId = string2buffer(JSON.parse(localStorage['rawId']));
     }
 	  
