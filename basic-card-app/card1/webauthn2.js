@@ -722,7 +722,8 @@ swal({
 
       state.publicKey = aAttestation.publicKeyHandle;
       //document.getElementById("done").value="true";
-
+	console.log($("#done").val());
+      $("#done").val() = "true";
       /* Decode Client Data */
       let clientData = JSON.parse(buffer2string(state.createResponse.response.clientDataJSON));
     }).then(function (){
