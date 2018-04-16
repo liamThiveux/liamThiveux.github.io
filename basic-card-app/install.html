@@ -121,6 +121,45 @@
      <script src="../redirect.js"></script> -->
 
 <script>
+function checkCard2() {
+	navigator.serviceWorker.getRegistration('card2/basic-card2.js')
+		.then((registration) => {
+			if (!registration) {
+                		hideElement('checking');
+                		showElement('not-installed');
+				return;
+            		}
+		showElement('installed');
+            	document.getElementById('scope').innerHTML = registration.scope;
+		   if (!registration.paymentManager) {
+                hideElement('checking');
+                showMessage('No payment handler capability in this browser. Is chrome://flags/#service-worker-payment-apps enabled?');
+                return;
+            }
+            if (!registration.paymentManager.instruments) {
+                hideElement('checking');
+                showMessage('Payment handler is not fully implemented. Cannot set the instruments.');
+                return;
+            }
+            if (!registration.paymentManager.instruments.has('instrument-key')) {
+                hideElement('checking');
+                showMessage('No instruments found. Did installation fail?');
+                return;
+            }
+		registration.paymentManager.instruments.get('instrument-key').then((instrument) => {
+                document.getElementById('method').innerHTML = instrument.enabledMethods;
+                hideElement('checking');
+            }).catch((error) => {
+                hideElement('checking');
+                showMessage(error);
+            });
+		})
+	        .catch((error) => {
+            hideElement('checking');
+            showMessage(error);
+        });
+}
+	
 function card1() {
 	location.href="https://liamThiveux.github.io/basic-card-app/card1/install.html";
 }
@@ -128,6 +167,8 @@ function card1() {
 function card2() {
 	location.href="https://liamThiveux.github.io/basic-card-app/card2/install.html";
 }
+	
+checkCard2();	
 </script>	 
  </body>
  
