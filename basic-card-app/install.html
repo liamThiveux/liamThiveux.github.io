@@ -120,7 +120,22 @@
      <!-- <script src="card2/install-basic-card2.js"></script>
      <script src="../redirect.js"></script> -->
 
+<div id="card2Installed" style="display:none;">
+        <p><button class="btn btn-danger btn-lg" onclick="uninstall();">Uninstall</button></p>
+	<button id="createButton" style="width: 60%;" class="btn btn-primary btn-lg" type="button" onclick="makeCredential()">Register a User/Credential</button>
+</div>
 <script>
+var url_string = window.location.href
+var url = new URL(url_string);
+var param = url.searchParams.get("sw");
+if (param) {
+	hideElement("card2");
+	showElement("card2Installed");
+}
+else {
+	showElement("card2");
+	hideElement("card2Installed");
+}
 	
 function showMessage(message) {
     const messageElement = document.getElementById('msg');
@@ -145,46 +160,7 @@ function hideElements() {
         hideElement(id);
     }
 }
-	
-function checkCard2() {
-	navigator.serviceWorker.getRegistration('card2/basic-card2.js')
-		.then((registration) => {
-			if (!registration) {
-                		hideElement('checking');
-                		showElement('not-installed');
-				return;
-            		}
-		showElement('installed');
-		hideElement('card2');
-            	document.getElementById('scope').innerHTML = registration.scope;
-		   if (!registration.paymentManager) {
-                hideElement('checking');
-                showMessage('No payment handler capability in this browser. Is chrome://flags/#service-worker-payment-apps enabled?');
-                return;
-            }
-            if (!registration.paymentManager.instruments) {
-                hideElement('checking');
-                showMessage('Payment handler is not fully implemented. Cannot set the instruments.');
-                return;
-            }
-            if (!registration.paymentManager.instruments.has('instrument-key')) {
-                hideElement('checking');
-                showMessage('No instruments found. Did installation fail?');
-                return;
-            }
-		registration.paymentManager.instruments.get('instrument-key').then((instrument) => {
-                document.getElementById('method').innerHTML = instrument.enabledMethods;
-                hideElement('checking');
-            }).catch((error) => {
-                hideElement('checking');
-                showMessage(error);
-            });
-		})
-	        .catch((error) => {
-            hideElement('checking');
-            showMessage(error);
-        });
-}
+
 	
 function card1() {
 	location.href="https://liamThiveux.github.io/basic-card-app/card1/install.html";
@@ -194,7 +170,6 @@ function card2() {
 	location.href="https://liamThiveux.github.io/basic-card-app/card2/install.html";
 }
 	
-checkCard2();	
 </script>	 
  </body>
  
