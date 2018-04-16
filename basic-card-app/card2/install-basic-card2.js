@@ -39,7 +39,7 @@ function check() {
         return;
     }
 
-    navigator.serviceWorker.getRegistration('basic-card.js')
+    navigator.serviceWorker.getRegistration('basic-card2.js')
         .then((registration) => {
             if (!registration) {
                 hideElement('checking');
@@ -129,7 +129,7 @@ function uninstall() {
     hideElements();
     showElement('uninstalling');
 
-    navigator.serviceWorker.getRegistration('basic-card.js')
+    navigator.serviceWorker.getRegistration('basic-card2.js')
         .then((registration) => {
             registration.unregister().then((result) => {
                 if (result) {
