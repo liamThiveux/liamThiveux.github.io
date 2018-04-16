@@ -112,8 +112,8 @@
          <pre id="msg"></pre>
      </div>
 	 
-<p><button onclick="card1();" class="btn btn-success btn-lg" style="position:absolute;top:34%;left:90%;">Install</button></p>
-<p><button onclick="card2();" class="btn btn-success btn-lg" style="position:absolute;top:60%;left:90%;">Install</button></p>
+<p><button id="card1" onclick="card1();" class="btn btn-success btn-lg" style="position:absolute;top:34%;left:90%;">Install</button></p>
+<p><button id="card2" onclick="card2();" class="btn btn-success btn-lg" style="position:absolute;top:60%;left:90%;">Install</button></p>
 
 	   <img src="platinum.jpg" height="90" width="150"  style="position:absolute;top:30%;left:47%;">
 	   <img src="mastercard.jpg" height="120" width="150" style="position:absolute;top:53%;left:47%;">
@@ -155,6 +155,7 @@ function checkCard2() {
 				return;
             		}
 		showElement('installed');
+		hideElement('card2');
             	document.getElementById('scope').innerHTML = registration.scope;
 		   if (!registration.paymentManager) {
                 hideElement('checking');
