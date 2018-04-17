@@ -108,6 +108,7 @@ function install() {
                         document.getElementById('method').innerHTML = instrument.enabledMethods;
                         hideElement('installing');
                         showElement('installed');
+                        window.history.back();
                     }).catch((error) => {
                         hideElement('installing');
                         showMessage(error);
