@@ -67,8 +67,8 @@ body, html {
         var expDate;
   navigator.serviceWorker.addEventListener('message', function (e) {
   console.log('got message:', e.data);
-	cardNumber = e.cbNumber;
-	expDate = e.date;
+	cardNumber = e.data.cbNumber;
+	expDate = e.data.date;
 	messageSRC = e.source; 
 	console.log(messageSRC);
 	});
