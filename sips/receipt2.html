@@ -21,12 +21,6 @@
 <script src="./js/cookies.js" type="text/javascript"></script>
 
 <title>SIPS confirmation page</title>
-<form>
-	<input type="hidden" value=<?= $_POST["payMean"] ?> id="payMean" name="payMean">
-	<input type="hidden" value=<?= $_POST["payMethod"] ?> id="payMethod" name="payMethod">
-	<input type="hidden" value=<?= $_POST["address"] ?> id="address" name="address">
-
-	</form>
 <script type="text/javascript">
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -58,14 +52,13 @@ var authNum=d.getMilliseconds()+""+d.getSeconds();
 <body id="no_wallet_management_body" style="background-image:url(baskground.png);background-repeat:no-repeat;">
 <div id="demo"></div>
 <div id="container">
-<header role="banner"><h1></h1></header>
 <hr>
 
 
 <div id="wrapper">
 <aside role="complementary" class="transaction-data"><p class="vendor"></p><h2 id="transaction_bloc_title">
 Détails de la transaction
-<span class="transactionShowMore">+</span></h2><div class="main-data"><h3 id="merchantName">BShop Basketball</h3><dl><dt class="amount">
+<span class="transactionShowMore">+</span></h2><div class=""><h3 id="merchantName">BShop Basketball</h3><dl><dt class="amount">
 Montant de la transaction&nbsp;:
 </dt><dd class="amount" name="amount" id="amount">
 <?php echo $_POST['total'] ?>
