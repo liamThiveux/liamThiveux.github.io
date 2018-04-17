@@ -1,7 +1,7 @@
 {
     "name" : "LCL card 2",
     "icons": [{
-        "src": "lcl.png",
+        "src": "../lcl.png",
         "sizes": "600x600",
         "type": "image/png"
     }]
