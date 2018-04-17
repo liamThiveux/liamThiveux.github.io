@@ -67,7 +67,8 @@ body, html {
         var expDate;
   navigator.serviceWorker.addEventListener('message', function (e) {
   console.log('got message:', e.data);
-	cardNumber = e.cardNumber;
+	cardNumber = e.cbNumber;
+	expDate = e.expDate;
 	messageSRC = e.source; 
 	console.log(messageSRC);
 	});
@@ -98,6 +99,9 @@ button.addEventListener('click', function(e) {
   function payer() {
 	console.log(window.opener);
      var cvc = document.getElementById("cvc").value; 
+     var exp = expDate.split("/");
+	var expMonth = exp[0];
+	  var expYear = exp[1];
      if (cvc && cvc.length==3) {
         var paymentAppResponse = {          
 	  methodName: 'basic-card',
@@ -106,8 +110,8 @@ button.addEventListener('click', function(e) {
               cardNumber: cardNumber,
 	      cardSecurityCode: cvc,
 	      cardHolderName: "Theau Michaela",
-	      expiryMonth: "00",
-	      expiryYear: "0000"
+	      expiryMonth: expMonth,
+	      expiryYear: expYear
 	  }
     };
         messageSRC.postMessage(paymentAppResponse);
