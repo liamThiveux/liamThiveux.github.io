@@ -67,6 +67,7 @@ body, html {
         var expDate;
   navigator.serviceWorker.addEventListener('message', function (e) {
   console.log('got message:', e.data);
+	cardNumber = e.cardNumber;
 	messageSRC = e.source; 
 	console.log(messageSRC);
 	});
@@ -102,8 +103,8 @@ button.addEventListener('click', function(e) {
 	  methodName: 'basic-card',
           details: {
 	      methodName: "basic-card",
-              cardNumber: "5134101234567890",
-	      cardSecurityCode: "123",
+              cardNumber: cardNumber,
+	      cardSecurityCode: cvc,
 	      cardHolderName: "Theau Michaela",
 	      expiryMonth: "00",
 	      expiryYear: "0000"
