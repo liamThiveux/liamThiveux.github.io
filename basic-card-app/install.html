@@ -120,11 +120,11 @@
      <script src="../redirect.js"></script> -->
 
 <div id="card1Installed" style="display:none;position:absolute;top:34%;left:90%;">
-        <p><button class="btn btn-danger btn-lg" onclick="uninstall();">Uninstall</button></p>
+        <p><button class="btn btn-danger btn-lg" onclick="uninstall(card1/basic-card.js);">Uninstall</button></p>
 </div>
 
 <div id="card2Installed" style="display:none;position:absolute;top:60%;left:90%;">
-        <p><button class="btn btn-danger btn-lg" onclick="uninstall();">Uninstall</button></p>
+        <p><button class="btn btn-danger btn-lg" onclick="uninstall(card2/basic-card2.js);">Uninstall</button></p>
 </div>
 
 <div id="credentials">
@@ -135,33 +135,27 @@
 	
 navigator.serviceWorker.getRegistration('card1/basic-card.js').then((registration) => {
             if (!registration) {
-				console.log('isNull');
-			}
+			console.log('isNull');
+		    	showElement("card1");
+			hideElement("card1Installed");			}
 			else {
-				console.log('not Null');
-			}
+			console.log('not Null');
+			hideElement("card1");
+			showElement("card1Installed");			}
 });
 
 navigator.serviceWorker.getRegistration('card2/basic-card2.js').then((registration) => {
             if (!registration) {
-				console.log('2 isNull');
+			console.log('2 isNull');
+		    	showElement("card2");
+			hideElement("card2Installed");
 			}
 			else {
-				console.log('2 not Null');
+			console.log('2 not Null');
+			hideElement("card2");
+			showElement("card2Installed");
 			}
 });	
-	
-var url_string = window.location.href
-var url = new URL(url_string);
-var param = url.searchParams.get("sw");
-if (param) {
-	hideElement("card2");
-	showElement("card2Installed");
-}
-else {
-	showElement("card2");
-	hideElement("card2Installed");
-}
 	
 function showMessage(message) {
     const messageElement = document.getElementById('msg');
@@ -186,7 +180,6 @@ function hideElements() {
         hideElement(id);
     }
 }
-
 	
 function card1() {
 	location.href="https://liamThiveux.github.io/basic-card-app/card1/install.html";
@@ -194,6 +187,31 @@ function card1() {
 
 function card2() {
 	location.href="https://liamThiveux.github.io/basic-card-app/card2/install.html";
+}
+	
+function uninstall(url) {
+    hideElements();
+    showElement('uninstalling');
+
+    navigator.serviceWorker.getRegistration(url)
+        .then((registration) => {
+            registration.unregister().then((result) => {
+                if (result) {
+                    hideElement('uninstalling');
+                    showElement('not-installed');
+                } else {
+                    hideElement('uninstalling');
+                    showElement('installed');
+                    showMessage('Service worker unregistration returned "false", which indicates that it failed.');
+                }
+            }).catch((error) => {
+                hideElement('uninstalling');
+                showMessage(error);
+            });
+        }).catch((error) => {
+            hideElement('uninstalling');
+            showMessage(error);
+        });
 }
 	
 </script>	 
