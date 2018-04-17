@@ -193,7 +193,7 @@ function uninstall(url) {
     navigator.serviceWorker.getRegistration(url)
         .then((registration) => {
             registration.unregister().then((result) => {
-                if (result) 
+                if (result) {
 			if(url=='card1/basic-card.js'){
 		    	showElement("card1");
 			hideElement("card1Installed");
@@ -211,7 +211,8 @@ function uninstall(url) {
         }).catch((error) => {
             showMessage(error);
         });
-	
+}
+
 </script>	 
  </body>
  
