@@ -193,9 +193,15 @@ function uninstall(url) {
     navigator.serviceWorker.getRegistration(url)
         .then((registration) => {
             registration.unregister().then((result) => {
-                if (result) {
+                if (result) 
+			if(url=='card1/basic-card.js'){
 		    	showElement("card1");
 			hideElement("card1Installed");
+	    		}
+			else{
+			showElement("card2");
+			hideElement("card2Installed");
+			}
                 } else {
                     showMessage('Service worker unregistration returned "false", which indicates that it failed.');
                 }
