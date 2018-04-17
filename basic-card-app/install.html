@@ -190,26 +190,19 @@ function card2() {
 }
 	
 function uninstall(url) {
-    hideElements();
-    showElement('uninstalling');
-
     navigator.serviceWorker.getRegistration(url)
         .then((registration) => {
             registration.unregister().then((result) => {
                 if (result) {
-                    hideElement('uninstalling');
-                    showElement('not-installed');
+		    	showElement("card1");
+			hideElement("card1Installed");
                 } else {
-                    hideElement('uninstalling');
-                    showElement('installed');
                     showMessage('Service worker unregistration returned "false", which indicates that it failed.');
                 }
             }).catch((error) => {
-                hideElement('uninstalling');
                 showMessage(error);
             });
         }).catch((error) => {
-            hideElement('uninstalling');
             showMessage(error);
         });
 }
