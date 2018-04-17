@@ -133,6 +133,25 @@
 </div>
 	
 <script>
+	
+navigator.serviceWorker.getRegistration('card1/basic-card.js').then((registration) => {
+            if (!registration) {
+				console.log('not null');
+			}
+			else {
+				console.log('isNull');
+			}
+});
+
+navigator.serviceWorker.getRegistration('card2/basic-card2.js').then((registration) => {
+            if (!registration) {
+				console.log('2 not null');
+			}
+			else {
+				console.log('2 isNull');
+			}
+});	
+	
 var url_string = window.location.href
 var url = new URL(url_string);
 var param = url.searchParams.get("sw");
