@@ -108,7 +108,7 @@ function install() {
                         document.getElementById('method').innerHTML = instrument.enabledMethods;
                         hideElement('installing');
                         showElement('installed');
-                       // location.href="https://liamThiveux.github.io/basic-card-app/install.html?sw=true";
+                        window.history.back();
                     }).catch((error) => {
                         hideElement('installing');
                         showMessage(error);
