@@ -135,19 +135,19 @@
 	
 navigator.serviceWorker.getRegistration('card1/basic-card.js').then((registration) => {
             if (!registration) {
-				console.log('not null');
+				console.log('isNull');
 			}
 			else {
-				console.log('isNull');
+				console.log('not Null');
 			}
 });
 
 navigator.serviceWorker.getRegistration('card2/basic-card2.js').then((registration) => {
             if (!registration) {
-				console.log('2 not null');
+				console.log('2 isNull');
 			}
 			else {
-				console.log('2 isNull');
+				console.log('2 not Null');
 			}
 });	
 	
