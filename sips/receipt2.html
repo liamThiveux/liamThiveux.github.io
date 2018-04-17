@@ -60,36 +60,36 @@ var authNum=d.getMilliseconds()+""+d.getSeconds();
 
 <div id="wrapper">
 <aside role="complementary" class="transaction-data"><p class="vendor"></p><h2 id="transaction_bloc_title">
-Détails de la transaction
+Transaction details
 <span class="transactionShowMore">+</span></h2><div class=""><h3 id="merchantName">BShop Basketball</h3><dl><dt class="amount">
-Montant de la transaction&nbsp;:
+Amount&nbsp;:
 </dt><dd class="amount" name="amount" id="amount">
 <?php echo $_POST['total'] ?>
 </dd></dl></div><dl class="data-sheet">
   <dt class="merchantId">
-  Identifiant du commerçant&nbsp;:
+  Merchant identifier&nbsp;:
   </dt><dd class="merchantId" name="merchantId" id="merchantId">
   002474849505152
   </dd>
   <div id="instalmentsInfo"><dt>
-  Référence de la transaction&nbsp;:
+  Transaction ID &nbsp;:
   </dt><dd>
     <?php echo $_POST['tId']; ?>
   </dd></div>
   <dt class="transactionDate">
-Date de la transaction&nbsp;:
+Transaction date&nbsp;:
 </dt><dd class="transactionDate" name="transactionDate" id="transactionDate">
 20 Nov. 2017
 </dd>
 <dt class="amount">
-Montant de la transaction&nbsp;:
+Amount&nbsp;:
 </dt><dd class="amount">
 <?php echo $_POST['total'] ?>
 </dd>
 
 <div id="cardResult" style="display:none">
 <dt class="maskedCardNumber">
-Numéro de carte&nbsp;:
+Card Number&nbsp;:
 </dt><dd class="maskedCardNumber" name="maskedCardNumber" id="maskedCardNumber">
   <script>//document.write(payMean+"##########")
   </script>
@@ -97,7 +97,7 @@ Numéro de carte&nbsp;:
  echo $_POST['payMean']; echo ' XXXX XXXX XXXX';
  }?>
 </dd><dt class="authorizationId">
-Numéro d’autorisation&nbsp;:
+Authorization number&nbsp;:
 </dt><dd class="authorizationId" name="authorizationId" id="authorizationId">
 <script>document.write(authNum)</script>
 </dd>
@@ -111,14 +111,14 @@ Numéro d’autorisation&nbsp;:
 
 <div id="bobpayResult"  style="display:none">
 <dt class="maskedCardNumber">
-Numéro de compte Bobpay&nbsp;:
+Bobpay account &nbsp;:
 </dt><dd class="maskedCardNumber" name="maskedCardNumber" id="maskedCardNumber">
   <script>//document.write(payMean)
   </script>
 <?php echo $_POST['payMean']; ?>
   </dd></div>
   <div id="address"><dt class="address">
-	Adresse : 
+	Address : 
 	</dt><dd class="address" name="address" id="address">
 	<?php echo $_POST['adcress'] ; ?>
 	</dd>
@@ -141,17 +141,17 @@ if ( payMethod=="bobpay" ) {
 
 
 
-<h2 class="receiptH2">Informations de paiement</h2><div class="k-confirm-messages"><div class="customMessage1">
+<h2 class="receiptH2">Payment Information</h2><div class="k-confirm-messages"><div class="customMessage1">
 
 </div><div class="customMessage2">
 
 </div><div id="paymentaccepted" style="display:block">
-Votre paiement a été accepté.
+Payment succeeded
 </div><div>
-Nous vous conseillons de conserver vos informations de paiement.
+Please keep those payment details.
 </div></div><div class="customMessage3">
 
-</div><div class="k-buttons-bar"><p><a role="button" class="bt-option k-print" href="#">Imprimer le reçu du paiement</a><a class="bt-submit" href="../merchant/confirmation.html">Continuer
+</div><div class="k-buttons-bar"><p><a role="button" class="bt-option k-print" href="#">Print the receipt</a><a class="bt-submit" href="../merchant/confirmation.html">Continue
 </a></p>
 </div></form></div>
 
