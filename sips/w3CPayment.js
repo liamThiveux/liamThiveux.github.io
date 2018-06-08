@@ -36,6 +36,13 @@ function initPaymentRequest(networks) {
 			customer: "Theau Michaela"
 	  	}
 	},
+	  	  {
+		supportedMethods: 'https://liamThiveux.github.io/dealI',
+	  	data : {
+	  		ID:"22453412",
+			customer: "Liam T"
+	  	}
+	},
 	  {
 	  	supportedMethods: 'https://rd.atosworldline.com/qualif/POCw3c',
 		data : {
