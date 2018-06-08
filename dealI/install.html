@@ -1,0 +1,47 @@
+	 <html>
+<head>
+	<link rel="manifest" href="manifest.json">
+	<h2> Install IDEAL handler </h2>
+</head>
+<body>
+    <div class="contents" id="contents" style="text-align:center">
+         <p id="checking" style="display:none"><font color="white">Checking whether the payment handler is installed...</font></p>
+ 
+         <div id="installed" style="display: none;">
+          <p><font style="font-size:18px" color="white">The payment handler is installed. </font><a href="../../POCw3c/sips/selection.html">Test it out</a>.</p>
+
+<font color="white" style="display:none;">Scope: <code id="scope">N/A</code></font></li>
+<font color="white" style="display:none;">Method: <code id="method">N/A</code></font></li>
+
+             <p><button onclick="uninstall();" style="font-size:20px" class="btn btn-lg btn-danger">Uninstall</button> <button onclick="goBack();" class="btn btn-lg" style="font-size:20px"> Go back </button></p>
+			 <!-- <p><button onclick="goToOneClick();" style="font-size:20px" class="btn btn-lg btn-primary">Install Paylib One-Click</button></p> -->
+         </div>
+ 
+         <p id="installing" style="display: none;">Installing...</p>
+ 
+         <p id="uninstalling" style="display: none;">Uninstalling...</p>
+ 
+
+         <div id="not-installed" style="display: none;">
+          <p><font color="white"  style="font-size:18px">Vous n'avez pas encore activ&eacute; Paylib One-clic </font></p>
+		          <form action="wallet.html" method="GET" id="loginPaylib">
+         <br><br>
+		 <h5>Afin de procÃ©der Ã  l'activation de Paylib one-clic, vous devrez selectionner la banque et la carte avec laquelle vous effectuerez vos paiements</h5>
+         <font color="white" id="font-mail"> E-mail : </font><input type="email" id="E-mail" name="E-mail" value="">
+         <font color="white" id="font-pass"> Mot de passe: </font><input type="password" name="password" id="password" value=""> <br> 
+        </form>
+
+             <p><button onclick="redirect()" class="btn btn-lg btn-success" style="font-size:20px">Activer Paylib-one Clic</button></p>
+         </div>
+ 
+         <pre id="msg"></pre>
+     </div>
+	<button id="bank1" onclick="redirect()">Install</button>
+</body>
+	 <script src="installIdeal.js"></script> 
+<script>
+function redirect(){
+	testlogin();
+}
+</script>
+</html>
