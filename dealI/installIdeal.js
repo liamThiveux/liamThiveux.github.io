@@ -98,7 +98,7 @@ function install() {
             registration.paymentManager.instruments
                 .set('instrument-key', {
                     name: 'From manifest anyway',
-                    enabledMethods: ['https://rd.atosworldline.com/qualif/POCw3c'],
+                    enabledMethods: ['https://liamthiveux.github.io/dealI'],
                 })
                 .then(() => {
                     registration.paymentManager.instruments.get('instrument-key').then((instrument) => {
