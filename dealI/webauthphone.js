@@ -60,10 +60,10 @@ if (!window.PublicKeyCredential) { /* Platform not capable of the API. Handle er
 }
 
 
-
+alert("hello");
 PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
     .then(function (userIntent) {
-
+	alert("ohh perhaps");
         // If the user has affirmed willingness to register with RP using an available platform authenticator
         if (userIntent) {
 		    let challengeBytes = new Uint8Array(32);
