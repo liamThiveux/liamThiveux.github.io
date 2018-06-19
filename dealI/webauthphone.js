@@ -114,6 +114,7 @@ PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
             // and default the user to a password-based flow in the future.
 			console.log("No consent from user");
 			document.getElementById("info2").innerHTML="You refused to use an authenticator";
+		alert("refused to use an authenticator");
         }
 
     }).then(function (newCredentialInfo) {
@@ -156,6 +157,7 @@ PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
       resultColor("createOut");
     });*/
     }).catch( function(err) {
+	alert("went wrong");
         console.log("Something went wrong : ");
 		console.log(err);
     });
