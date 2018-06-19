@@ -60,12 +60,12 @@ if (!window.PublicKeyCredential) { /* Platform not capable of the API. Handle er
 }
 
 
-alert("hello");
 PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
     .then(function (userIntent) {
 	alert("ohh perhaps");
         // If the user has affirmed willingness to register with RP using an available platform authenticator
         if (userIntent) {
+		alert("hello2");
 		    let challengeBytes = new Uint8Array(32);
 			window.crypto.getRandomValues(challengeBytes);
             var publicKeyOptions = { /* Public key credential creation options. */
@@ -104,6 +104,7 @@ PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
                                            // in attestation
 	
 			};
+alert("helloState");
 
 			    state.createRequest = publicKeyOptions;
             // Create and register credentials.
@@ -112,12 +113,13 @@ PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
 
             // Record that the user does not intend to use a platform authenticator
             // and default the user to a password-based flow in the future.
+		alert("refused to use an authenticator");
 			console.log("No consent from user");
 			document.getElementById("info2").innerHTML="You refused to use an authenticator";
-		alert("refused to use an authenticator");
         }
 
     }).then(function (newCredentialInfo) {
+		alert("refused");
 	      state.createResponse = newCredentialInfo;
         // Send new credential info to server for verification and registration.
 		 /*  .then(function (aNewCredentialInfo) {
