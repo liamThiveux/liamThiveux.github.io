@@ -1,11 +1,22 @@
 <html>
 <head>
 </head>
-<body>
-<video controls="" width="100%" height="100%">
+<body style="overflow:hidden">
+<script>
+var video = document.getElementById("videoW3C");
+if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+	video.src="Payment handler and webauthn API.ogg";
+	video.src.type="video/ogg";
+}
+else {
+	video.src="Payment handler and webauthn API.mp4";
+	video.src.type="video/mp4";
+}
+</script>
+	<video id="videoW3C" width="100%" height="100%" controls>
+		<!-- <source src="Payment handler and webauthn API.ogg" type="video/ogg">
 		<source src="Payment handler and webauthn API.mp4" type="video/mp4">
-    <source src="Payment handler and webauthn API.ogg" type="video/ogg">
-		Your browser does not support the HTML5 video tag.
+		Your browser does not support the HTML5 video tag. -->
 	</video>
 </body>
 </html>
